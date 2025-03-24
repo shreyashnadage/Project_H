@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <ORE>
   <Setup>
     <Parameter name="asofDate">2016-02-05</Parameter>
@@ -50,21 +51,21 @@
       <Parameter name="pricingEnginesFile">../../Input/pricingengine.xml</Parameter>
       <Parameter name="baseCurrency">EUR</Parameter>
       <Parameter name="observationModel">Disable</Parameter>
-      
+      <!-- Parameter name="scenariodump">scenariodump.csv</Parameter> -->
       <Parameter name="cubeFile">cube.csv.gz</Parameter>
       <Parameter name="aggregationScenarioDataFileName">scenariodata.csv.gz</Parameter>
     </Analytic>
-  <Analytic type="xva">
+    <Analytic type="xva">
       <Parameter name="active">Y</Parameter>
+      <Parameter name="useXvaRunner">N</Parameter>
       <Parameter name="csaFile">netting.xml</Parameter>
       <Parameter name="cubeFile">cube.csv.gz</Parameter>
       <Parameter name="scenarioFile">scenariodata.csv.gz</Parameter>
-      <Parameter name="collateralBalancesFile">collateralbalances.xml</Parameter>
       <Parameter name="baseCurrency">EUR</Parameter>
       <Parameter name="exposureProfiles">Y</Parameter>
       <Parameter name="exposureProfilesByTrade">Y</Parameter>
       <Parameter name="quantile">0.95</Parameter>
-      <Parameter name="calculationType">NoLag</Parameter>
+      <Parameter name="calculationType">Symmetric</Parameter>
       <Parameter name="allocationMethod">None</Parameter>
       <Parameter name="marginalAllocationLimit">1.0</Parameter>
       <Parameter name="exerciseNextBreak">N</Parameter>
@@ -74,24 +75,14 @@
       <Parameter name="fva">N</Parameter>
       <Parameter name="fvaBorrowingCurve">BANK_EUR_BORROW</Parameter>
       <Parameter name="fvaLendingCurve">BANK_EUR_LEND</Parameter>
-      <Parameter name="colva">Y</Parameter>
-      <Parameter name="collateralFloor">Y</Parameter>
-      <Parameter name="dynamicCredit">N</Parameter>
-      <Parameter name="kva">Y</Parameter>
-      <Parameter name="kvaCapitalDiscountRate">0.10</Parameter>
-      <Parameter name="kvaAlpha">1.4</Parameter>
-      <Parameter name="kvaRegAdjustment">12.5</Parameter>
-      <Parameter name="kvaCapitalHurdle">0.012</Parameter>
-      <Parameter name="kvaOurPdFloor">0.03</Parameter>
-      <Parameter name="kvaTheirPdFloor">0.03</Parameter>
-      <Parameter name="kvaOurCvaRiskWeight">0.005</Parameter>
-      <Parameter name="kvaTheirCvaRiskWeight">0.05</Parameter>
-      <Parameter name="dim">Y</Parameter>
-      <Parameter name="dimModel">Regression</Parameter>
-      <Parameter name="mva">Y</Parameter>
-      <Parameter name="dimQuantile">0.99</Parameter>
-      <Parameter name="dimHorizonCalendarDays">14</Parameter>
-      <Parameter name="dimRegressionOrder">1</Parameter>
-      <Parameter name="dimRegressors">EUR-EURIBOR-3M,USD-LIBOR-3M,USD</Parameter>
-    </Analytic></Analytics>
+      <Parameter name="colva">N</Parameter>
+      <Parameter name="collateralFloor">N</Parameter>
+      <Parameter name="rawCubeOutputFile">rawcube.csv</Parameter>
+      <Parameter name="netCubeOutputFile">netcube.csv</Parameter>
+    </Analytic>
+    <Analytic type="initialMargin">
+      <Parameter name="active">N</Parameter>
+      <Parameter name="method"/>
+    </Analytic>
+  </Analytics>
 </ORE>

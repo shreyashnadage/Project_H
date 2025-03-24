@@ -6,13 +6,13 @@ from langchain_anthropic import ChatAnthropic
 
 
 
-@tool(response_format="content")
+@tool(response_format="content_and_artifact")
 def list_analytics(root_path: str = None) -> Tuple[str, List[str]]:
     """
     List all the analytics present in the ore.xml file.
 
     Args:
-        root_path (str): The absolute path to the ore.xml file. Defaults to 'ore.xml'.
+        root_path (str): The absolute path to the ore.xml file eg 'D:\Project_H\Examples\Example_1\Inputnew\ore.xml'. Defaults to 'ore.xml'.
 
     Returns:
         Tuple[str, List[str]]: A tuple containing a comma-separated string of analytic types and a list of analytic types.
@@ -252,17 +252,4 @@ def seek_advise_on_ore_xml(root_path: str, query: str) -> str:
     return response.content
 
 
-@tool
-def ask_human(query: str) -> str:
-    """
-    This tool should be used as a last resort when no other tools can be used.
-    It can help in giving advise to supervisor if it gets stuck with a task that it thinks can't be accomplished by any other tool.
-
-    Args:
-        query (str): The query to be answered.
-
-    Returns:
-        str: The answer to the query.
-    """
-    return query
 list_ore_tools = [list_analytics, get_analytic_parameters, set_analytic_active, add_analytic, set_analytic_parameter, remove_analytic, list_active_analytics, seek_advise_on_ore_xml]
