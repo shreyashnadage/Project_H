@@ -1,0 +1,228 @@
+NOTICE   [2025-Mar-15 16:50:34.324847]    (OREAnalytics\orea\app\parameters.cpp:133) : Parameters:
+NOTICE   [2025-Mar-15 16:50:34.324847]    (OREAnalytics\orea\app\parameters.cpp:136) : group = cashflow : active = Y
+NOTICE   [2025-Mar-15 16:50:34.325848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = cashflow : outputFileName = flows.csv
+NOTICE   [2025-Mar-15 16:50:34.325848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : active = Y
+NOTICE   [2025-Mar-15 16:50:34.325848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : configuration = default
+NOTICE   [2025-Mar-15 16:50:34.326848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : grid = 240,1M
+NOTICE   [2025-Mar-15 16:50:34.326848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : outputFileName = curves.csv
+NOTICE   [2025-Mar-15 16:50:34.326848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : fxcalibration = default
+NOTICE   [2025-Mar-15 16:50:34.326848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : lgmcalibration = default
+NOTICE   [2025-Mar-15 16:50:34.326848]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : pricing = default
+NOTICE   [2025-Mar-15 16:50:34.328320]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : simulation = default
+NOTICE   [2025-Mar-15 16:50:34.328320]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : active = Y
+NOTICE   [2025-Mar-15 16:50:34.328320]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : baseCurrency = EUR
+NOTICE   [2025-Mar-15 16:50:34.328320]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : outputFileName = npv.csv
+NOTICE   [2025-Mar-15 16:50:34.329799]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : asofDate = 2016-02-05
+NOTICE   [2025-Mar-15 16:50:34.329799]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : conventionsFile = conventions.xml
+NOTICE   [2025-Mar-15 16:50:34.329799]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : curveConfigFile = curveconfig.xml
+NOTICE   [2025-Mar-15 16:50:34.331015]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : fixingDataFile = fixings.txt
+NOTICE   [2025-Mar-15 16:50:34.331015]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : implyTodaysFixings = Y
+NOTICE   [2025-Mar-15 16:50:34.333273]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : inputPath = Input
+NOTICE   [2025-Mar-15 16:50:34.334274]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logFile = log.txt
+NOTICE   [2025-Mar-15 16:50:34.334274]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logMask = 31
+NOTICE   [2025-Mar-15 16:50:34.335271]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketConfigFile = todaysmarket.xml
+NOTICE   [2025-Mar-15 16:50:34.335271]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketDataFile = market.txt
+NOTICE   [2025-Mar-15 16:50:34.335271]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : observationModel = None
+NOTICE   [2025-Mar-15 16:50:34.336270]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : outputPath = Output
+NOTICE   [2025-Mar-15 16:50:34.336270]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : portfolioFile = portfolio.xml
+NOTICE   [2025-Mar-15 16:50:34.337268]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : pricingEnginesFile = pricingengine.xml
+NOTICE   [2025-Mar-15 16:50:34.337268]        (OREAnalytics\orea\app\oreapp.cpp:567) : load OREAppInputParameters called
+WARNING  [2025-Mar-15 16:50:34.337268]        (OREAnalytics\orea\app\oreapp.cpp:589) : Calendar adjustments not found, using defaults
+WARNING  [2025-Mar-15 16:50:34.337268]        (OREAnalytics\orea\app\oreapp.cpp:600) : Currency configurations not found, using defaults
+NOTICE   [2025-Mar-15 16:50:34.338702]        (OREAnalytics\orea\app\oreapp.cpp:664) : Observation Mode is None
+WARNING  [2025-Mar-15 16:50:34.338702]        (OREAnalytics\orea\app\oreapp.cpp:677) : Reference data not found
+WARNING  [2025-Mar-15 16:50:34.338702]        (OREAnalytics\orea\app\oreapp.cpp:687) : Script library not loaded
+NOTICE   [2025-Mar-15 16:50:34.338702]        (OREAnalytics\orea\app\oreapp.cpp:692) : Loading conventions from file: "Input\\conventions.xml"
+WARNING  [2025-Mar-15 16:50:34.340097]        (OREAnalytics\orea\app\oreapp.cpp:703) : Using default Ibor fallback config
+NOTICE   [2025-Mar-15 16:50:34.340097]        (OREAnalytics\orea\app\oreapp.cpp:708) : Load curve configurations from file: 
+NOTICE   [2025-Mar-15 16:50:34.341599]        (OREAnalytics\orea\app\oreapp.cpp:717) : Load pricing engine data from file: "Input\\pricingengine.xml"
+NOTICE   [2025-Mar-15 16:50:34.341599]        (OREAnalytics\orea\app\oreapp.cpp:726) : Loading today's market parameters from file"Input\\todaysmarket.xml"
+WARNING  [2025-Mar-15 16:50:34.342606]  (...rketdata\todaysmarketparameters.cpp:190) : TodaysMarketParameters: the attribute 'currency' is deprecated for 'SwaptionVolatilities', use 'key' instead.
+NOTICE   [2025-Mar-15 16:50:34.342606]  (...lytics\orea\app\inputparameters.cpp:147) : Loading portfolio from file: Input/portfolio.xml
+NOTICE   [2025-Mar-15 16:50:34.342606]     (OREData\ored\portfolio\portfolio.cpp:96) : Finished Parsing XML doc
+NOTICE   [2025-Mar-15 16:50:34.344033]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::fxcalibration = default
+NOTICE   [2025-Mar-15 16:50:34.344033]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::lgmcalibration = default
+NOTICE   [2025-Mar-15 16:50:34.344033]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::pricing = default
+NOTICE   [2025-Mar-15 16:50:34.345233]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::simulation = default
+NOTICE   [2025-Mar-15 16:50:34.345233]       (OREAnalytics\orea\app\oreapp.cpp:1274) : SIMM
+NOTICE   [2025-Mar-15 16:50:34.346172]       (OREAnalytics\orea\app\oreapp.cpp:1338) : IM SCHEDULE
+NOTICE   [2025-Mar-15 16:50:34.346172]       (OREAnalytics\orea\app\oreapp.cpp:2048) : analytics: 2
+NOTICE   [2025-Mar-15 16:50:34.346172]       (OREAnalytics\orea\app\oreapp.cpp:2050) : analytic: CASHFLOW
+NOTICE   [2025-Mar-15 16:50:34.347170]       (OREAnalytics\orea\app\oreapp.cpp:2050) : analytic: NPV
+NOTICE   [2025-Mar-15 16:50:34.347170]       (OREAnalytics\orea\app\oreapp.cpp:2052) : buildInputParameters done
+NOTICE   [2025-Mar-15 16:50:34.347675]  (...lytics\orea\app\inputparameters.cpp:597) : OutputFileNameMap called
+NOTICE   [2025-Mar-15 16:50:34.348699]  (...lytics\orea\app\inputparameters.cpp:676) : OutputFileNameMap complete
+NOTICE   [2025-Mar-15 16:50:34.349689]        (OREAnalytics\orea\app\oreapp.cpp:376) : initFromParameters done, requested analytics:CASHFLOW,NPV
+NOTICE   [2025-Mar-15 16:50:34.349689]        (OREAnalytics\orea\app\oreapp.cpp:221) : ORE analytics starting
+WARNING  [2025-Mar-15 16:50:34.350687]        (OREAnalytics\orea\app\oreapp.cpp:222) : 150650880|150654976
+WARNING  [2025-Mar-15 16:50:34.350687]        (OREAnalytics\orea\app\oreapp.cpp:202) : dividend data file not found
+WARNING  [2025-Mar-15 16:50:34.351836]        (OREAnalytics\orea\app\oreapp.cpp:210) : fixing cutoff date not set
+NOTICE   [2025-Mar-15 16:50:34.352341]   (OREData\ored\marketdata\csvloader.cpp:101) : CSVLoader loading from Input/market.txt
+NOTICE   [2025-Mar-15 16:50:34.352341]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/EUR/EUR1D/A360/1Y
+NOTICE   [2025-Mar-15 16:50:34.352341]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/EUR/EUR6M/A360/1Y
+NOTICE   [2025-Mar-15 16:50:34.353801]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/GBP/GBP1D/A365F/1Y
+NOTICE   [2025-Mar-15 16:50:34.353801]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/GBP/GBP6M/A365F/1Y
+NOTICE   [2025-Mar-15 16:50:34.353801]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum SWAPTION/RATE_LNVOL/EUR/1Y/1Y/ATM
+NOTICE   [2025-Mar-15 16:50:34.354808]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum SWAPTION/RATE_NVOL/GBP/1Y/1Y/ATM
+NOTICE   [2025-Mar-15 16:50:34.354808]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum FX/RATE/EUR/GBP
+NOTICE   [2025-Mar-15 16:50:34.355816]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum FX_OPTION/RATE_LNVOL/EUR/GBP/1Y/ATM
+NOTICE   [2025-Mar-15 16:50:34.355816]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum FX_OPTION/RATE_LNVOL/EUR/GBP/10Y/ATM
+NOTICE   [2025-Mar-15 16:50:34.355816]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum RECOVERY_RATE/RATE/BANK/SR/EUR
+NOTICE   [2025-Mar-15 16:50:34.355816]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum CDS/CREDIT_SPREAD/BANK/SR/EUR/1Y
+NOTICE   [2025-Mar-15 16:50:34.356844]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum RECOVERY_RATE/RATE/CPTY_A/SR/EUR
+NOTICE   [2025-Mar-15 16:50:34.356844]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum HAZARD_RATE/RATE/CPTY_A/SR/EUR/1Y
+NOTICE   [2025-Mar-15 16:50:34.356844]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum MM/RATE/USD/0D/1D
+NOTICE   [2025-Mar-15 16:50:34.357853]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/0D/1D/1D
+NOTICE   [2025-Mar-15 16:50:34.357853]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1M
+NOTICE   [2025-Mar-15 16:50:34.357853]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1W
+NOTICE   [2025-Mar-15 16:50:34.357853]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/0D/1D/2D
+NOTICE   [2025-Mar-15 16:50:34.357853]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/2M
+NOTICE   [2025-Mar-15 16:50:34.357853]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/2W
+NOTICE   [2025-Mar-15 16:50:34.359263]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/3M
+NOTICE   [2025-Mar-15 16:50:34.359263]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/3W
+NOTICE   [2025-Mar-15 16:50:34.359263]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/4M
+NOTICE   [2025-Mar-15 16:50:34.359263]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/5M
+NOTICE   [2025-Mar-15 16:50:34.359263]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/6M
+NOTICE   [2025-Mar-15 16:50:34.359263]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/7M
+NOTICE   [2025-Mar-15 16:50:34.360723]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/8M
+NOTICE   [2025-Mar-15 16:50:34.360723]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/9M
+NOTICE   [2025-Mar-15 16:50:34.360723]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/10M
+NOTICE   [2025-Mar-15 16:50:34.360723]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/11M
+NOTICE   [2025-Mar-15 16:50:34.360723]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y
+NOTICE   [2025-Mar-15 16:50:34.362202]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/2Y
+NOTICE   [2025-Mar-15 16:50:34.362202]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/3Y
+NOTICE   [2025-Mar-15 16:50:34.362202]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/4Y
+NOTICE   [2025-Mar-15 16:50:34.362202]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/5Y
+NOTICE   [2025-Mar-15 16:50:34.362202]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/7Y
+NOTICE   [2025-Mar-15 16:50:34.362202]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/10Y
+NOTICE   [2025-Mar-15 16:50:34.363642]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/12Y
+NOTICE   [2025-Mar-15 16:50:34.363642]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y3M
+NOTICE   [2025-Mar-15 16:50:34.363642]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/15Y
+NOTICE   [2025-Mar-15 16:50:34.366104]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y6M
+NOTICE   [2025-Mar-15 16:50:34.367078]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/20Y
+NOTICE   [2025-Mar-15 16:50:34.367078]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y9M
+NOTICE   [2025-Mar-15 16:50:34.368075]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/25Y
+NOTICE   [2025-Mar-15 16:50:34.368075]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/30Y
+NOTICE   [2025-Mar-15 16:50:34.369074]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/50Y
+NOTICE   [2025-Mar-15 16:50:34.369074]   (OREData\ored\marketdata\csvloader.cpp:189) : CSVLoader completed processing Input/market.txt
+NOTICE   [2025-Mar-15 16:50:34.370074]    (OREData\ored\marketdata\csvloader.cpp:80) : CSVLoader loaded 46 market data points for February 5th, 2016
+NOTICE   [2025-Mar-15 16:50:34.370074]   (OREData\ored\marketdata\csvloader.cpp:101) : CSVLoader loading from Input/fixings.txt
+NOTICE   [2025-Mar-15 16:50:34.371074]   (OREData\ored\marketdata\csvloader.cpp:189) : CSVLoader completed processing Input/fixings.txt
+NOTICE   [2025-Mar-15 16:50:34.371074]    (OREData\ored\marketdata\csvloader.cpp:85) : CSVLoader loaded 0 fixings
+NOTICE   [2025-Mar-15 16:50:34.371074]    (OREData\ored\marketdata\csvloader.cpp:90) : CSVLoader loaded 0 dividends
+NOTICE   [2025-Mar-15 16:50:34.372075]    (OREData\ored\marketdata\csvloader.cpp:92) : CSVLoader complete.
+NOTICE   [2025-Mar-15 16:50:34.372075]  (...lytics\orea\app\analyticsmanager.cpp:69) : register analytic with label 'PRICING' and sub-analytics CASHFLOW,CASHFLOWNPV,NPV,SENSITIVITY
+NOTICE   [2025-Mar-15 16:50:34.372075]  (...lytics\orea\app\analyticsmanager.cpp:69) : register analytic with label 'PRICING' and sub-analytics CASHFLOW,CASHFLOWNPV,NPV,SENSITIVITY
+NOTICE   [2025-Mar-15 16:50:34.372075]        (OREAnalytics\orea\app\oreapp.cpp:239) : Available analytics: CASHFLOW,CASHFLOWNPV,NPV,SENSITIVITY
+NOTICE   [2025-Mar-15 16:50:34.373563]        (OREAnalytics\orea\app\oreapp.cpp:242) : Requested analytics: CASHFLOW,NPV
+NOTICE   [2025-Mar-15 16:50:34.373563]  (...ytics\orea\app\analyticsmanager.cpp:130) : AnalyticsManager::runAnalytics: requireMarketData Y
+NOTICE   [2025-Mar-15 16:50:34.373563]  (...ytics\orea\app\analyticsmanager.cpp:135) : AnalyticsManager::runAnalytics: populate loader for dates: February 5th, 2016
+NOTICE   [2025-Mar-15 16:50:34.373563]  (...ics\orea\app\marketdatacsvloader.cpp:78) : MarketDataCsvLoader::retrieveFixings called: all fixings ? Y
+NOTICE   [2025-Mar-15 16:50:34.374573]  (...ytics\orea\app\marketdataloader.cpp:261) : Adding the loaded fixings to the IndexManager
+NOTICE   [2025-Mar-15 16:50:34.374573]      (OREData\ored\marketdata\fixings.cpp:68) : Added 0 of 0 fixings in 0.000004 seconds
+NOTICE   [2025-Mar-15 16:50:34.374573]  (...ytics\orea\app\marketdataloader.cpp:265) : Generating market datum set
+NOTICE   [2025-Mar-15 16:50:34.375572]  (...ytics\orea\app\marketdataloader.cpp:283) : CurveConfigs require 33 quotes
+NOTICE   [2025-Mar-15 16:50:34.376572]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX/RATE/GBP/EUR for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Mar-15 16:50:34.376572]  (...ytics\orea\app\marketdataloader.cpp:290) : Got market data
+NOTICE   [2025-Mar-15 16:50:34.376572]  (...nalytics\orea\app\reportwriter.cpp:1400) : Writing MarketData report
+NOTICE   [2025-Mar-15 16:50:34.377574]  (...nalytics\orea\app\reportwriter.cpp:1444) : Writing Fixings report
+NOTICE   [2025-Mar-15 16:50:34.377574]  (...nalytics\orea\app\reportwriter.cpp:1453) : Fixings report written
+NOTICE   [2025-Mar-15 16:50:34.377574]  (...nalytics\orea\app\reportwriter.cpp:1458) : Writing Dividends report
+NOTICE   [2025-Mar-15 16:50:34.378573]  (...nalytics\orea\app\reportwriter.cpp:1470) : Dividends report written
+NOTICE   [2025-Mar-15 16:50:34.378573]  (...ytics\orea\app\analyticsmanager.cpp:159) : run analytic with label 'PRICING'
+WARNING  [2025-Mar-15 16:50:34.378573]       (OREAnalytics\orea\app\analytic.cpp:85) : 151736320|151736320
+NOTICE   [2025-Mar-15 16:50:34.379577]      (OREAnalytics\orea\app\analytic.cpp:180) : Analytic::buildMarket called
+NOTICE   [2025-Mar-15 16:50:34.379577]  (...\ored\marketdata\bondspreadimply.cpp:48) : identify securities that require a spread imply for configuration default
+NOTICE   [2025-Mar-15 16:50:34.379577]  (...ored\marketdata\bondspreadimply.cpp:105) : got 0 securities
+NOTICE   [2025-Mar-15 16:50:34.379577]  (...ta\ored\marketdata\todaysmarket.cpp:115) : Todays Market Loading Fixings
+NOTICE   [2025-Mar-15 16:50:34.380589]      (OREData\ored\marketdata\fixings.cpp:68) : Added 0 of 0 fixings in 0.000000 seconds
+NOTICE   [2025-Mar-15 16:50:34.380589]  (...ta\ored\marketdata\todaysmarket.cpp:119) : Todays Market Loading Fixing done.
+NOTICE   [2025-Mar-15 16:50:34.380589]  (...ta\ored\marketdata\todaysmarket.cpp:124) : Todays Market Loading Dividends
+NOTICE   [2025-Mar-15 16:50:34.382982]  (...ta\ored\marketdata\todaysmarket.cpp:128) : Todays Market Loading Dividends done.
+NOTICE   [2025-Mar-15 16:50:34.382982]  (...\ored\marketdata\fxtriangulation.cpp:65) : FXTriangulation: initializing
+NOTICE   [2025-Mar-15 16:50:34.383985]  (...ored\marketdata\fxtriangulation.cpp:112) : FXTriangulation: initialized with 1 quotes, 2 currencies.
+NOTICE   [2025-Mar-15 16:50:34.384989]  (...\ored\marketdata\dependencygraph.cpp:40) : Build dependency graph for TodaysMarket configuration default
+WARNING  [2025-Mar-15 16:50:34.384989]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Mar-15 16:50:34.384989]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Mar-15 16:50:34.386483]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Mar-15 16:50:34.386992]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+NOTICE   [2025-Mar-15 16:50:34.386992]  (...ta\ored\marketdata\todaysmarket.cpp:229) : Build objects in TodaysMarket lazily, i.e. when requested.
+NOTICE   [2025-Mar-15 16:50:34.386992]  (...ta\ored\marketdata\todaysmarket.cpp:234) : TodaysMarket build stats:
+NOTICE   [2025-Mar-15 16:50:34.388004]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 1 load fixings                    :           0.278 ms         1          0.278 ms
+NOTICE   [2025-Mar-15 16:50:34.388004]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 2 load dividends                  :          0.0082 ms         1         0.0082 ms
+NOTICE   [2025-Mar-15 16:50:34.388004]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 3 add all fx quotes               :            1.26 ms         1           1.26 ms
+NOTICE   [2025-Mar-15 16:50:34.388004]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 4 build dep graphs                :            2.49 ms         1           2.49 ms
+NOTICE   [2025-Mar-15 16:50:34.389004]  (...ta\ored\marketdata\todaysmarket.cpp:243) : Total build time              :          4.0361 ms
+NOTICE   [2025-Mar-15 16:50:34.389004]      (OREAnalytics\orea\app\analytic.cpp:214) : Market Build time 0.009504 sec
+NOTICE   [2025-Mar-15 16:50:34.389004]     (OREData\ored\portfolio\portfolio.cpp:45) : Reset portfolio of size 1
+NOTICE   [2025-Mar-15 16:50:34.389004]      (OREAnalytics\orea\app\analytic.cpp:237) : Build the portfolio
+NOTICE   [2025-Mar-15 16:50:34.390089]      (OREAnalytics\orea\app\analytic.cpp:162) : Analytic::engineFactory() called
+NOTICE   [2025-Mar-15 16:50:34.390089]      (OREAnalytics\orea\app\analytic.cpp:172) : MarketContext::pricing = default
+NOTICE   [2025-Mar-15 16:50:34.390089]  (...ta\ored\portfolio\enginefactory.cpp:184) : Building EngineFactory
+NOTICE   [2025-Mar-15 16:50:34.391100]    (OREData\ored\portfolio\portfolio.cpp:124) : Building Portfolio of size 1 for context = 'analytic/PRICING'
+WARNING  [2025-Mar-15 16:50:34.392100]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Mar-15 16:50:34.392100]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Mar-15 16:50:34.393099]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Mar-15 16:50:34.393099]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Mar-15 16:50:34.394100]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+NOTICE   [2025-Mar-15 16:50:34.394100]    (OREData\ored\portfolio\portfolio.cpp:142) : Built Portfolio. Initial size = 1, size now 1, built 0 failed trades, context is analytic/PRICING
+NOTICE   [2025-Mar-15 16:50:34.394100]      (OREAnalytics\orea\app\analytic.cpp:246) : Filter trades that expire before February 5th, 2016
+NOTICE   [2025-Mar-15 16:50:34.395672]  (OREAnalytics\orea\app\reportwriter.cpp:156) : Writing cashflow report for February 5th, 2016
+NOTICE   [2025-Mar-15 16:50:34.396613]  (OREAnalytics\orea\app\reportwriter.cpp:653) : Cashflow report written
+NOTICE   [2025-Mar-15 16:50:34.396613]   (OREAnalytics\orea\app\reportwriter.cpp:83) : portfolio valuation
+WARNING  [2025-Mar-15 16:50:34.397613]         (OREData\ored\portfolio\swap.cpp:272) : swap engine does not provide current notional: currentNotional not provided, using fallback
+WARNING  [2025-Mar-15 16:50:34.398967]         (OREData\ored\portfolio\swap.cpp:272) : swap engine does not provide current notional: currentNotional not provided, using fallback
+WARNING  [2025-Mar-15 16:50:34.399999]         (OREData\ored\portfolio\swap.cpp:272) : swap engine does not provide current notional: currentNotional not provided, using fallback
+NOTICE   [2025-Mar-15 16:50:34.401001]  (OREAnalytics\orea\app\reportwriter.cpp:146) : NPV file written
+NOTICE   [2025-Mar-15 16:50:34.401996]  (...a\app\analytics\pricinganalytic.cpp:106) : Write curves report
+NOTICE   [2025-Mar-15 16:50:34.401996]  (OREAnalytics\orea\app\reportwriter.cpp:720) : Write curves... 
+WARNING  [2025-Mar-15 16:50:34.402994]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date (no more warnings of this type will be emitted)
+NOTICE   [2025-Mar-15 16:50:34.408993]  (...ta\ored\marketdata\defaultcurve.cpp:301) : Start building default curve of type SpreadCDS for curve BANK_SR_EUR
+NOTICE   [2025-Mar-15 16:50:34.410002]  (...ta\ored\marketdata\defaultcurve.cpp:168) : Loading explicit quotes for default curve BANK_SR_EUR
+NOTICE   [2025-Mar-15 16:50:34.410002]  (...ta\ored\marketdata\defaultcurve.cpp:194) : DefaultCurve BANK_SR_EUR using 1 default quotes of 1 requested quotes.
+NOTICE   [2025-Mar-15 16:50:34.410002]  (...ta\ored\marketdata\defaultcurve.cpp:539) : Finished building default curve of type SpreadCDS for curve BANK_SR_EUR
+NOTICE   [2025-Mar-15 16:50:34.411044]  (...ta\ored\marketdata\defaultcurve.cpp:545) : Start building default curve of type HazardRate for curve CPTY_A_SR_EUR
+NOTICE   [2025-Mar-15 16:50:34.411557]  (...ta\ored\marketdata\defaultcurve.cpp:168) : Loading explicit quotes for default curve CPTY_A_SR_EUR
+NOTICE   [2025-Mar-15 16:50:34.411557]  (...ta\ored\marketdata\defaultcurve.cpp:194) : DefaultCurve CPTY_A_SR_EUR using 1 default quotes of 1 requested quotes.
+NOTICE   [2025-Mar-15 16:50:34.411557]  (...ta\ored\marketdata\defaultcurve.cpp:567) : DefaultCurve: add asof (February 5th, 2016), hazard rate 0.01, as not given
+NOTICE   [2025-Mar-15 16:50:34.411557]  (...ta\ored\marketdata\defaultcurve.cpp:577) : DefaultCurve: set up interpolated hazard rate curve
+NOTICE   [2025-Mar-15 16:50:34.412573]  (...ta\ored\marketdata\defaultcurve.cpp:595) : Finished building default curve of type HazardRate for curve CPTY_A_SR_EUR
+WARNING  [2025-Mar-15 16:50:34.412573]       (OREAnalytics\orea\app\analytic.cpp:88) : 155119616|155119616
+NOTICE   [2025-Mar-15 16:50:34.413614]  (...ytics\orea\app\analyticsmanager.cpp:161) : run analytic with label 'PRICING' finished.
+NOTICE   [2025-Mar-15 16:50:34.416134]  (...nalytics\orea\app\reportwriter.cpp:1475) : Writing Pricing stats report
+NOTICE   [2025-Mar-15 16:50:34.418133]  (...nalytics\orea\app\reportwriter.cpp:1491) : Pricing stats report written
+NOTICE   [2025-Mar-15 16:50:34.418133]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name cashflow occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.418133]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name curves occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.418133]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name dividends occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.419131]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name fixings occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.419131]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name marketdata occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.419131]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name npv occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.419131]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name pricingstats occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.420129]  (...ytics\orea\app\analyticsmanager.cpp:234) : report name todaysmarketcalibration occurs 1 times
+NOTICE   [2025-Mar-15 16:50:34.420129]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/flows.csv'
+NOTICE   [2025-Mar-15 16:50:34.422131]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/flows.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.422131]  (...ytics\orea\app\analyticsmanager.cpp:277) : report cashflow written to Output/flows.csv
+NOTICE   [2025-Mar-15 16:50:34.422131]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/dividends.csv'
+NOTICE   [2025-Mar-15 16:50:34.423508]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/dividends.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.423508]  (...ytics\orea\app\analyticsmanager.cpp:277) : report dividends written to Output/dividends.csv
+NOTICE   [2025-Mar-15 16:50:34.424519]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/fixings.csv'
+NOTICE   [2025-Mar-15 16:50:34.424519]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/fixings.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.424519]  (...ytics\orea\app\analyticsmanager.cpp:277) : report fixings written to Output/fixings.csv
+NOTICE   [2025-Mar-15 16:50:34.424519]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/todaysmarketcalibration.csv'
+NOTICE   [2025-Mar-15 16:50:34.425909]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/todaysmarketcalibration.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.426966]  (...ytics\orea\app\analyticsmanager.cpp:277) : report todaysmarketcalibration written to Output/todaysmarketcalibration.csv
+NOTICE   [2025-Mar-15 16:50:34.426966]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/marketdata.csv'
+NOTICE   [2025-Mar-15 16:50:34.427974]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/marketdata.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.427974]  (...ytics\orea\app\analyticsmanager.cpp:277) : report marketdata written to Output/marketdata.csv
+NOTICE   [2025-Mar-15 16:50:34.427974]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/curves.csv'
+NOTICE   [2025-Mar-15 16:50:34.435140]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/curves.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.435140]  (...ytics\orea\app\analyticsmanager.cpp:277) : report curves written to Output/curves.csv
+NOTICE   [2025-Mar-15 16:50:34.435140]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/npv.csv'
+NOTICE   [2025-Mar-15 16:50:34.436164]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/npv.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.436164]  (...ytics\orea\app\analyticsmanager.cpp:277) : report npv written to Output/npv.csv
+NOTICE   [2025-Mar-15 16:50:34.436164]       (OREData\ored\report\csvreport.cpp:110) : Opening CSV file report 'Output/pricingstats.csv'
+NOTICE   [2025-Mar-15 16:50:34.436164]       (OREData\ored\report\csvreport.cpp:199) : CSV file report 'Output/pricingstats.csv' closed.
+NOTICE   [2025-Mar-15 16:50:34.437393]  (...ytics\orea\app\analyticsmanager.cpp:277) : report pricingstats written to Output/pricingstats.csv
+WARNING  [2025-Mar-15 16:50:34.437393]        (OREAnalytics\orea\app\oreapp.cpp:309) : 155324416|155324416
+NOTICE   [2025-Mar-15 16:50:34.437393]        (OREAnalytics\orea\app\oreapp.cpp:310) : ORE analytics done
+NOTICE   [2025-Mar-15 16:50:34.437393]        (OREAnalytics\orea\app\oreapp.cpp:439) : ORE done.
