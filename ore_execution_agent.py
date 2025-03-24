@@ -62,9 +62,9 @@ def ore_execution_agent_node(state: State) -> Command[Literal["supervisor"]]:
             ]})
 
 
-test = ore_execution_agent.invoke({'messages': [SystemMessage(content=ore_execution_agent_system_prompt_content),SystemMessage(content=file_location_prompt)] + [HumanMessage(content="run ore with ore.xml")]})
+# test = ore_execution_agent.invoke({'messages': [SystemMessage(content=ore_execution_agent_system_prompt_content),SystemMessage(content=file_location_prompt)] + [HumanMessage(content="run ore with ore.xml")]})
 
-test1 = 0
+# test1 = 0
 
 
 

@@ -53,7 +53,7 @@ ore_agent = create_react_agent(llm,
     tools = all_tools_list_ore_xml,
 )
 
-def ore_agent_node(state: State) -> Command[Literal["supervisor"]]:
+def ore_xml_agent_node(state: State) -> Command[Literal["supervisor"]]:
     messages_list = input_messages["messages"] + state["messages"]
     messages = {'messages': messages_list}
     response = ore_agent.invoke(messages)
