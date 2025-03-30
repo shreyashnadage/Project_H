@@ -253,3 +253,6 @@ def seek_advise_on_ore_xml(root_path: str, query: str) -> str:
 
 
 list_ore_tools = [list_analytics, get_analytic_parameters, set_analytic_active, add_analytic, set_analytic_parameter, remove_analytic, list_active_analytics, seek_advise_on_ore_xml]
+
+list_ore_xml_tools_description = [str(n+1)+". "+i.description.split("\n\n")[0]+'\n' for n, i in enumerate(list_ore_tools)]
+test  = 0

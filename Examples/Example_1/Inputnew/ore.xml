@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <ORE>
   <Setup>
     <Parameter name="asofDate">2016-02-05</Parameter>
@@ -39,24 +38,24 @@
       <Parameter name="outputFileName">flows.csv</Parameter>
     </Analytic>
     <Analytic type="curves">
-      <Parameter name="active">Y</Parameter>
+      <Parameter name="active">N</Parameter>
       <Parameter name="configuration">default</Parameter>
       <Parameter name="grid">240,1M</Parameter>
       <Parameter name="outputFileName">curves.csv</Parameter>
       <Parameter name="outputTodaysMarketCalibration">Y</Parameter>
     </Analytic>
     <Analytic type="simulation">
-      <Parameter name="active">Y</Parameter>
+      <Parameter name="active">N</Parameter>
       <Parameter name="simulationConfigFile">simulation.xml</Parameter>
       <Parameter name="pricingEnginesFile">../../Input/pricingengine.xml</Parameter>
       <Parameter name="baseCurrency">EUR</Parameter>
       <Parameter name="observationModel">Disable</Parameter>
-      <!-- Parameter name="scenariodump">scenariodump.csv</Parameter> -->
+      
       <Parameter name="cubeFile">cube.csv.gz</Parameter>
       <Parameter name="aggregationScenarioDataFileName">scenariodata.csv.gz</Parameter>
     </Analytic>
     <Analytic type="xva">
-      <Parameter name="active">Y</Parameter>
+      <Parameter name="active">N</Parameter>
       <Parameter name="useXvaRunner">N</Parameter>
       <Parameter name="csaFile">netting.xml</Parameter>
       <Parameter name="cubeFile">cube.csv.gz</Parameter>
@@ -82,7 +81,11 @@
     </Analytic>
     <Analytic type="initialMargin">
       <Parameter name="active">N</Parameter>
-      <Parameter name="method"/>
+      <Parameter name="method" />
     </Analytic>
-  </Analytics>
+  <Analytic type="imschedule">
+      <Parameter name="active">N</Parameter>
+      <Parameter name="crif">schedule_crif.csv</Parameter>
+      <Parameter name="calculationCurrency">USD</Parameter>
+    </Analytic></Analytics>
 </ORE>

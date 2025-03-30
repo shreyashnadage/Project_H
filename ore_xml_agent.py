@@ -1,10 +1,10 @@
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 from langchain_anthropic import ChatAnthropic
 from langgraph.prebuilt import create_react_agent
 from tools_utility import list_tools as common_tools_list
 from ore_xml_tools import list_ore_tools as ore_xml_tools_list
 from react_agent_system_prompts import *
-from langgraph.graph import MessagesState
+from ExtendedState import State
 from langgraph.types import Command
 from typing import Literal
 from config_file import file_location_prompt
@@ -18,27 +18,9 @@ def print_stream(stream):
         else:
             message.pretty_print()
 
-# Function to summarize chat history
-def summarize_messages(state):
-    messages = state["messages"]
-
-    # Convert messages to a format suitable for summarization
-    chat_history = "\n".join(
-        f"Human: {msg.content}" if isinstance(msg, HumanMessage) else f"AI: {msg.content}"
-        for msg in messages
-    )
-
-    summary_prompt = f"Summarize the following conversation:\n\n{chat_history}\n\nSummary: step by step summary of the conversation."
-
-    # Get the summary from the LLM
-    summary = llm.invoke(summary_prompt)
-
-    return {"summary": summary}
 
 all_tools_list_ore_xml = ore_xml_tools_list + common_tools_list
 
-class State(MessagesState):
-    next: str
 
 llm = ChatAnthropic(
     model="claude-3-5-haiku-latest",
@@ -54,7 +36,7 @@ ore_agent = create_react_agent(llm,
 )
 
 def ore_xml_agent_node(state: State) -> Command[Literal["supervisor"]]:
-    messages_list = input_messages["messages"] + state["messages"]
+    messages_list = input_messages["messages"] + [HumanMessage(content=state["task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria_current_agent"])]
     messages = {'messages': messages_list}
     response = ore_agent.invoke(messages)
     state["messages"] = messages_list + response["messages"]

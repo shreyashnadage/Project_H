@@ -4,6 +4,9 @@ import os
 from langchain.tools import tool
 from typing import List
 import xml.etree.ElementTree as ET
+from typing import Tuple    
+params = Parameters()
+ore = OREApp(params, True)
 
 def convert_paths(absolute_path: str) -> str:
     """
@@ -41,7 +44,7 @@ def convert_paths(absolute_path: str) -> str:
     # Return modified XML as a string
     return ET.tostring(root, encoding="unicode")
 
-# @tool
+@tool
 def run_ore(file_path: str = None) -> str:
     """
     Run the ORE model with the specified file.
@@ -56,7 +59,6 @@ def run_ore(file_path: str = None) -> str:
         absolute_path = os.path.dirname(os.path.dirname(file_path))
         cwd = os.getcwd()
         os.chdir(absolute_path)
-        params = Parameters()
         params.fromFile(file_path)
         ore = OREApp(params, True)
         ore.run()
@@ -69,25 +71,27 @@ def run_ore(file_path: str = None) -> str:
 @tool
 def get_ore_report_list(file_path: str = None) -> List[str]:
     """
-    Get a list of report names from the specified ore.xml file.
-    Should only be called after run_ore.
+    Get a list of report names from the ORE model.
 
     Args:
-        file_path (str): The absolute path to the ore.xml file. Defaults to 'ore.xml'.
+        file_path (str): The absolute path to the ore.xml file eg D:Project_H\Examples\Example_1\Inputnew\ore.xml. Defaults to 'ore.xml'.
 
     Returns:
         List[str]: A list of report names.
     """
     try:
-        params = Parameters()
+        absolute_path = os.path.dirname(os.path.dirname(file_path))
+        cwd = os.getcwd()
+        os.chdir(absolute_path)
         params.fromFile(file_path)
         ore = OREApp(params, True)
-        return ore.getReportNames()
+        ore.run()
+        os.chdir(cwd)
+        return list(ore.getReportNames())
     except Exception as e:
         return f"Error getting report list: {str(e)}"
 
 list_ore_tools = [run_ore, get_ore_report_list]
+list_ore_tools_description = [str(n+1)+". "+i.description.split("\n\n")[0]+'\n' for n, i in enumerate(list_ore_tools)]
 
-
-run_ore("D:\Project_H\Examples\Example_1\Inputnew\ore.xml")
 

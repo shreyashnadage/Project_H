@@ -571,6 +571,7 @@ def insert_risk_factor_template(filepath: str, component_type: str) -> str:
 
 
 list_sensitivity_tools = [add_market_component, modify_market_component, delete_market_component, query_market_component, toggle_compute_gamma, toggle_use_spreaded_term_structures, list_market_components, seek_advise_on_sensitivity_xml, add_cross_gamma_pair, delete_cross_gamma_pair,insert_risk_factor_template, create_new_sensitivity_xml]
+list_sensitivity_tools_description = [str(n+1)+". "+i.description.split("\n\n")[0]+'\n' for n, i in enumerate(list_sensitivity_tools)]
 
 
 

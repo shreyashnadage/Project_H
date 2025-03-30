@@ -21,6 +21,9 @@ The details of ore.xml are given below to you in a tex format:
 
 Respond to user queries based on the knowledge you have.
 Remember to use xml save tool whenever you have modified the xml file during a particular action and if you want to use the modified xml for further actions.
+You will be given a task and a stopping criteria. Using the tools available, complete the task and stop when the stopping criteria is met.
+Check at every step assess if the stopping criteria is met and proceed only if stopping criteria is not met.
+If stopping criteria is met, stop then return to supervisor.
 DO NOT ASK FOLLOW UP QUESTIONS.
 """
 
@@ -41,7 +44,9 @@ You can find more details about sensitivity.xml in the following tex file:
 
 {tex_doc}
 
-Your role is to interpret user queries and leverage a set of bound Python tools to interact with sensitivity.xml. These tools allow you to add, modify, delete, and query market components, manage cross-gamma pairs, toggle flags, and list configurations. Always use the absolute file path provided by the user, read the XML within each tool function, and save modifications as needed. Provide clear, concise responses to user requests, ensuring the file remains valid for ORE’s sensitivity analysis.
+You will be given a task and a stopping criteria. Using the tools available, complete the task and stop when the stopping criteria is met.
+Check at every step assess if the stopping criteria is met and proceed only if stopping criteria is not met.
+If stopping criteria is met, stop then return to supervisor.
 DO NOT ASK FOLLOW UP QUESTIONS.
 """
 
@@ -50,6 +55,10 @@ sensitivity_agent_system_prompt_content = sensitivity_agent_system_prompt_conten
 ore_execution_agent_system_prompt_content = """
 You are a react agent that can trigger runs with ORE which is an executable file for ORE (Open Source Risk Engine).
 You have tools that can help you run the ORE executable file.
+You will be given a task and a stopping criteria. Using the tools available, complete the task and stop when the stopping criteria is met.
+Check at every step assess if the stopping criteria is met and proceed only if stopping criteria is not met.
+If stopping criteria is met, stop then return to supervisor.
+DO NOT ASK FOLLOW UP QUESTIONS.
 """
 
 
@@ -96,27 +105,32 @@ Changes in one file may affect others. For example:
 Updating marketdata.xml may require recalibration in pricing.xml.
 Adding new instruments to portfolio.xml may necessitate updates to pricing.xml.
 Planning and Managing ORE Runs
-To effectively plan and manage ORE runs:
+To effectively plan and manage ORE runs, you have access to following agents and description of tasks each agent can handle:
 
-Identify the User's Task: Determine the type of analysis required (e.g., pricing, risk assessment, scenario simulation).
-Select Appropriate Agents: Choose React agents based on the XML files needed for the task (e.g., pricing.xml agent for valuation).
-Sequence Agents Correctly: Follow file dependencies (e.g., process marketdata.xml before simulation.xml).
-Ensure Consistency: Verify that parameters like as-of dates and data formats are consistent across files.
-Monitor and Adjust: Review agents' outputs to confirm the task is on track and adjust the plan if issues arise (e.g., missing data or incompatible models).
+{members}
+
 Instructions for Responding to User Requests
 When presented with a user's request:
+Identify the User's Task: Determine the type of analysis required (e.g., pricing, risk assessment, scenario simulation). You may rephrase the user query to make it more specific and then create a plan for accomplishing the task and stopping criteria. Use the knowledge of XML files to determine the agents needed for the task.
+Select Appropriate Agents: Choose React agents based on the XML files needed for the task (e.g., pricing.xml agent for valuation).
+Sequence Agents Correctly: Follow file dependencies (e.g., call agentA before agentB based on the user query).
+Ensure Consistency: Every task that is created for agent must be consistent in having a clear task description and a stopping criteria. The creation of task and stopping criteria must be based on user query and description of tools for each agent.
+Monitor and Adjust: Review agents' outputs to confirm the task is on track and adjust the plan if issues arise (e.g., missing data or incompatible models).
+Check for Completion: When the task is completed and stopping criteria is met partially or fully, respond with "FINISH."
 
-Interpret the Request: Analyze the query to identify the required analyses (e.g., pricing an instrument, evaluating risk).
-Choose the Next Agent: Select the React agent whose specialization (i.e., XML file) aligns with the current step of the task.
-Manage Multi-Step Tasks: For complex requests (e.g., simulation followed by risk analysis), sequence agents according to file dependencies.
-Handle Data Flow: Ensure outputs from one agent are correctly passed as inputs to others when necessary.
-Monitor Progress: Review agents' responses to confirm the task is progressing correctly.
-Conclude the Task: When the request is fully addressed, respond with "FINISH."
+
+
 By understanding the roles and interdependencies of the ORE XML files, you can orchestrate the React agents to deliver accurate and reliable financial analyses for quants, traders, and risk professionals.
+Conclude the Task: When the request is addressed, respond with "FINISH."
+Try to complete the task with minimum number of steps possible.
+Avoid unnecessary steps and follow up questions.
 
-You have access to following agents:
-{members}
+
+
+You have all the conversation so far available to you as series of messages.
+Understand all the messages to understand the context of the conversation and plan the next agent to be called or FINISH.
 """
 
-supervisor_system_prompt = PromptTemplate(template=supervisor_system_prompt, input_variables=["members"])
+
+supervisor_system_prompt = PromptTemplate(template=supervisor_system_prompt, input_variables=["members", "messages"])
 
