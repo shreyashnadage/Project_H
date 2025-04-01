@@ -87,5 +87,11 @@
       <Parameter name="active">N</Parameter>
       <Parameter name="crif">schedule_crif.csv</Parameter>
       <Parameter name="calculationCurrency">USD</Parameter>
-    </Analytic></Analytics>
+    </Analytic><Analytic type="sensitivity">
+      <Parameter name="active">Y</Parameter>
+      <Parameter name="marketConfigFile">D:\Project_H\Examples\Example_1\Inputnew\simulation.xml</Parameter>
+      <Parameter name="sensitivityConfigFile">D:\Project_H\Examples\Example_1\Inputnew\sensitivity.xml</Parameter>
+      <Parameter name="pricingEnginesFile">D:\Project_H\Examples\Example_1\Inputnew\pricingengine.xml</Parameter>
+      <Parameter name="sensitivityOutputFile">D:\Project_H\Examples\Example_1\Output\sensitivity.csv</Parameter>
+    <Parameter name="scenarioOutputFile">D:\Project_H\Examples\Example_1\Output\scenario.csv</Parameter><Parameter name="crossGammaOutputFile">D:\Project_H\Examples\Example_1\Output\crossgamma.csv</Parameter><Parameter name="outputSensitivityThreshold">0.000001</Parameter><Parameter name="recalibrateModels">Y</Parameter></Analytic></Analytics>
 </ORE>

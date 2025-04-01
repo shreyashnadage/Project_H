@@ -3,21 +3,22 @@ from langchain_anthropic import ChatAnthropic
 from typing import Optional, Dict
 import os
 import xml.etree.ElementTree as ET
+from ExtendedState import State
 
 @tool
-def seek_advice_on_stresstest_xml(root_path: str, query: str) -> str:
+def seek_advice_on_stresstest_xml(state: State, query: str) -> str:
     """
     This tool should be used as a last resort when no other tools can be used.
     It can help in giving advice to supervisor if it gets stuck with a task that it thinks can't be accomplished by any other tool.
 
     Args:
-        root_path (str): The absolute path to the stresstest.xml file.
+        state (State): Contains the absolute path to the stresstest.xml file.
         query (str): The query to be answered.
 
     Returns:
         str: The answer to the query.
     """
-    with open(root_path, "r") as f:
+    with open(os.path.join(state["input_path"], "stresstest.xml"), "r") as f:
         file_content = f.read()
     
     llm = ChatAnthropic(model="claude-3-5-haiku-latest")
@@ -38,20 +39,18 @@ def seek_advice_on_stresstest_xml(root_path: str, query: str) -> str:
     response = llm.invoke(prompt)
     return response.content
 
-    from langchain.tools import tool
-
 @tool
-def create_stresstest_xml(root_path: str) -> str:
+def create_stresstest_xml(state: State) -> str:
     """
     Creates a new stresstest.xml file with a bare minimum template if it doesn't exist.
 
     Args:
-        root_path (str): The absolute path where stresstest.xml should be created.
+        state (State): Contains the absolute path where stresstest.xml should be created.
 
     Returns:
         str: Success message or error if file already exists.
     """
-    if os.path.exists(root_path):
+    if os.path.exists(os.path.join(state["input_path"], "stresstest.xml")):
         return "stresstest.xml already exists at the specified path."
     
     root = ET.Element("StressTest")
@@ -62,16 +61,16 @@ def create_stresstest_xml(root_path: str) -> str:
     
     tree = ET.ElementTree(root)
     ET.indent(tree, space="  ")  # Pretty print with indentation
-    tree.write(root_path, encoding="utf-8", xml_declaration=True)
+    tree.write(os.path.join(state["input_path"], "stresstest.xml"), encoding="utf-8", xml_declaration=True)
     return "Successfully created stresstest.xml with minimum template."
 
 @tool
-def add_stress_scenario(root_path: str, scenario_name: str, shift_type: str, parameters: Dict[str, str]) -> str:
+def add_stress_scenario(state: State, scenario_name: str, shift_type: str, parameters: Dict[str, str]) -> str:
     """
     Adds a new stress scenario to the stresstest.xml file.
 
     Args:
-        root_path (str): The absolute path to the stresstest.xml file.
+        state (State): Contains the absolute path to the stresstest.xml file.
         scenario_name (str): Name of the new scenario.
         shift_type (str): Type of shift (e.g., Absolute, Relative).
         parameters (Dict[str, str]): Dictionary of parameter names and values.
@@ -79,7 +78,7 @@ def add_stress_scenario(root_path: str, scenario_name: str, shift_type: str, par
     Returns:
         str: Confirmation message.
     """
-    tree = ET.parse(root_path)
+    tree = ET.parse(os.path.join(state["input_path"], "stresstest.xml"))
     root = tree.getroot()
     scenarios = root.find("Scenarios")
     if scenarios is None:
@@ -93,22 +92,22 @@ def add_stress_scenario(root_path: str, scenario_name: str, shift_type: str, par
         ET.SubElement(scenario, param_name).text = param_value
     
     ET.indent(tree, space="  ")
-    tree.write(root_path, encoding="utf-8", xml_declaration=True)
+    tree.write(os.path.join(state["input_path"], "stresstest.xml"), encoding="utf-8", xml_declaration=True)
     return f"Added scenario '{scenario_name}' to stresstest.xml."
 
 @tool
-def remove_stress_scenario(root_path: str, scenario_name: str) -> str:
+def remove_stress_scenario(state: State, scenario_name: str) -> str:
     """
     Removes a specific stress scenario from the stresstest.xml file.
 
     Args:
-        root_path (str): The absolute path to the stresstest.xml file.
+        state (State): Contains the absolute path to the stresstest.xml file.
         scenario_name (str): Name of the scenario to remove.
 
     Returns:
         str: Confirmation message or error if not found.
     """
-    tree = ET.parse(root_path)
+    tree = ET.parse(os.path.join(state["input_path"], "stresstest.xml"))
     root = tree.getroot()
     scenarios = root.find("Scenarios")
     
@@ -120,18 +119,18 @@ def remove_stress_scenario(root_path: str, scenario_name: str) -> str:
         if name is not None and name.text == scenario_name:
             scenarios.remove(scenario)
             ET.indent(tree, space="  ")
-            tree.write(root_path, encoding="utf-8", xml_declaration=True)
+            tree.write(os.path.join(state["input_path"], "stresstest.xml"), encoding="utf-8", xml_declaration=True)
             return f"Removed scenario '{scenario_name}' from stresstest.xml."
     
     return f"Scenario '{scenario_name}' not found in stresstest.xml."
 
 @tool
-def modify_scenario_parameter(root_path: str, scenario_name: str, parameter_name: str, new_value: str) -> str:
+def modify_scenario_parameter(state: State, scenario_name: str, parameter_name: str, new_value: str) -> str:
     """
     Modifies a parameter value in a specific scenario.
 
     Args:
-        root_path (str): The absolute path to the stresstest.xml file.
+        state (State): Contains the absolute path to the stresstest.xml file.
         scenario_name (str): Name of the scenario to modify.
         parameter_name (str): Name of the parameter to change.
         new_value (str): New value for the parameter.
@@ -139,7 +138,7 @@ def modify_scenario_parameter(root_path: str, scenario_name: str, parameter_name
     Returns:
         str: Confirmation message or error if not found.
     """
-    tree = ET.parse(root_path)
+    tree = ET.parse(os.path.join(state["input_path"], "stresstest.xml"))
     root = tree.getroot()
     scenarios = root.find("Scenarios")
     
@@ -153,24 +152,24 @@ def modify_scenario_parameter(root_path: str, scenario_name: str, parameter_name
             if param is not None:
                 param.text = new_value
                 ET.indent(tree, space="  ")
-                tree.write(root_path, encoding="utf-8", xml_declaration=True)
+                tree.write(os.path.join(state["input_path"], "stresstest.xml"), encoding="utf-8", xml_declaration=True)
                 return f"Modified {parameter_name} in scenario '{scenario_name}' to '{new_value}'."
             return f"Parameter '{parameter_name}' not found in scenario '{scenario_name}'."
     
     return f"Scenario '{scenario_name}' not found in stresstest.xml."
 
 @tool
-def list_scenarios(root_path: str) -> str:
+def list_scenarios(state: State) -> str:
     """
     Lists all scenarios in the stresstest.xml file.
 
     Args:
-        root_path (str): The absolute path to the stresstest.xml file.
+        state (State): Contains the absolute path to the stresstest.xml file.
 
     Returns:
         str: List of scenario names or message if none found.
     """
-    tree = ET.parse(root_path)
+    tree = ET.parse(os.path.join(state["input_path"], "stresstest.xml"))
     root = tree.getroot()
     scenarios = root.find("Scenarios")
     

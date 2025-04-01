@@ -1,5 +1,4 @@
 from ORE import *
-from config_file import f_path
 import os
 from langchain.tools import tool
 from typing import List

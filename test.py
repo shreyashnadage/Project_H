@@ -45,6 +45,7 @@ from langgraph.graph import StateGraph, MessagesState, START
 from sensitivity_agent import sensitivity_agent_node
 from ore_execution_agent import ore_execution_agent_node
 from ExtendedState import State
+from analysis_agent import analysis_agent_node
 
 
 main_supervisor_node = make_supervisor_node(llm=llm, state=State, members=members)
@@ -54,6 +55,7 @@ main_agent_builder.add_node("supervisor", main_supervisor_node)
 main_agent_builder.add_node("ore_xml_agent", ore_xml_agent_node)
 main_agent_builder.add_node("sensitivity_agent", sensitivity_agent_node)
 main_agent_builder.add_node("ore_execution_agent", ore_execution_agent_node)
+main_agent_builder.add_node("analysis_agent", analysis_agent_node)
 
 main_agent_builder.add_edge(START, "supervisor")
 main_graph = main_agent_builder.compile()
@@ -65,10 +67,10 @@ main_graph = main_agent_builder.compile()
 ascii_representation = main_graph.get_graph().print_ascii()
 print(ascii_representation)
 
-user_query = """What is shock applied to EUR discounting curve. If the shock is 1bps leave as it is else change it to 2bps. After that run the ore to compute npv and sensitivity results."""
+# user_query = """Give me analysis of exposure of 20Y swap, focus on exposure. in the directory D:\Project_H\Examples\Example_1\Output"""
+user_query = """Get all active analytics present in the ore.xml file. Check if sensitivity analytics is present if not add it to ore.xml"""
 
 for s in main_graph.stream(
-    {"messages": [("user", user_query)]}
-):
+    {"messages": [HumanMessage(content=user_query)],"input_path":r"D:\Project_H\Examples\Example_1\Inputnew","output_path":r"D:\Project_H\Examples\Example_1\Output"}):
     print(s)
     print("---")

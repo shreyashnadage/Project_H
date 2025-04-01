@@ -8,7 +8,8 @@ from ExtendedState import State
 from langgraph.types import Command
 from typing import Literal
 from config_file import file_location_prompt
-
+from summary_node import summary_node
+from llm_manager import llm
 
 def print_stream(stream):
     for s in stream:
@@ -22,27 +23,20 @@ def print_stream(stream):
 all_tools_list_ore_xml = ore_xml_tools_list + common_tools_list
 
 
-llm = ChatAnthropic(
-    model="claude-3-5-haiku-latest",
-    temperature=0,
-    timeout=None,
-    max_retries=2,
-    # other params...
-)
 
 input_messages = {'messages': [SystemMessage(content=ore_agent_system_prompt_content),SystemMessage(content=file_location_prompt)]}
-ore_agent = create_react_agent(llm,
+ore_xml_agent = create_react_agent(llm,
     tools = all_tools_list_ore_xml,
 )
 
 def ore_xml_agent_node(state: State) -> Command[Literal["supervisor"]]:
-    messages_list = input_messages["messages"] + [HumanMessage(content=state["task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria_current_agent"])]
+    messages_list = input_messages["messages"] + [HumanMessage(content=state["next_task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria"])]
     messages = {'messages': messages_list}
-    response = ore_agent.invoke(messages)
+    response = ore_xml_agent.invoke(messages)
     state["messages"] = messages_list + response["messages"]
-
+    response_txt = summary_node(response, state)
     return Command(goto="supervisor", update={"messages": [
-                HumanMessage(content=response["messages"][-1].content, name="ore_agent")
+                HumanMessage(content=response_txt, name="ore_xml_agent")
             ]})
 
 

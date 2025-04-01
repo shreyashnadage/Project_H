@@ -1,5 +1,7 @@
 from langchain_anthropic import ChatAnthropic
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv(), override = True)
 
 llm = ChatAnthropic(
     model="claude-3-5-haiku-latest",
