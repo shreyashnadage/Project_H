@@ -46,31 +46,49 @@ from sensitivity_agent import sensitivity_agent_node
 from ore_execution_agent import ore_execution_agent_node
 from ExtendedState import State
 from analysis_agent import analysis_agent_node
+from planner_node import planner_node, replanner_node
+from router_node import router_node
+from ExtendedStatePlanExecute import PlanExecuteState
+
+# main_supervisor_node = make_supervisor_node(llm=llm, state=State, members=members)
+
+# main_agent_builder = StateGraph(State)
+# main_agent_builder.add_node("supervisor", main_supervisor_node)
+# main_agent_builder.add_node("ore_xml_agent", ore_xml_agent_node)
+# main_agent_builder.add_node("sensitivity_agent", sensitivity_agent_node)
+# main_agent_builder.add_node("ore_execution_agent", ore_execution_agent_node)
+# main_agent_builder.add_node("analysis_agent", analysis_agent_node)
+
+# main_agent_builder.add_edge(START, "supervisor")
+# main_graph = main_agent_builder.compile()
 
 
-main_supervisor_node = make_supervisor_node(llm=llm, state=State, members=members)
-
-main_agent_builder = StateGraph(State)
-main_agent_builder.add_node("supervisor", main_supervisor_node)
+main_planner_node = planner_node
+main_agent_builder = StateGraph(PlanExecuteState)
+main_agent_builder.add_node("planner", main_planner_node)
 main_agent_builder.add_node("ore_xml_agent", ore_xml_agent_node)
 main_agent_builder.add_node("sensitivity_agent", sensitivity_agent_node)
 main_agent_builder.add_node("ore_execution_agent", ore_execution_agent_node)
 main_agent_builder.add_node("analysis_agent", analysis_agent_node)
-
-main_agent_builder.add_edge(START, "supervisor")
+main_agent_builder.add_node("replanner", replanner_node)
+main_agent_builder.add_node("router", router_node)
+main_agent_builder.add_edge(START, "planner")
+main_agent_builder.add_edge("planner", "router")
 main_graph = main_agent_builder.compile()
-
-
-# test = main_supervisor_node( {"messages": [("user", )]})
 
 
 ascii_representation = main_graph.get_graph().print_ascii()
 print(ascii_representation)
 
 # user_query = """Give me analysis of exposure of 20Y swap, focus on exposure. in the directory D:\Project_H\Examples\Example_1\Output"""
-user_query = """Get all active analytics present in the ore.xml file. Check if sensitivity analytics is present if not add it to ore.xml"""
+user_query = """Get all active analytics present in the ore.xml file. Check if sensitivity analytics is present if not add it to ore.xml. run ore and then analyze exposure for 20year swap from results."""
+
+
+
 
 for s in main_graph.stream(
-    {"messages": [HumanMessage(content=user_query)],"input_path":r"D:\Project_H\Examples\Example_1\Inputnew","output_path":r"D:\Project_H\Examples\Example_1\Output"}):
+    {"messages": [HumanMessage(content=user_query)],"input_path":r"D:\Project_H\Examples\Example_1\Inputnew","output_path":r"D:\Project_H\Examples\Example_1\Output","user_query": user_query}):
     print(s)
     print("---")
+
+

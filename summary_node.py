@@ -1,8 +1,9 @@
-from langchain_anthropic import ChatAnthropic
 from pydantic import BaseModel, Field
-from langgraph.graph import MessagesState
-from ExtendedState import State
+from ExtendedStatePlanExecute import PlanExecuteState
+from langchain_core.messages import HumanMessage
 from typing import Literal
+from rich.console import Console
+from rich.markdown import Markdown
 from llm_manager import llm
 
 class Summary(BaseModel):
@@ -10,14 +11,39 @@ class Summary(BaseModel):
     is_completed: Literal["True", "False"] = Field(description="Is the task completed or not. Should be True if the task is completed, False otherwise.")
 
 
-def summary_node(response: MessagesState, state: State) -> str:
-    summary = llm.with_structured_output(Summary).invoke(response["messages"])
-    state["summary"] = summary.summary
-    state["is_completed"] = summary.is_completed
-    response_txt = f"""
-    Given task was: {state["next_task"]}
-    Stopping criteria was: {state["stopping_criteria"]}
-    Summary of tasks performed by {state["next_agent"]}: {state["summary"]}
-    Is task completed: {state["is_completed"]}
+def summary_node(state: PlanExecuteState) -> str:
+    
+    
+
+    summary_response = f"""
+    You are a copilot to a quant working in investement bank. You have successfully completed the task requested by user.
+    You will be given the user query and the steps taken by the AI agent so far to accomplish the task.
+    Your job is: 
+    1. Understand the user query.
+    2. Understand the steps taken by the AI agent which will be in form of list of tuple of (agent, task, task completion status).
+    3. Summarize the steps taken by the AI agent.
+    4. Return the summary in well formatted markdown report that looks professional.
+
+    User query is:
+    {state['user_query']}
+    
+    Steps taken by the AI agent are:
+    {state['past_steps']}
+
+    Dump of messages are:
+    {state['messages']}
+    
+    Return the summary in well formatted markdown report that looks professional.
+    The report should consist of following:
+    - Describe the user query.
+    - List of steps taken by the AI agent.
+    - Summary of the tasks performed so far.
+    
     """
-    return response_txt
+    summary = llm.invoke([HumanMessage(content=summary_response)])
+    console = Console()
+    md = Markdown(summary.content)
+    console.print(md)
+    return summary.content
+
+# def summary_node_analysis(state: PlanExecuteState) -> str:

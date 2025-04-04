@@ -1,0 +1,10 @@
+#TradeId,IsPar,Factor_1,ShiftSize_1,Factor_2,ShiftSize_2,Currency,Base NPV,Delta,Gamma
+Swap_20y,false,DiscountCurve/EUR/0/6M,0.000000,,0.000000,EUR,597.96,4.28,0.00
+Swap_20y,false,DiscountCurve/EUR/1/1Y,0.000000,,0.000000,EUR,597.96,-3.72,0.00
+Swap_20y,false,DiscountCurve/EUR/2/2Y,0.000000,,0.000000,EUR,597.96,-0.44,0.00
+Swap_20y,false,DiscountCurve/EUR/3/3Y,0.000000,,0.000000,EUR,597.96,-0.35,0.00
+Swap_20y,false,DiscountCurve/EUR/4/5Y,0.000000,,0.000000,EUR,597.96,-1.03,0.00
+Swap_20y,false,DiscountCurve/EUR/5/7Y,0.000000,,0.000000,EUR,597.96,-1.39,0.01
+Swap_20y,false,DiscountCurve/EUR/6/10Y,0.000000,,0.000000,EUR,597.96,-3.45,0.01
+Swap_20y,false,DiscountCurve/EUR/7/15Y,0.000000,,0.000000,EUR,597.96,-3.84,0.02
+Swap_20y,false,DiscountCurve/EUR/8/20Y,0.000000,,0.000000,EUR,597.96,-72.09,0.16

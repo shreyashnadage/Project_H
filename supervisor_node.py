@@ -1,6 +1,6 @@
-from typing import Literal
+from typing import Literal, List
 from langchain_core.language_models.chat_models import BaseChatModel
-from langchain_core.messages import SystemMessage
+from langchain_core.messages import SystemMessage, AIMessage
 from langgraph.graph import END
 from langgraph.types import Command
 from langchain.prompts import PromptTemplate
@@ -14,11 +14,8 @@ def make_supervisor_node(llm: BaseChatModel, members: dict[str, str], state: Sta
     members_str = '\n'.join([f"{key}: {value}" for key, value in members.items()])
     system_prompt = (sys_prompt.format(members=members_str))
 
-    class Router(BaseModel):
-        """Worker to route to next. If no workers needed, route to FINISH."""
-        stopping_criteria_current_agent: str = Field(description="Stopping criteria for current agent to be defined based on current task and tools description of the agent.")
-        is_completed: Literal["True", "False"] = Field(description="Whether the task is completed or not based on stopping criteria of current task and also past summary", default="False")
-        summary: str = Field(description="Summary of the tasks performed so far and also past summary. This is to keep track of past actions and thier outcomes and also to provide context to next task. Should be blank if there is no task performed so far, Should be clear and consise eg: 1. <task performed>:<task outcome>, 2. <task performed>:<task outcome>")
+    class StepsSummary(BaseModel):
+        summary: List[str] = Field(description="Summary of the tasks performed so far and also past summary as list of strings. This is to keep track of past actions and thier outcomes and also to provide context to next task. Should be blank if there is no task performed so far, Should be clear and consise eg: 1. <task performed>:<task outcome>, 2. <task performed>:<task outcome>")
 
     class Plan(BaseModel):
         next_agent : Literal[*options] = Field(description="Next agent to be called based on current task and tools description of the agent.")
@@ -29,6 +26,14 @@ def make_supervisor_node(llm: BaseChatModel, members: dict[str, str], state: Sta
         messages = [
             {"role": "system", "content": system_prompt},
         ] + state["messages"]
+        steps_list = []
+        for i in state["messages"]:
+            if type(i) == AIMessage:
+                steps_list.append(i)
+        if steps_list:
+            state["summary_of_tasks"] = llm.with_structured_output(StepsSummary).invoke(steps_list)
+        else:
+            state["summary_of_tasks"] = [AIMessage(content="No tasks performed so far.")]
         response_plan = llm.with_structured_output(Plan).invoke(messages)
             
         state["next_agent"] = response_plan.next_agent
