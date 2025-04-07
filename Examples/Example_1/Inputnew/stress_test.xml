@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<StressTesting>
+  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+  <StressTest id="eur_discount_10bps_parallel">
+    <DiscountCurves>
+      <DiscountCurve ccy="EUR">
+        <ShiftType>Absolute</ShiftType>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+        <Shifts>0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001</Shifts>
+      </DiscountCurve>
+    </DiscountCurves>
+  </StressTest>
+</StressTesting>

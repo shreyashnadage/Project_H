@@ -1,0 +1,2 @@
+TradeId,FirstCashflowDate,LastCashflowDate,Notional,Currency,TotalPresentValue,TotalNominalAmount
+Swap_20y,2016-09-01,2036-03-03,10000000.0,EUR,602.49,20386.55

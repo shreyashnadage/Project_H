@@ -89,5 +89,14 @@
       <Parameter name="sensitivityConfigFile">sensitivity.xml</Parameter>
       <Parameter name="pricingEnginesFile">../../Input/pricingengine.xml</Parameter>
       <Parameter name="sensitivityOutputFile">sensitivity.csv</Parameter>
+    </Analytic><Analytic type="stress">
+      <Parameter name="active">Y</Parameter>
+      <Parameter name="marketConfigFile">simulation.xml</Parameter>
+      <Parameter name="stressConfigFile">stresstest.xml</Parameter>
+      <Parameter name="pricingEnginesFile">../../Input/pricingengine.xml</Parameter>
+      <Parameter name="scenarioOutputFile">stresstest.csv</Parameter>
+    </Analytic><Analytic type="parametricVar">
+      <Parameter name="active">Y</Parameter>
+      <Parameter name="sensitivityInputFile">sensitivity.csv</Parameter>
     </Analytic></Analytics>
 </ORE>

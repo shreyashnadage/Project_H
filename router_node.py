@@ -14,6 +14,6 @@ def router_node(state: PlanExecuteState) -> Command[Literal[*list(members.keys()
     next_task = plan_step[1]
     stopping_criteria = plan_step[2]
     if state.get("action") == "FINISH":
-        _ = summary_node(state)
-        return Command(goto="__end__")
-    return Command(goto=next_agent, update={"next_agent": next_agent, "next_task": next_task, "stopping_criteria": stopping_criteria})
+        return Command(goto="__end__", update={"action": "FINISH", 'markdown_report':summary_node(state)})
+    else:
+        return Command(goto=next_agent, update={"next_agent": next_agent, "next_task": next_task, "stopping_criteria": stopping_criteria})

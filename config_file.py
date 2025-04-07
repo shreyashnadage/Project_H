@@ -6,3 +6,5 @@ file_location_prompt = f"""Input files are saved at: {f_path_in}
  Important Instructions: 
  - file path arguments to the function calls should always contain absolute paths.
  - choose right directory based on query."""
+
+f_path_trade_docs = 'D:\\Project_H\\Docs\\UserGuide\\tradedata'

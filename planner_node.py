@@ -67,6 +67,5 @@ def replanner_node(state: PlanExecuteState):
     if response_replan.plan_steps:
         return Command(goto="router", update={"plan_steps": response_replan.plan_steps})
     else:
-        _ = summary_node(state)
-        return Command(goto="__end__")
+        return Command(goto="__end__", update={"action": "FINISH", 'markdown_report':summary_node(state)})
     

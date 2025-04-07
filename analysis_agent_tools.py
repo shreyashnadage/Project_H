@@ -74,7 +74,7 @@ def analyze_relevant_files(query: str) -> str:
     prefix=SystemMessage(content=sys_prompt_pandas).content,
     return_intermediate_steps = True,
     agent_type="zero-shot-react-description",
-    verbose=True,
+    verbose=False,
     allow_dangerous_code=True,
     handle_parsing_errors=True
     )
@@ -138,7 +138,7 @@ def analyze_and_plot_relevant_files(query: str) -> str:
     prefix=SystemMessage(content=sys_prompt_pandas_prefix).content,
     return_intermediate_steps = True,
     agent_type="zero-shot-react-description",
-    verbose=True,
+    verbose=False,
     allow_dangerous_code=True,
     handle_parsing_errors=True
     )

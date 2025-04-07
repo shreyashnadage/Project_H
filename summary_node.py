@@ -41,9 +41,6 @@ def summary_node(state: PlanExecuteState) -> str:
     
     """
     summary = llm.invoke([HumanMessage(content=summary_response)])
-    console = Console()
-    md = Markdown(summary.content)
-    console.print(md)
     return summary.content
 
 # def summary_node_analysis(state: PlanExecuteState) -> str:

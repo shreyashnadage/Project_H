@@ -1,19 +1,11 @@
 #TradeId,Factor,Up/Down,Base NPV,ShiftSize_1,ShiftSize_2,Scenario NPV,Difference
 Swap_20y,DiscountCurve/EUR/0/6M,Up,597.96,0.000000,#N/A,602.24,4.28
-Swap_20y,DiscountCurve/EUR/1/1Y,Up,597.96,0.000000,#N/A,594.24,-3.72
-Swap_20y,DiscountCurve/EUR/2/2Y,Up,597.96,0.000000,#N/A,597.52,-0.44
-Swap_20y,DiscountCurve/EUR/3/3Y,Up,597.96,0.000000,#N/A,597.61,-0.35
-Swap_20y,DiscountCurve/EUR/4/5Y,Up,597.96,0.000000,#N/A,596.93,-1.03
-Swap_20y,DiscountCurve/EUR/5/7Y,Up,597.96,0.000000,#N/A,596.57,-1.39
-Swap_20y,DiscountCurve/EUR/6/10Y,Up,597.96,0.000000,#N/A,594.51,-3.45
-Swap_20y,DiscountCurve/EUR/7/15Y,Up,597.96,0.000000,#N/A,594.12,-3.84
-Swap_20y,DiscountCurve/EUR/8/20Y,Up,597.96,0.000000,#N/A,525.86,-72.09
+Swap_20y,DiscountCurve/EUR/1/1Y,Up,597.96,0.000000,#N/A,592.54,-5.42
+Swap_20y,DiscountCurve/EUR/2/10Y,Up,597.96,0.000000,#N/A,592.99,-4.96
+Swap_20y,DiscountCurve/EUR/3/15Y,Up,597.96,0.000000,#N/A,594.12,-3.84
+Swap_20y,DiscountCurve/EUR/4/20Y,Up,597.96,0.000000,#N/A,525.86,-72.09
 Swap_20y,DiscountCurve/EUR/0/6M,Down,597.96,0.000000,#N/A,593.67,-4.28
-Swap_20y,DiscountCurve/EUR/1/1Y,Down,597.96,0.000000,#N/A,601.68,3.72
-Swap_20y,DiscountCurve/EUR/2/2Y,Down,597.96,0.000000,#N/A,598.40,0.44
-Swap_20y,DiscountCurve/EUR/3/3Y,Down,597.96,0.000000,#N/A,598.31,0.35
-Swap_20y,DiscountCurve/EUR/4/5Y,Down,597.96,0.000000,#N/A,598.99,1.03
-Swap_20y,DiscountCurve/EUR/5/7Y,Down,597.96,0.000000,#N/A,599.35,1.40
-Swap_20y,DiscountCurve/EUR/6/10Y,Down,597.96,0.000000,#N/A,601.42,3.46
-Swap_20y,DiscountCurve/EUR/7/15Y,Down,597.96,0.000000,#N/A,601.81,3.85
-Swap_20y,DiscountCurve/EUR/8/20Y,Down,597.96,0.000000,#N/A,670.21,72.25
+Swap_20y,DiscountCurve/EUR/1/1Y,Down,597.96,0.000000,#N/A,603.38,5.42
+Swap_20y,DiscountCurve/EUR/2/10Y,Down,597.96,0.000000,#N/A,602.93,4.97
+Swap_20y,DiscountCurve/EUR/3/15Y,Down,597.96,0.000000,#N/A,601.81,3.85
+Swap_20y,DiscountCurve/EUR/4/20Y,Down,597.96,0.000000,#N/A,670.21,72.25
