@@ -1,14 +1,8 @@
 
-from langchain_core.messages import HumanMessage
-from langgraph.prebuilt import create_react_agent
-from react_agent_system_prompts import *
-from members_details import members
-import getpass
 import os
 import shutil
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv(), override = True)
-
 
 
 def copy_directory(src_dir):
@@ -21,18 +15,6 @@ def copy_directory(src_dir):
         s = os.path.join(src_dir, item)
         d = os.path.join(dst_dir, item)
         shutil.copy2(s, d)
-
-def _set_env(var: str):
-    if not os.environ.get(var):
-        os.environ[var] = getpass.getpass(f"{var}: ")
-
-def print_stream(stream):
-    for s in stream:
-        message = s["messages"][-1]
-        if isinstance(message, tuple):
-            print(message)
-        else:
-            message.pretty_print()
 
 
 from langchain_core.messages import HumanMessage
@@ -49,19 +31,6 @@ from analysis_agent import analysis_agent_node
 from planner_node import planner_node, replanner_node
 from router_node import router_node
 from ExtendedStatePlanExecute import PlanExecuteState
-from streamlit_pretty_printer_library import printer_functions_dict
-
-# main_supervisor_node = make_supervisor_node(llm=llm, state=State, members=members)
-
-# main_agent_builder = StateGraph(State)
-# main_agent_builder.add_node("supervisor", main_supervisor_node)
-# main_agent_builder.add_node("ore_xml_agent", ore_xml_agent_node)
-# main_agent_builder.add_node("sensitivity_agent", sensitivity_agent_node)
-# main_agent_builder.add_node("ore_execution_agent", ore_execution_agent_node)
-# main_agent_builder.add_node("analysis_agent", analysis_agent_node)
-
-# main_agent_builder.add_edge(START, "supervisor")
-# main_graph = main_agent_builder.compile()
 
 
 main_planner_node = planner_node
@@ -101,7 +70,6 @@ main_graph = main_agent_builder.compile()
 
 import streamlit as st
 st.set_page_config(page_title="ORE Agent", page_icon="Logo.jpg", layout="wide")
-# st.image("Logo.jpg",width = 100)
 st.title("Project Hanumaan")
 
 
@@ -136,9 +104,10 @@ if user_prompt := st.chat_input("What is up?"):
                     st.markdown(stream[node_name].get('markdown_report'))
                     st.success("Completed successfully.", icon="✅")
                 elif stream[node_name] is not None:
-                    with st.spinner(f"Agent {stream['router']['next_agent']} is working on {stream['router']['next_task']} with stopping criteria {stream['router']['stopping_criteria']}"):
-                        pass
+                    with st.spinner('Working on task:'):
+                        st.write(f"👤 {stream['router']['next_agent']} 🎯 {stream['router']['next_task']}  ⏹️ {stream['router']['stopping_criteria']}")
             else:
                 summary_response = stream[node_name]['past_steps'][0][1]
-                st.markdown(summary_response)
-            st.session_state.messages.append({"role": "assistant", "content": stream})
+                with st.expander('See detailed report...'):
+                    st.write(summary_response)
+    st.session_state.messages.append({"role": "assistant", "content": stream})
