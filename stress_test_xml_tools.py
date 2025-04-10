@@ -27,20 +27,20 @@ def translate_to_stress_test_config(user_query: str) -> str:
         str: summary of what was changed in the stress test configuration.
     """
     try:
-        if not os.path.isfile(os.path.join(f_path_in, 'stress_test.xml')):
-            with open(os.path.join(f_path_in, 'stress_test.xml'), 'w') as f:
+        if not os.path.isfile(os.path.join(f_path_in, 'stresstest.xml')):
+            with open(os.path.join(f_path_in, 'stresstest.xml'), 'w') as f:
                 result = llm.with_structured_output(GetXMLResponse).invoke([SystemMessage(content=stress_config_agent_system_prompt_content),SystemMessage(content=stress_test_scenario_transaltor_tool_prompt), HumanMessage(content=f"\n\nCreate an empty stress test configuration xml")])
                 f.write(result.content)
             
         else:
-            with open(os.path.join(f_path_in, 'stress_test.xml'), 'r') as f:
+            with open(os.path.join(f_path_in, 'stresstest.xml'), 'r') as f:
                 file_content = f.read().strip()
                 if file_content == "":
-                    with open(os.path.join(f_path_in, 'stress_test.xml'), 'w') as f:
+                    with open(os.path.join(f_path_in, 'stresstest.xml'), 'w') as f:
                         result = llm.with_structured_output(GetXMLResponse).invoke([SystemMessage(content=stress_config_agent_system_prompt_content), SystemMessage(content=stress_test_scenario_transaltor_tool_prompt), HumanMessage(content=f"\n\nCreate an empty stress test configuration xml")])
                         f.write(result.content)
                     
-            tree = ET.parse(os.path.join(f_path_in, 'stress_test.xml'))
+            tree = ET.parse(os.path.join(f_path_in, 'stresstest.xml'))
             root = tree.getroot()
             file_content = ET.tostring(root, encoding='unicode')
             message_list = [SystemMessage(content=stress_config_agent_system_prompt_content), SystemMessage(content=stress_test_scenario_transaltor_tool_prompt), HumanMessage(content=f"\n\nCreate a stress test configuration for following user query: \n{user_query}\n\n Current stress test configuration is :\n {file_content}")]
@@ -48,7 +48,7 @@ def translate_to_stress_test_config(user_query: str) -> str:
             new_root = ET.fromstring(results.content)
             tree = ET.ElementTree(new_root)
             ET.indent(tree, space="  ")
-            tree.write(os.path.join(f_path_in, 'stress_test.xml'), encoding="utf-8", xml_declaration=True)
+            tree.write(os.path.join(f_path_in, 'stresstest.xml'), encoding="utf-8", xml_declaration=True)
         return results.summary
     except Exception as e:
         return f"Error: {str(e)}"
@@ -70,7 +70,7 @@ def describe_stress_test_config(user_query: str) -> str:
     """
 
     try:
-        with open(os.path.join(f_path_in, 'stress_test.xml'), 'r') as f:
+        with open(os.path.join(f_path_in, 'stresstest.xml'), 'r') as f:
             file_content = f.read().strip()
             if file_content == "":
                 return "The stress test configuration is empty."
@@ -80,4 +80,4 @@ def describe_stress_test_config(user_query: str) -> str:
         return f"Error: {str(e)}"
 
 list_stress_test_tools = [translate_to_stress_test_config, describe_stress_test_config]
-list_stress_test_tools_description = [str(n+1)+". "+i.description.split("\n\n")[0]+'\n' for n, i in enumerate(list_stress_test_tools)]
+list_stress_test_tools_description = [i.name+" : "+i.description +'\n\n' for n, i in enumerate(list_stress_test_tools)]

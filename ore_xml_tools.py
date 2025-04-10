@@ -2,7 +2,7 @@ from langchain.tools import tool
 import xml.etree.ElementTree as ET
 import ore_analytics_snippets as ore_snippet
 from typing import Tuple, List, Literal
-from langchain_anthropic import ChatAnthropic
+from llm_manager import llm
 from config_file import f_path_in
 import os
 
@@ -53,6 +53,39 @@ def get_analytic_parameters(analytic_type: Literal[*list(ore_snippet.ore_analyti
         return "Error parsing XML file."
     except FileNotFoundError:
         return "File not found."
+
+@tool
+def get_output_file_name_from_analytic_parameters(analytic_type: Literal[*list(ore_snippet.ore_analytics.keys())]) -> str:
+    """
+    Get the output file name from the parameters of a specific analytic in the ore.xml file.
+
+    Args:
+        analytic_type (str): The type of the analytic, e.g., 'npv', 'cashflow'.
+
+    Returns:
+        str: The output file name.
+    """
+    try:
+        tree = ET.parse(os.path.join(f_path_in, 'ore.xml'))
+        root = tree.getroot()
+        analytics_section = root.find("Analytics")
+        if analytics_section is None:
+            return "Analytics section not found."
+        analytic_elem = analytics_section.find(f"Analytic[@type='{analytic_type}']")
+        if analytic_elem is None:
+            return f"Analytic '{analytic_type}' not found."
+        params = analytic_elem.findall("Parameter")
+        param_dict = {param.get("name"): param.text for param in params if param.get("name")}
+        class outputFileName(BaseModel):
+            outputFileName: str = Field(str, description="Output file name")
+        file_name = llm.with_structured_output(outputFileName).invoke(f"Here is the content of an ore.xml file:\n{str(param_dict)}\n\nPlease provide a name of output file as answer:")
+        return file_name.outputFileName
+    except ET.ParseError:
+        return "Error parsing XML file."
+    except FileNotFoundError:
+        return "File not found."
+       
+
 
 @tool(response_format="content")
 def set_analytic_active(analytic_type: Literal[*list(ore_snippet.ore_analytics.keys())], active: str) -> str:
@@ -194,7 +227,6 @@ def seek_advice_on_ore_xml(query: str) -> str:
     try:
         with open(os.path.join(f_path_in, 'ore.xml'), "r") as f:
             file_content = f.read()
-        llm = ChatAnthropic(model="claude-3-5-haiku-latest")
         results = llm.invoke(f"Here is the content of an ore.xml file:\n{file_content}\n\nQuestion: {query}\n\nPlease provide a detailed answer:")
         return results.content
     except FileNotFoundError:
@@ -203,7 +235,8 @@ def seek_advice_on_ore_xml(query: str) -> str:
         return f"Error: {str(e)}"
 
 
-list_ore_tools = [list_analytics, get_analytic_parameters, set_analytic_active, add_analytic, remove_analytic, list_active_analytics, seek_advice_on_ore_xml]
+list_ore_tools = [list_analytics, get_analytic_parameters, set_analytic_active, add_analytic, remove_analytic, list_active_analytics, seek_advice_on_ore_xml, get_output_file_name_from_analytic_parameters]
 
-list_ore_xml_tools_description = [str(n+1)+". "+i.description.split("\n\n")[0]+'\n' for n, i in enumerate(list_ore_tools)]
+list_ore_xml_tools_description = [i.name+" : "+i.description +'\n\n' for n, i in enumerate(list_ore_tools)]
+
 test  = 0

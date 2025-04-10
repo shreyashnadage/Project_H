@@ -38,9 +38,7 @@ def summary_node(state: PlanExecuteState) -> str:
     - Describe the user query.
     - List of steps taken by the AI agent.
     - Summary of the tasks performed so far.
-    
+    - mention the name of author as: QuantCatalyst Copilot.
     """
     summary = llm.invoke([HumanMessage(content=summary_response)])
     return summary.content
-
-# def summary_node_analysis(state: PlanExecuteState) -> str:

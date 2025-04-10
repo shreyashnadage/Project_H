@@ -13,15 +13,14 @@ all_tools_list_ore_xml = ore_xml_tools_list + common_tools_list
 
 
 
-input_messages = {'messages': [SystemMessage(content=ore_agent_system_prompt_content)]}
+input_messages = {'messages': [SystemMessage(content=ore_xml_agent_system_prompt_content)]}
 ore_xml_agent = create_react_agent(llm,
     tools = all_tools_list_ore_xml,
     response_format=AgentResponseSchema
 )
 
-
 def ore_xml_agent_node(state: PlanExecuteState) -> Command[Literal["replanner"]]:
-    messages_list = input_messages["messages"] + [HumanMessage(content=state["next_task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria"])]
+    messages_list = input_messages["messages"] + [HumanMessage(content='\n\nTask: ' + state["next_task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria"])]
     messages = {'messages': messages_list}
     response = ore_xml_agent.invoke(messages)
     response_structured = response['structured_response']

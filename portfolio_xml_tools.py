@@ -11,14 +11,14 @@ from config_file import f_path_trade_docs, f_path_in
 
 
 
-
 class ExtractTradeType(BaseModel):
     trade_type: Literal[*os.listdir(f_path_trade_docs)] = Field(str, description="Type of trade to be created.")
     
 
 class GetTradeXMLResponse(BaseModel):
-    xml_content: str = Field(str, description="Content of the XML generated based on trade type.")
+    xml_content: str = Field(str, description="Content of the XML generated based on user modification request.")
     trade_type: Literal[*os.listdir(f_path_trade_docs)] = Field(str, description="Trade type used to generate XML.")
+    trade_id: str = Field(str, description="Trade id used for the modified XML.")
 
 class ModifyTradeResponse(BaseModel):
     summary: str = Field(str, description="Summary of the modification made to the trade")
@@ -30,37 +30,37 @@ def extract_trade_doc(trade_type:str) -> HumanMessage:
     portfolio_trade_creator_tool_prompt_sys = portfolio_trade_creator_tool_prompt.format(tex_doc=trade_doc)
     return SystemMessage(content=portfolio_trade_creator_tool_prompt_sys)
     
-@tool(response_format="content")
-def create_trade(user_query: str) -> str:
-    """
-    Create a new trade in the portfolio.xml file.
+# @tool(response_format="content")
+# def create_trade(user_query: str) -> str:
+#     """
+#     Create a new trade in the portfolio.xml file.
 
-    This function takes as input a user query and returns a string containing the XML code for the new trade.
+#     This function takes as input a user query and returns a string containing the XML code for the new trade.
 
-    Args:
-        user_query (str): User query to be translated.
+#     Args:
+#         user_query (str): User query to be translated.
 
-    Returns:
-        str: Summary of the XML generated based on trade type.
-    """
-    try:
-        with open(os.path.join(f_path_in, 'portfolio.xml'), 'r') as f:
-            file_content = f.read().strip()
-            if file_content == "":
-                return "The portfolio.xml file is empty."
-            else:
-                tree = ET.parse(os.path.join(f_path_in, 'portfolio.xml'))
-                root = tree.getroot()
+#     Returns:
+#         str: Summary of the XML generated based on trade type.
+#     """
+#     try:
+#         with open(os.path.join(f_path_in, 'portfolio.xml'), 'r') as f:
+#             file_content = f.read().strip()
+#             if file_content == "":
+#                 return "The portfolio.xml file is empty."
+#             else:
+#                 tree = ET.parse(os.path.join(f_path_in, 'portfolio.xml'))
+#                 root = tree.getroot()
 
-                trade_type = llm.with_structured_output(ExtractTradeType).invoke([SystemMessage(content=portfolio_xml_agent_system_prompt_content), HumanMessage(content=f"\n\nUser Query: {user_query}\n\n")])
-                trade_doc = extract_trade_doc(trade_type=trade_type.trade_type)
-                result = llm.with_structured_output(GetTradeXMLResponse).invoke([trade_doc, HumanMessage(content=f"\n\nCreate trade xml snippet with a trade id that describes the trade uniquely to be inserted in the portfolio.xml file for  {trade_type.trade_type} trade type using documentation provided to you. Mention the trade id for the created trade in summary of response \n\n")])
-                trade_xml = ET.fromstring(result.xml_content)
-                root.append(trade_xml)
-                tree.write(os.path.join(f_path_in, 'portfolio.xml'), encoding="utf-8", xml_declaration=True)
-        return f"Generated trade following trade xml for {trade_type.trade_type} successfully.\n\n Trade ID: {trade_xml.find('Trade').attrib['id']} "
-    except Exception as e:
-        return f"Error: {str(e)}"
+#                 trade_type = llm.with_structured_output(ExtractTradeType).invoke([SystemMessage(content=portfolio_xml_agent_system_prompt_content), HumanMessage(content=f"\n\nUser Query: {user_query}\n\n")])
+#                 trade_doc = extract_trade_doc(trade_type=trade_type.trade_type)
+#                 result = llm.with_structured_output(GetTradeXMLResponse).invoke([trade_doc, HumanMessage(content=f"\n\nCreate trade xml snippet with a trade id that describes the trade uniquely to be inserted in the portfolio.xml file for  {trade_type.trade_type} trade type using documentation provided to you. Mention the trade id for the created trade in summary of response \n\n")])
+#                 trade_xml = ET.fromstring(result.xml_content)
+#                 root.append(trade_xml)
+#                 tree.write(os.path.join(f_path_in, 'portfolio.xml'), encoding="utf-8", xml_declaration=True)
+#         return f"Generated trade following trade xml for {trade_type.trade_type} successfully.\n\n Trade ID: {trade_xml.find('Trade').attrib['id']} "
+#     except Exception as e:
+#         return f"Error: {str(e)}"
 
 
 @tool(response_format="content")
@@ -83,26 +83,22 @@ def modify_trade(trade_id: str, modification_query: str) -> str:
         trade = root.find(f".//Trade[@id='{trade_id}']")
         if trade is None:
             return f"Error: Trade with ID {trade_id} not found"
+        
+        
+        modified_trade = llm.with_structured_output(GetTradeXMLResponse).invoke([HumanMessage(content=f"Modify trade xml snippet with a trade id that describes the trade uniquely to be inserted in the portfolio.xml file for {trade_id} trade type using documentation provided to you. Mention the trade id for the modified trade in summary of response \n\nTrade snippet to be modified:\n\n {ET.tostring(trade, encoding='unicode', method='xml')}\n\n modification request:\n\n {modification_query}")])
+        
             
-        # Parse the modification query and update the trade
-        if "delete" in modification_query.lower():
-            root.remove(trade)
-            tree.write(os.path.join(f_path_in, 'portfolio.xml'), encoding="utf-8", xml_declaration=True)
-            return f"Successfully deleted trade with ID {trade_id}"
-            
-        # For parameter modifications
-        for param in trade.findall(".//Parameter"):
-            param_name = param.get('name')
-            if param_name.lower() in modification_query.lower():
-                # Extract new value from query using LLM
-                new_value = llm.invoke(f"Extract the new value for parameter {param_name} from: {modification_query}")
-                param.set('value', new_value.strip())
+        trade_xml = ET.fromstring(modified_trade.xml_content)
+        root.append(trade_xml)
+        
                 
         tree.write(os.path.join(f_path_in, 'portfolio.xml'), encoding="utf-8", xml_declaration=True)
-        return f"Successfully modified trade with ID {trade_id}"
+        return f"Successfully modified trade with ID {trade_id}\n\n modified xml of trade: \n\n{ET.tostring(trade_xml, encoding='unicode', method='xml')}"
         
     except Exception as e:
         return f"Error: {str(e)}"
+
+
 
 @tool(response_format="content")
 def get_trade_info(trade_id: str) -> str:
@@ -128,5 +124,50 @@ def get_trade_info(trade_id: str) -> str:
     except Exception as e:
         return f"Error: {str(e)}"
 
-list_portfolio_xml_tools = [create_trade, get_trade_info, modify_trade]
-list_portfolio_xml_tools_description = [str(n+1)+". "+i.description.split("\n\n")[0]+'\n' for n, i in enumerate(list_portfolio_xml_tools)]
+@tool(response_format="content")
+def list_trades() -> str:
+    """
+    List all trades in the portfolio.xml file.
+
+    Returns:
+        str: List of trades in XML format
+    """
+    try:
+        tree = ET.parse(os.path.join(f_path_in, 'portfolio.xml'))
+        root = tree.getroot()
+        trades = root.findall(".//Trade")
+        if not trades:
+            return "No trades found in portfolio.xml"
+        
+        trade_ids = [trade.attrib['id'] for trade in trades]
+        return f"Trade IDs: {', '.join(trade_ids)}"
+        
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+@tool(response_format="content")
+def select_trades_by_trade_type(trade_type: str) -> str:
+    """
+    Select trades of a specific type from the portfolio.xml file.
+
+    Args:
+        trade_type (str): Type of trade to select
+
+    Returns:
+        str: Trades of the specified type in XML format
+    """
+    try:
+        tree = ET.parse(os.path.join(f_path_in, 'portfolio.xml'))
+        root = tree.getroot()
+        trades = root.findall(f".//TradeType[@type='{trade_type}']")
+        if not trades:
+            return f"No trades of type {trade_type} found in portfolio.xml"
+        
+        trade_ids = [trade.attrib['id'] for trade in trades]
+        return f"Trade IDs: {', '.join(trade_ids)}"
+        
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+list_portfolio_xml_tools = [get_trade_info, modify_trade, list_trades]
+list_portfolio_xml_tools_description = [i.name+" : "+i.description + '\n\n' for n, i in enumerate(list_portfolio_xml_tools)]

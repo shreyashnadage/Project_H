@@ -4,12 +4,9 @@ from langchain.tools import tool
 from typing import List
 import xml.etree.ElementTree as ET
 from typing import Tuple
+import utilities_ore as utilities
 from config_file import f_path_in
-params = Parameters()
-
-params.fromFile(os.path.join(f_path_in, 'ore.xml'))
-
-ore = OREApp(params, True)
+import sys
 
 
 @tool
@@ -22,33 +19,36 @@ def run_ore() -> str:
     """
     try:
         cwd = os.getcwd()
-        os.chdir(os.path.join(f_path_in, '..'))
+        os.chdir(os.path.dirname(f_path_in))
+        sys.path.append('..')
+        params = Parameters()
+        params.fromFile("Input/ore.xml")
+        ore = OREApp(params, True)
         ore.run()
         os.chdir(cwd)
-        return "ORE run completed successfully."
+        reports_str = '\\n'.join([str(n)+'. '+i for n,i in enumerate(list(ore.getReportNames()))])
+        return f"ORE run completed successfully. It generated following reports:{reports_str}"
     except Exception as e:
         return f"Error executing ORE model: {str(e)}"
+#     """
+#     Get a list of report names from the ORE model.
 
-
-@tool
-def get_ore_report_list() -> List[str]:
-    """
-    Get a list of report names from the ORE model.
-
-    Returns:
-        List[str]: A list of report names.
-    """
-    try:
-        cwd = os.getcwd()
-        os.chdir(os.path.join(f_path_in, '..'))
-        ore.run()
-        os.chdir(cwd)
-        return list(ore.getReportNames())
-    except Exception as e:
+#     Returns:
+#         List[str]: A list of report names.
+#     """
+#     try:
+#         cwd = os.getcwd()
+#         os.chdir(os.path.join(f_path_in, '..'))
+#         ore.run()
+#         os.chdir(cwd)
+#         return list(ore.getReportNames())
+#     except Exception as e:
         return f"Error getting report list: {str(e)}"
 
 
-list_ore_tools = [run_ore, get_ore_report_list]
-list_ore_tools_description = [str(n+1)+". "+i.description.split("\n\n")[0]+'\n' for n, i in enumerate(list_ore_tools)]
+list_ore_execution_tools = [run_ore]
+list_ore_execution_tools_description = [i.name+" : "+i.description +'\n\n' for n, i in enumerate(list_ore_execution_tools)]
+
+test  = 0
 
 

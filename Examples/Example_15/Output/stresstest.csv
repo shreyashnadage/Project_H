@@ -1,0 +1,15 @@
+#TradeId,ScenarioLabel,Base NPV,Scenario NPV,Sensitivity
+BERMUDAN_SWAPTION,eur_5bp_parallel_discount,-3125476.42,-3097215.73,28260.69
+CAP_EUR,eur_5bp_parallel_discount,-7157.67,-7129.72,27.94
+CC_SWAP_EUR_USD,eur_5bp_parallel_discount,-20857165.79,-20375535.14,481630.65
+CC_SWAP_EUR_USD_RESET,eur_5bp_parallel_discount,-19563936.20,-19154895.31,409040.89
+EQ_CALL_LUFT,eur_5bp_parallel_discount,1872.93,1870.99,-1.94
+EQ_FWD_LUFT,eur_5bp_parallel_discount,399.11,398.69,-0.41
+EQ_PUT_LUFT,eur_5bp_parallel_discount,1473.82,1472.29,-1.52
+EUROPEAN_SWAPTION,eur_5bp_parallel_discount,-3076613.10,-3048674.57,27938.53
+FLOOR_EUR,eur_5bp_parallel_discount,78572.27,78394.15,-178.12
+FXFWD_EURUSD_10Y,eur_5bp_parallel_discount,179341.84,174518.77,-4823.07
+FX_CALL_OPTION,eur_5bp_parallel_discount,255066.80,251428.02,-3638.79
+FX_PUT_OPTION,eur_5bp_parallel_discount,75724.96,76909.25,1184.29
+SWAP_EUR,eur_5bp_parallel_discount,-262631.05,-258672.89,3958.16
+YearOnYear_Swap,eur_5bp_parallel_discount,590124.24,589151.95,-972.29

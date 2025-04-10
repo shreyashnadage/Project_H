@@ -1,80 +1,893 @@
-NOTICE   [2025-Mar-29 19:15:19.195493]    (OREAnalytics\orea\app\parameters.cpp:133) : Parameters:
-NOTICE   [2025-Mar-29 19:15:19.195545]    (OREAnalytics\orea\app\parameters.cpp:136) : group = cashflow : active = Y
-NOTICE   [2025-Mar-29 19:15:19.195545]    (OREAnalytics\orea\app\parameters.cpp:136) : group = cashflow : outputFileName = flows.csv
-NOTICE   [2025-Mar-29 19:15:19.195545]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : active = Y
-NOTICE   [2025-Mar-29 19:15:19.196552]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : configuration = default
-NOTICE   [2025-Mar-29 19:15:19.196552]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : grid = 240,1M
-NOTICE   [2025-Mar-29 19:15:19.197115]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : outputFileName = curves.csv
-NOTICE   [2025-Mar-29 19:15:19.197115]    (OREAnalytics\orea\app\parameters.cpp:136) : group = initialMargin : active = N
-NOTICE   [2025-Mar-29 19:15:19.197115]    (OREAnalytics\orea\app\parameters.cpp:136) : group = initialMargin : method = 
-NOTICE   [2025-Mar-29 19:15:19.197115]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : fxcalibration = default
-NOTICE   [2025-Mar-29 19:15:19.198136]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : lgmcalibration = collateral_inccy
-NOTICE   [2025-Mar-29 19:15:19.198136]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : pricing = default
-NOTICE   [2025-Mar-29 19:15:19.198647]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : simulation = default
-NOTICE   [2025-Mar-29 19:15:19.198647]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : active = Y
-NOTICE   [2025-Mar-29 19:15:19.198647]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : baseCurrency = EUR
-NOTICE   [2025-Mar-29 19:15:19.198647]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : outputFileName = npv.csv
-NOTICE   [2025-Mar-29 19:15:19.199659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : asofDate = 2016-02-05
-NOTICE   [2025-Mar-29 19:15:19.199659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : conventionsFile = conventions.xml
-NOTICE   [2025-Mar-29 19:15:19.199659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : curveConfigFile = curveconfig.xml
-NOTICE   [2025-Mar-29 19:15:19.199659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : fixingDataFile = fixings.txt
-NOTICE   [2025-Mar-29 19:15:19.200659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : implyTodaysFixings = N
-NOTICE   [2025-Mar-29 19:15:19.200659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : inputPath = Input
-NOTICE   [2025-Mar-29 19:15:19.200659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logFile = log.txt
-NOTICE   [2025-Mar-29 19:15:19.200659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logMask = 31
-NOTICE   [2025-Mar-29 19:15:19.201656]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketConfigFile = todaysmarket.xml
-NOTICE   [2025-Mar-29 19:15:19.201656]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketDataFile = market.txt
-NOTICE   [2025-Mar-29 19:15:19.201656]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : observationModel = Disable
-NOTICE   [2025-Mar-29 19:15:19.201656]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : outputPath = Output
-NOTICE   [2025-Mar-29 19:15:19.202661]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : portfolioFile = portfolio.xml
-NOTICE   [2025-Mar-29 19:15:19.202661]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : pricingEnginesFile = pricingengine.xml
-NOTICE   [2025-Mar-29 19:15:19.202661]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : active = Y
-NOTICE   [2025-Mar-29 19:15:19.202661]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : aggregationScenarioDataFileName = scenariodata.csv.gz
-NOTICE   [2025-Mar-29 19:15:19.202661]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : baseCurrency = EUR
-NOTICE   [2025-Mar-29 19:15:19.203658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : cubeFile = cube.csv.gz
-NOTICE   [2025-Mar-29 19:15:19.203658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : pricingEnginesFile = pricingengine.xml
-NOTICE   [2025-Mar-29 19:15:19.203658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : simulationConfigFile = simulation.xml
-NOTICE   [2025-Mar-29 19:15:19.203658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : storeFlows = N
-NOTICE   [2025-Mar-29 19:15:19.204658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : active = Y
-NOTICE   [2025-Mar-29 19:15:19.204658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : allocationMethod = Marginal
-NOTICE   [2025-Mar-29 19:15:19.204658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : baseCurrency = EUR
-NOTICE   [2025-Mar-29 19:15:19.204658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : calculationType = Symmetric
-NOTICE   [2025-Mar-29 19:15:19.205658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : collateralFloor = N
-NOTICE   [2025-Mar-29 19:15:19.205658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : colva = N
-NOTICE   [2025-Mar-29 19:15:19.205658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : csaFile = netting.xml
-NOTICE   [2025-Mar-29 19:15:19.205658]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : cubeFile = cube.csv.gz
-NOTICE   [2025-Mar-29 19:15:19.206659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : cva = Y
-NOTICE   [2025-Mar-29 19:15:19.206659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dva = N
-NOTICE   [2025-Mar-29 19:15:19.206659]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dvaName = BANK
-NOTICE   [2025-Mar-29 19:15:19.207657]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : exerciseNextBreak = N
-NOTICE   [2025-Mar-29 19:15:19.207657]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : exposureProfiles = Y
-NOTICE   [2025-Mar-29 19:15:19.208656]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : exposureProfilesByTrade = Y
-NOTICE   [2025-Mar-29 19:15:19.208656]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : fva = N
-NOTICE   [2025-Mar-29 19:15:19.209166]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : fvaBorrowingCurve = BANK_EUR_BORROW
-NOTICE   [2025-Mar-29 19:15:19.209166]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : fvaLendingCurve = BANK_EUR_LEND
-NOTICE   [2025-Mar-29 19:15:19.210176]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : marginalAllocationLimit = 1.0
-NOTICE   [2025-Mar-29 19:15:19.210176]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : netCubeOutputFile = netcube.csv
-NOTICE   [2025-Mar-29 19:15:19.211176]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : quantile = 0.95
-NOTICE   [2025-Mar-29 19:15:19.211176]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : rawCubeOutputFile = rawcube.csv
-NOTICE   [2025-Mar-29 19:15:19.212178]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : scenarioFile = scenariodata.csv.gz
-NOTICE   [2025-Mar-29 19:15:19.212178]        (OREAnalytics\orea\app\oreapp.cpp:567) : load OREAppInputParameters called
-WARNING  [2025-Mar-29 19:15:19.213177]        (OREAnalytics\orea\app\oreapp.cpp:589) : Calendar adjustments not found, using defaults
-WARNING  [2025-Mar-29 19:15:19.213177]        (OREAnalytics\orea\app\oreapp.cpp:600) : Currency configurations not found, using defaults
-NOTICE   [2025-Mar-29 19:15:19.214181]        (OREAnalytics\orea\app\oreapp.cpp:664) : Observation Mode is Disable
-WARNING  [2025-Mar-29 19:15:19.214181]        (OREAnalytics\orea\app\oreapp.cpp:677) : Reference data not found
-WARNING  [2025-Mar-29 19:15:19.215179]        (OREAnalytics\orea\app\oreapp.cpp:687) : Script library not loaded
-NOTICE   [2025-Mar-29 19:15:19.215179]        (OREAnalytics\orea\app\oreapp.cpp:692) : Loading conventions from file: "Input\\conventions.xml"
-WARNING  [2025-Mar-29 19:15:19.216177]        (OREAnalytics\orea\app\oreapp.cpp:703) : Using default Ibor fallback config
-NOTICE   [2025-Mar-29 19:15:19.217177]        (OREAnalytics\orea\app\oreapp.cpp:708) : Load curve configurations from file: 
-NOTICE   [2025-Mar-29 19:15:19.217177]        (OREAnalytics\orea\app\oreapp.cpp:717) : Load pricing engine data from file: "Input\\pricingengine.xml"
-NOTICE   [2025-Mar-29 19:15:19.218180]        (OREAnalytics\orea\app\oreapp.cpp:726) : Loading today's market parameters from file"Input\\todaysmarket.xml"
-WARNING  [2025-Mar-29 19:15:19.219182]  (...rketdata\todaysmarketparameters.cpp:190) : TodaysMarketParameters: the attribute 'currency' is deprecated for 'SwaptionVolatilities', use 'key' instead.
-NOTICE   [2025-Mar-29 19:15:19.219182]  (...lytics\orea\app\inputparameters.cpp:147) : Loading portfolio from file: Input/portfolio.xml
-NOTICE   [2025-Mar-29 19:15:19.220175]     (OREData\ored\portfolio\portfolio.cpp:96) : Finished Parsing XML doc
-NOTICE   [2025-Mar-29 19:15:19.221176]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::fxcalibration = default
-NOTICE   [2025-Mar-29 19:15:19.221686]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::lgmcalibration = collateral_inccy
-NOTICE   [2025-Mar-29 19:15:19.221686]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::pricing = default
-NOTICE   [2025-Mar-29 19:15:19.222699]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::simulation = default
-NOTICE   [2025-Mar-29 19:15:19.222699]       (OREAnalytics\orea\app\oreapp.cpp:1274) : SIMM
-NOTICE   [2025-Mar-29 19:15:19.223768]       (OREAnalytics\orea\app\oreapp.cpp:1338) : IM SCHEDULE
-NOTICE   [2025-Mar-29 19:15:19.224277]       (OREAnalytics\orea\app\oreapp.cpp:1464) : Loading simulation config from fileInput/simulation.xml
+NOTICE   [2025-Apr-08 20:41:23.355943]    (OREAnalytics\orea\app\parameters.cpp:133) : Parameters:
+NOTICE   [2025-Apr-08 20:41:23.355943]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : fxcalibration = default
+NOTICE   [2025-Apr-08 20:41:23.355943]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : lgmcalibration = collateral_inccy
+NOTICE   [2025-Apr-08 20:41:23.357006]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : pricing = default
+NOTICE   [2025-Apr-08 20:41:23.357006]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : simulation = default
+NOTICE   [2025-Apr-08 20:41:23.357006]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : active = Y
+NOTICE   [2025-Apr-08 20:41:23.357006]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : baseCurrency = EUR
+NOTICE   [2025-Apr-08 20:41:23.358059]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : outputFileName = npv.csv
+NOTICE   [2025-Apr-08 20:41:23.358059]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : asofDate = 2016-02-05
+NOTICE   [2025-Apr-08 20:41:23.358059]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : conventionsFile = conventions.xml
+NOTICE   [2025-Apr-08 20:41:23.359060]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : curveConfigFile = curveconfig.xml
+NOTICE   [2025-Apr-08 20:41:23.359060]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : fixingDataFile = fixings.txt
+NOTICE   [2025-Apr-08 20:41:23.359060]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : implyTodaysFixings = N
+NOTICE   [2025-Apr-08 20:41:23.359060]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : inputPath = Input
+NOTICE   [2025-Apr-08 20:41:23.360061]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logFile = log.txt
+NOTICE   [2025-Apr-08 20:41:23.360061]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logMask = 31
+NOTICE   [2025-Apr-08 20:41:23.360634]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketConfigFile = todaysmarket.xml
+NOTICE   [2025-Apr-08 20:41:23.360634]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketDataFile = market.txt
+NOTICE   [2025-Apr-08 20:41:23.360634]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : observationModel = Disable
+NOTICE   [2025-Apr-08 20:41:23.360634]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : outputPath = Output
+NOTICE   [2025-Apr-08 20:41:23.361644]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : portfolioFile = portfolio.xml
+NOTICE   [2025-Apr-08 20:41:23.361644]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : pricingEnginesFile = pricingengine.xml
+NOTICE   [2025-Apr-08 20:41:23.361644]        (OREAnalytics\orea\app\oreapp.cpp:567) : load OREAppInputParameters called
+WARNING  [2025-Apr-08 20:41:23.361644]        (OREAnalytics\orea\app\oreapp.cpp:589) : Calendar adjustments not found, using defaults
+WARNING  [2025-Apr-08 20:41:23.362644]        (OREAnalytics\orea\app\oreapp.cpp:600) : Currency configurations not found, using defaults
+NOTICE   [2025-Apr-08 20:41:23.362644]        (OREAnalytics\orea\app\oreapp.cpp:664) : Observation Mode is Disable
+WARNING  [2025-Apr-08 20:41:23.362644]        (OREAnalytics\orea\app\oreapp.cpp:677) : Reference data not found
+WARNING  [2025-Apr-08 20:41:23.362644]        (OREAnalytics\orea\app\oreapp.cpp:687) : Script library not loaded
+NOTICE   [2025-Apr-08 20:41:23.363644]        (OREAnalytics\orea\app\oreapp.cpp:692) : Loading conventions from file: "Input\\conventions.xml"
+WARNING  [2025-Apr-08 20:41:23.375327]        (OREAnalytics\orea\app\oreapp.cpp:703) : Using default Ibor fallback config
+NOTICE   [2025-Apr-08 20:41:23.375875]        (OREAnalytics\orea\app\oreapp.cpp:708) : Load curve configurations from file: 
+NOTICE   [2025-Apr-08 20:41:23.386938]        (OREAnalytics\orea\app\oreapp.cpp:717) : Load pricing engine data from file: "Input\\pricingengine.xml"
+NOTICE   [2025-Apr-08 20:41:23.388954]        (OREAnalytics\orea\app\oreapp.cpp:726) : Loading today's market parameters from file"Input\\todaysmarket.xml"
+WARNING  [2025-Apr-08 20:41:23.397535]  (...rketdata\todaysmarketparameters.cpp:190) : TodaysMarketParameters: the attribute 'currency' is deprecated for 'SwaptionVolatilities', use 'key' instead.
+NOTICE   [2025-Apr-08 20:41:23.397535]  (...lytics\orea\app\inputparameters.cpp:147) : Loading portfolio from file: Input/portfolio.xml
+NOTICE   [2025-Apr-08 20:41:23.398557]     (OREData\ored\portfolio\portfolio.cpp:96) : Finished Parsing XML doc
+NOTICE   [2025-Apr-08 20:41:23.398557]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::fxcalibration = default
+NOTICE   [2025-Apr-08 20:41:23.398557]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::lgmcalibration = collateral_inccy
+NOTICE   [2025-Apr-08 20:41:23.398557]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::pricing = default
+NOTICE   [2025-Apr-08 20:41:23.399588]        (OREAnalytics\orea\app\oreapp.cpp:745) : MarketContext::simulation = default
+NOTICE   [2025-Apr-08 20:41:23.399588]       (OREAnalytics\orea\app\oreapp.cpp:1274) : SIMM
+NOTICE   [2025-Apr-08 20:41:23.399588]       (OREAnalytics\orea\app\oreapp.cpp:1338) : IM SCHEDULE
+NOTICE   [2025-Apr-08 20:41:23.411131]       (OREAnalytics\orea\app\oreapp.cpp:2048) : analytics: 1
+NOTICE   [2025-Apr-08 20:41:23.411131]       (OREAnalytics\orea\app\oreapp.cpp:2050) : analytic: NPV
+NOTICE   [2025-Apr-08 20:41:23.412379]       (OREAnalytics\orea\app\oreapp.cpp:2052) : buildInputParameters done
+NOTICE   [2025-Apr-08 20:41:23.412379]  (...lytics\orea\app\inputparameters.cpp:597) : OutputFileNameMap called
+NOTICE   [2025-Apr-08 20:41:23.412379]  (...lytics\orea\app\inputparameters.cpp:676) : OutputFileNameMap complete
+NOTICE   [2025-Apr-08 20:41:23.412379]        (OREAnalytics\orea\app\oreapp.cpp:376) : initFromParameters done, requested analytics:NPV
+NOTICE   [2025-Apr-08 20:41:23.413464]        (OREAnalytics\orea\app\oreapp.cpp:221) : ORE analytics starting
+WARNING  [2025-Apr-08 20:41:23.413464]        (OREAnalytics\orea\app\oreapp.cpp:222) : 151998464|152002560
+WARNING  [2025-Apr-08 20:41:23.413464]        (OREAnalytics\orea\app\oreapp.cpp:202) : dividend data file not found
+WARNING  [2025-Apr-08 20:41:23.413464]        (OREAnalytics\orea\app\oreapp.cpp:210) : fixing cutoff date not set
+NOTICE   [2025-Apr-08 20:41:23.414503]   (OREData\ored\marketdata\csvloader.cpp:101) : CSVLoader loading from Input/market.txt
+NOTICE   [2025-Apr-08 20:41:23.416059]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/EUR/EUR1D/A360/1Y
+NOTICE   [2025-Apr-08 20:41:23.416600]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/EUR/EUR6M/A360/1Y
+NOTICE   [2025-Apr-08 20:41:23.417117]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/GBP/GBP1D/A365F/1Y
+NOTICE   [2025-Apr-08 20:41:23.417117]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum ZERO/RATE/GBP/GBP6M/A365F/1Y
+NOTICE   [2025-Apr-08 20:41:23.417717]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum SWAPTION/RATE_LNVOL/EUR/1Y/1Y/ATM
+NOTICE   [2025-Apr-08 20:41:23.417717]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum SWAPTION/RATE_NVOL/GBP/1Y/1Y/ATM
+NOTICE   [2025-Apr-08 20:41:23.418233]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum FX/RATE/EUR/GBP
+NOTICE   [2025-Apr-08 20:41:23.418233]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum FX_OPTION/RATE_LNVOL/EUR/GBP/1Y/ATM
+NOTICE   [2025-Apr-08 20:41:23.418233]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum FX_OPTION/RATE_LNVOL/EUR/GBP/10Y/ATM
+NOTICE   [2025-Apr-08 20:41:23.419869]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum RECOVERY_RATE/RATE/BANK/SR/EUR
+NOTICE   [2025-Apr-08 20:41:23.420763]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum CDS/CREDIT_SPREAD/BANK/SR/EUR/1Y
+NOTICE   [2025-Apr-08 20:41:23.420763]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum RECOVERY_RATE/RATE/CPTY_A/SR/EUR
+NOTICE   [2025-Apr-08 20:41:23.420763]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum HAZARD_RATE/RATE/CPTY_A/SR/EUR/1Y
+NOTICE   [2025-Apr-08 20:41:23.421781]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum MM/RATE/USD/0D/1D
+NOTICE   [2025-Apr-08 20:41:23.421781]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/0D/1D/1D
+NOTICE   [2025-Apr-08 20:41:23.422403]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1M
+NOTICE   [2025-Apr-08 20:41:23.422403]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1W
+NOTICE   [2025-Apr-08 20:41:23.422403]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/0D/1D/2D
+NOTICE   [2025-Apr-08 20:41:23.422403]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/2M
+NOTICE   [2025-Apr-08 20:41:23.423412]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/2W
+NOTICE   [2025-Apr-08 20:41:23.423412]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/3M
+NOTICE   [2025-Apr-08 20:41:23.423920]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/3W
+NOTICE   [2025-Apr-08 20:41:23.423920]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/4M
+NOTICE   [2025-Apr-08 20:41:23.424427]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/5M
+NOTICE   [2025-Apr-08 20:41:23.424427]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/6M
+NOTICE   [2025-Apr-08 20:41:23.424427]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/7M
+NOTICE   [2025-Apr-08 20:41:23.424427]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/8M
+NOTICE   [2025-Apr-08 20:41:23.426165]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/9M
+NOTICE   [2025-Apr-08 20:41:23.426165]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/10M
+NOTICE   [2025-Apr-08 20:41:23.426165]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/11M
+NOTICE   [2025-Apr-08 20:41:23.426994]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y
+NOTICE   [2025-Apr-08 20:41:23.426994]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/2Y
+NOTICE   [2025-Apr-08 20:41:23.427516]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/3Y
+NOTICE   [2025-Apr-08 20:41:23.427516]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/4Y
+NOTICE   [2025-Apr-08 20:41:23.427516]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/5Y
+NOTICE   [2025-Apr-08 20:41:23.428624]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/7Y
+NOTICE   [2025-Apr-08 20:41:23.428624]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/10Y
+NOTICE   [2025-Apr-08 20:41:23.429129]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/12Y
+NOTICE   [2025-Apr-08 20:41:23.429129]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y3M
+NOTICE   [2025-Apr-08 20:41:23.429129]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/15Y
+NOTICE   [2025-Apr-08 20:41:23.429129]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y6M
+NOTICE   [2025-Apr-08 20:41:23.430541]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/20Y
+NOTICE   [2025-Apr-08 20:41:23.430541]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/1Y9M
+NOTICE   [2025-Apr-08 20:41:23.430541]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/25Y
+NOTICE   [2025-Apr-08 20:41:23.430541]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/30Y
+NOTICE   [2025-Apr-08 20:41:23.431581]   (OREData\ored\marketdata\csvloader.cpp:152) : Added MarketDatum IR_SWAP/RATE/USD/2D/1D/50Y
+NOTICE   [2025-Apr-08 20:41:23.431581]   (OREData\ored\marketdata\csvloader.cpp:189) : CSVLoader completed processing Input/market.txt
+NOTICE   [2025-Apr-08 20:41:23.431581]    (OREData\ored\marketdata\csvloader.cpp:80) : CSVLoader loaded 46 market data points for February 5th, 2016
+NOTICE   [2025-Apr-08 20:41:23.431581]   (OREData\ored\marketdata\csvloader.cpp:101) : CSVLoader loading from Input/fixings.txt
+NOTICE   [2025-Apr-08 20:41:23.431581]   (OREData\ored\marketdata\csvloader.cpp:189) : CSVLoader completed processing Input/fixings.txt
+NOTICE   [2025-Apr-08 20:41:23.433060]    (OREData\ored\marketdata\csvloader.cpp:85) : CSVLoader loaded 0 fixings
+NOTICE   [2025-Apr-08 20:41:23.433060]    (OREData\ored\marketdata\csvloader.cpp:90) : CSVLoader loaded 0 dividends
+NOTICE   [2025-Apr-08 20:41:23.433060]    (OREData\ored\marketdata\csvloader.cpp:92) : CSVLoader complete.
+NOTICE   [2025-Apr-08 20:41:23.434086]  (...lytics\orea\app\analyticsmanager.cpp:69) : register analytic with label 'PRICING' and sub-analytics CASHFLOW,CASHFLOWNPV,NPV,SENSITIVITY
+NOTICE   [2025-Apr-08 20:41:23.435113]        (OREAnalytics\orea\app\oreapp.cpp:239) : Available analytics: CASHFLOW,CASHFLOWNPV,NPV,SENSITIVITY
+NOTICE   [2025-Apr-08 20:41:23.435113]        (OREAnalytics\orea\app\oreapp.cpp:242) : Requested analytics: NPV
+NOTICE   [2025-Apr-08 20:41:23.438152]  (...ytics\orea\app\analyticsmanager.cpp:130) : AnalyticsManager::runAnalytics: requireMarketData Y
+NOTICE   [2025-Apr-08 20:41:23.438152]  (...ytics\orea\app\analyticsmanager.cpp:135) : AnalyticsManager::runAnalytics: populate loader for dates: February 5th, 2016
+NOTICE   [2025-Apr-08 20:41:23.440694]  (...ics\orea\app\marketdatacsvloader.cpp:78) : MarketDataCsvLoader::retrieveFixings called: all fixings ? Y
+NOTICE   [2025-Apr-08 20:41:23.440694]  (...ytics\orea\app\marketdataloader.cpp:261) : Adding the loaded fixings to the IndexManager
+NOTICE   [2025-Apr-08 20:41:23.440694]      (OREData\ored\marketdata\fixings.cpp:68) : Added 0 of 0 fixings in 0.000004 seconds
+NOTICE   [2025-Apr-08 20:41:23.441774]  (...ytics\orea\app\marketdataloader.cpp:265) : Generating market datum set
+NOTICE   [2025-Apr-08 20:41:23.455845]  (...ytics\orea\app\marketdataloader.cpp:283) : CurveConfigs require 740 quotes
+NOTICE   [2025-Apr-08 20:41:23.456851]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.456851]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/12Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.456851]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.457852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/1Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.457852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.457852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.458854]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.458854]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.458854]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/40Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.459857]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.459857]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/50Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.459857]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.460853]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/60Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.460853]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/70Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.461852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote BASIS_SWAP/BASIS_SPREAD/6M/3M/GBP/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.461852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.461852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.462858]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.463415]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.463923]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.463923]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.463923]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/40Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.464932]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.464932]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/50Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.465436]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.465436]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/EUR/3M/GBP/3M/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.465436]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.465436]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.466944]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.466944]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.466944]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.467953]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.468460]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/40Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.468460]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.469467]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/50Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.470045]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.470566]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/EUR/3M/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.470566]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.471660]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.471660]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.471660]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.471660]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.473166]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.473166]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/40Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.474249]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.474249]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/50Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.474249]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.474249]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CC_BASIS_SWAP/BASIS_SPREAD/USD/3M/GBP/3M/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.475908]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CDS/CREDIT_SPREAD/BANK/SR/USD/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.475908]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CDS/CREDIT_SPREAD/BANK/SR/USD/1Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.475908]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CDS/CREDIT_SPREAD/BANK/SR/USD/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.475908]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CDS/CREDIT_SPREAD/BANK/SR/USD/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.477000]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CDS/CREDIT_SPREAD/BANK/SR/USD/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.477000]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CDS/CREDIT_SPREAD/BANK/SR/USD/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.477000]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote CDS/CREDIT_SPREAD/BANK/SR/USD/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.477999]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/1M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.477999]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/1Y/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.477999]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/2M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.479004]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/3M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.479004]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/4M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.479004]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/5M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.480005]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/6M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.480005]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/EUR/9M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.480005]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/GBP/1M/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.480005]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/GBP/1Y/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.480005]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/GBP/2M/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.480005]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/GBP/3M/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.481543]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/GBP/4M/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.481543]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/GBP/5M/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.481543]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/GBP/6M/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.482677]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/USD/1Y/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.482677]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/USD/3M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.482677]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/USD/6M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.482677]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FRA/RATE/USD/9M/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.483711]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX/RATE/EUR/USD for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.483711]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX/RATE/GBP/EUR for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.483711]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX/RATE/GBP/USD for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.484709]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX/RATE/USD/EUR for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.485312]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX/RATE/USD/GBP for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.485312]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/GBP/12M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.486746]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/GBP/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.486746]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/GBP/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.487784]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/GBP/9M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.488806]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/USD/12M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.489509]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/USD/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.490130]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/USD/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.490130]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/EUR/USD/9M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.490130]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/USD/GBP/1Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.491185]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/USD/GBP/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.491185]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/USD/GBP/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.491185]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FXFWD/RATE/USD/GBP/9M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.492218]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/GBP/1M/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.492218]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/GBP/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.492218]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/GBP/3M/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.493640]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/GBP/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.493640]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/GBP/6M/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.493640]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/USD/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.494916]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/USD/1M/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.494916]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/USD/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.495421]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/USD/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.495421]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/USD/3M/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.495421]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/USD/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.496429]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote FX_OPTION/RATE_LNVOL/EUR/USD/6M/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.496429]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/0Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.496429]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.497801]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.497801]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/1Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.498330]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.498330]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.499607]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.500117]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.501127]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.501127]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.502134]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote HAZARD_RATE/RATE/CPTY_A/SR/USD/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.503138]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/10M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.504145]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.504145]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/11M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.504145]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/12Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.505746]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.505746]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/1M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.505746]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/1W for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.506820]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/1Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.506820]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/1Y3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.506820]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/1Y6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.507803]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/1Y9M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.507803]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.507803]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/25Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.507803]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/2M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.508935]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/2W for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.508935]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.508935]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.509953]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.509953]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.510525]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/4M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.511060]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.511060]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/5M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.511060]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.512091]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.512091]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/6Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.512091]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/7M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.513356]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.513356]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/8M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.513356]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/8Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.513356]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/9M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.514878]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/1D/9Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.514878]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.514878]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/12Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.514878]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.516364]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.516364]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/25Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.516869]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.517400]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.517919]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/40Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.517919]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.517919]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/50Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.518926]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.518926]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/6Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.518926]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.520436]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/8Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.521455]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/3M/9Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.521455]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.522157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/12Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.522157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.522157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.522157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/25Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.522157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.523678]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.523678]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.524309]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/40Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.524309]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.524309]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/50Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.524309]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.524309]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/EUR/2D/6M/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.525983]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/10M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.525983]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.526990]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/11M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.526990]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/12M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.526990]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.527991]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/1M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.527991]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/1W for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.527991]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.528989]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/25Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.528989]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/2M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.528989]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/2W for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.528989]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.529988]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.529988]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.529988]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.531492]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/40Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.532081]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/4M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.532081]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.532647]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/50Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.533152]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/5M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.533152]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.533152]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.534158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/6Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.534158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/7M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.534158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.535158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/8M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.535158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/8Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.535158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/9M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.536160]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/1D/9Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.537160]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.537160]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/12Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.537160]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.538159]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.538159]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/25Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.538159]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.539158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.539158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.539158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.540158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.540158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/6Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.540158]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.541165]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/8Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.541165]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/GBP/0D/6M/9Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.541165]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.542163]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/12Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.542163]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/15Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.543164]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.543164]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/25Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.543845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.544350]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/30Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.544350]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/3Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.545130]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/4Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.545130]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.545130]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/6Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.546149]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/7Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.546149]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/8Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.546149]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote IR_SWAP/RATE/USD/2D/3M/9Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.547135]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/EUR/0D/1D for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.547135]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/EUR/2D/1M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.547135]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/EUR/2D/1W for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.548161]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/EUR/2D/2M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.548161]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/EUR/2D/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.548161]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/EUR/2D/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.549157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/GBP/0D/1M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.549157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/GBP/0D/1W for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.549157]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/GBP/0D/2M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.550218]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/GBP/0D/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.550218]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/GBP/0D/6M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.550218]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/USD/2D/1M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.551248]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/USD/2D/1W for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.551248]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/USD/2D/2M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.551248]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote MM/RATE/USD/2D/3M for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.552272]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote RECOVERY_RATE/RATE/BANK/SR/USD for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.552272]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote RECOVERY_RATE/RATE/CPTY_A/SR/USD for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.552272]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.553468]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.553468]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.553468]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.554527]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.554527]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.554527]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.555529]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.555529]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.555529]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.555529]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/10Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.557026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.557026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.557026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.558026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.558026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.558026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.558026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.559028]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.559028]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.560028]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.560028]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/15Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.560028]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.561026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.561026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.561026]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.562025]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.562025]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.562621]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.563168]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.563168]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.563168]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.563168]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.564683]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.564683]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.564683]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.565688]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.565688]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.565688]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.565688]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.566689]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.567193]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.567193]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.567193]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/1Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.568198]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.568717]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.569315]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.569315]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.569315]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.569315]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.570839]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.570839]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.570839]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.571845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.571845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/20Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.571845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.572845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.573352]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.573876]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.574400]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.574400]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.574985]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.574985]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.575506]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.575506]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.576332]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/25Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.576332]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.576838]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.576838]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.576838]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.577843]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.577843]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.578844]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.578844]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.578844]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.579843]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.579843]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/2Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.579843]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.580845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.580845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.580845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.580845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.581843]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.582351]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.582351]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.582351]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.583358]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.583358]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/30Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.583358]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.584356]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.584356]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.584356]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.585355]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.585355]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.586361]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.587395]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.587395]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.588357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.588357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.588357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.589357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.589357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.589357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.590359]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.590359]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.591367]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.591367]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.592365]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.592972]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.592972]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/3Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.592972]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.593976]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.593976]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.593976]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.594978]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.594978]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.594978]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.595977]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.595977]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.595977]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.596976]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/4Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.596976]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.596976]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.597978]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.597978]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.597978]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.598959]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.598959]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.599466]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.599466]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.600475]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.600475]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/5Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.601472]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.601472]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.601472]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.602476]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.602476]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.603473]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.603473]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.603473]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.604471]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.604471]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.604471]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/6M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.604471]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.605977]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.606342]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.606342]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.606845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.606845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.606845]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.607851]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.607851]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.607851]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.608852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/GBP/7Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.608852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.608852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.609852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.610438]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.610438]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.610438]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.611449]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.611449]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.611449]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.612445]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.612445]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/10Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.612445]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.613444]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.613444]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.613444]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.613444]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.613444]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.614949]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.614949]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.614949]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.615954]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.615954]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/15Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.615954]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.616955]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.617458]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.617458]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.617962]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.617962]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.617962]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.618967]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.618967]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.618967]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.620475]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.620475]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.620475]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.620475]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.620475]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.622060]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.622060]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.622060]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.623068]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.623597]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.623597]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.624116]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/1Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.624116]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.624116]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.624116]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.624116]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.625713]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.625713]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.625713]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.626720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.626720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.626720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.627719]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/20Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.627719]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.627719]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.628720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.628720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.628720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.629719]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.629719]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.629719]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.630720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.630720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.630720]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/25Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.631719]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.632223]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.632223]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.632223]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.633123]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.633628]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.633628]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.633628]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.634633]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.634633]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.634633]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/2Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.635635]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.635635]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.636644]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.636644]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.636644]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.637635]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.637635]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.637635]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.638633]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.638633]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.639634]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/30Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.639634]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.639634]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.640634]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.640634]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.640634]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.641639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.641639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.641639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.641639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.642639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.642639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.642639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.643639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.643639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.644639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.644639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.644639]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.645640]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.645640]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.646357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.646357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.646862]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/3Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.646862]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.646862]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.647866]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.647866]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.647866]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.648867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.648867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.648867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.649867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.649867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.649867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/4Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.650868]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.650868]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.650868]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.651867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.651867]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.652873]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.653892]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.653892]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.653892]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.653892]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.655398]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/5Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.655398]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.655398]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.656405]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.657214]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.657724]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.658261]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.658261]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.659269]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.659778]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.660313]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.660843]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/6M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.661387]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.661387]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.661956]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.662495]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.663079]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.663079]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.663079]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.663079]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.663079]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.664758]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.664758]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_LNVOL/USD/7Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.664758]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.665864]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.665864]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.665864]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.666908]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.666908]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.666908]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.667981]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.668487]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.668487]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.668487]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/10Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.670054]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.670572]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.670572]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.670572]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.671576]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.671576]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.671576]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.671576]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.671576]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.673080]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.673741]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/15Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.674263]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.674263]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.674263]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.674263]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.675842]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.675842]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.676850]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.676850]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.676850]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.676850]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.677850]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.677850]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.677850]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.678852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.678852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.678852]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.679849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.679849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.679849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.679849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.680849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.680849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/1Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.680849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.681849]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.682352]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.682352]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.682352]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.682352]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.683357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.683357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.683357]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.684390]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.684390]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/20Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.685156]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.685156]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.686167]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.687263]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.687805]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.687805]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.688812]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.688812]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.688812]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.689810]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.689810]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/25Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.689810]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.690816]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.690816]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.690816]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.691817]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.691817]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.691817]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.692816]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.692816]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.692816]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.692816]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/2Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.694021]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.694492]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.695001]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.695001]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.695001]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.695001]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.696038]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.696038]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.696038]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.697076]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.697076]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/30Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.697076]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.698083]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.698083]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.698083]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.699073]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.699073]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.699073]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.700082]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.700082]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.700082]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.701083]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.702057]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.703842]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.704426]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.704426]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.705983]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.705983]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.705983]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.707285]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.707285]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.707285]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.708341]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/3Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.708341]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.708341]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.709125]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.709631]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.709631]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.709631]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.710896]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.710896]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.710896]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.711898]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.711898]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/4Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.711898]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.712896]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.712896]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.712896]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.712896]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.713891]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.713891]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.713891]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.714891]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.714891]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.714891]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/5Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.715968]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.716498]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.716498]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.717061]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.717061]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.717626]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.718160]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.718160]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.718160]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.719282]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.719282]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/6M/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.719282]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/10Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.719282]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/15Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.720790]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/1Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.720790]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/20Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.720790]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/25Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.721873]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/2Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.721873]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/30Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.721873]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/3Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.722914]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/4Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.722914]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/5Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.722914]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote SWAPTION/RATE_NVOL/EUR/7Y/7Y/ATM for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.722914]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_BORROW/A365/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.722914]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_BORROW/A365/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.724561]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_BORROW/A365/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.724561]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_BORROW/A365/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.725098]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_LEND/A365/10Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.725098]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_LEND/A365/20Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.725637]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_LEND/A365/2Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.726227]  (...ics\orea\app\marketdatacsvloader.cpp:59) : Requested quote ZERO/YIELD_SPREAD/EUR/BANK_EUR_LEND/A365/5Y for date February 5th, 2016 not in csv file. This is not necessarily an error.
+NOTICE   [2025-Apr-08 20:41:23.726227]  (...ytics\orea\app\marketdataloader.cpp:290) : Got market data
+NOTICE   [2025-Apr-08 20:41:23.727245]  (...nalytics\orea\app\reportwriter.cpp:1400) : Writing MarketData report
+NOTICE   [2025-Apr-08 20:41:23.728247]  (...nalytics\orea\app\reportwriter.cpp:1444) : Writing Fixings report
+NOTICE   [2025-Apr-08 20:41:23.728247]  (...nalytics\orea\app\reportwriter.cpp:1453) : Fixings report written
+NOTICE   [2025-Apr-08 20:41:23.728247]  (...nalytics\orea\app\reportwriter.cpp:1458) : Writing Dividends report
+NOTICE   [2025-Apr-08 20:41:23.728247]  (...nalytics\orea\app\reportwriter.cpp:1470) : Dividends report written
+NOTICE   [2025-Apr-08 20:41:23.729262]  (...ytics\orea\app\analyticsmanager.cpp:159) : run analytic with label 'PRICING'
+WARNING  [2025-Apr-08 20:41:23.729262]       (OREAnalytics\orea\app\analytic.cpp:85) : 153264128|153264128
+NOTICE   [2025-Apr-08 20:41:23.729262]      (OREAnalytics\orea\app\analytic.cpp:180) : Analytic::buildMarket called
+NOTICE   [2025-Apr-08 20:41:23.730269]  (...\ored\marketdata\bondspreadimply.cpp:48) : identify securities that require a spread imply for configuration default
+NOTICE   [2025-Apr-08 20:41:23.730269]  (...\ored\marketdata\bondspreadimply.cpp:48) : identify securities that require a spread imply for configuration collateral_inccy
+NOTICE   [2025-Apr-08 20:41:23.730269]  (...\ored\marketdata\bondspreadimply.cpp:48) : identify securities that require a spread imply for configuration xois_eur
+NOTICE   [2025-Apr-08 20:41:23.730269]  (...\ored\marketdata\bondspreadimply.cpp:48) : identify securities that require a spread imply for configuration xois_usd
+NOTICE   [2025-Apr-08 20:41:23.730269]  (...\ored\marketdata\bondspreadimply.cpp:48) : identify securities that require a spread imply for configuration libor
+NOTICE   [2025-Apr-08 20:41:23.731773]  (...ored\marketdata\bondspreadimply.cpp:105) : got 0 securities
+NOTICE   [2025-Apr-08 20:41:23.732370]  (...ta\ored\marketdata\todaysmarket.cpp:115) : Todays Market Loading Fixings
+NOTICE   [2025-Apr-08 20:41:23.732370]      (OREData\ored\marketdata\fixings.cpp:68) : Added 0 of 0 fixings in 0.000000 seconds
+NOTICE   [2025-Apr-08 20:41:23.733396]  (...ta\ored\marketdata\todaysmarket.cpp:119) : Todays Market Loading Fixing done.
+NOTICE   [2025-Apr-08 20:41:23.733396]  (...ta\ored\marketdata\todaysmarket.cpp:124) : Todays Market Loading Dividends
+NOTICE   [2025-Apr-08 20:41:23.733396]  (...ta\ored\marketdata\todaysmarket.cpp:128) : Todays Market Loading Dividends done.
+NOTICE   [2025-Apr-08 20:41:23.734447]  (...\ored\marketdata\fxtriangulation.cpp:65) : FXTriangulation: initializing
+NOTICE   [2025-Apr-08 20:41:23.734447]  (...ored\marketdata\fxtriangulation.cpp:112) : FXTriangulation: initialized with 1 quotes, 2 currencies.
+NOTICE   [2025-Apr-08 20:41:23.735457]  (...\ored\marketdata\dependencygraph.cpp:40) : Build dependency graph for TodaysMarket configuration default
+WARNING  [2025-Apr-08 20:41:23.735457]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Apr-08 20:41:23.737893]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Apr-08 20:41:23.742803]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Apr-08 20:41:23.743845]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Apr-08 20:41:23.743845]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+WARNING  [2025-Apr-08 20:41:23.743845]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+NOTICE   [2025-Apr-08 20:41:23.744843]  (...\ored\marketdata\dependencygraph.cpp:40) : Build dependency graph for TodaysMarket configuration collateral_inccy
+WARNING  [2025-Apr-08 20:41:23.744843]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+NOTICE   [2025-Apr-08 20:41:23.744843]  (...\ored\marketdata\dependencygraph.cpp:40) : Build dependency graph for TodaysMarket configuration xois_eur
+WARNING  [2025-Apr-08 20:41:23.744843]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+NOTICE   [2025-Apr-08 20:41:23.745894]  (...\ored\marketdata\dependencygraph.cpp:40) : Build dependency graph for TodaysMarket configuration xois_usd
+WARNING  [2025-Apr-08 20:41:23.745894]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date
+NOTICE   [2025-Apr-08 20:41:23.745894]  (...\ored\marketdata\dependencygraph.cpp:40) : Build dependency graph for TodaysMarket configuration libor
+WARNING  [2025-Apr-08 20:41:23.746982]  (...a\ored\configuration\conventions.cpp:88) : InstrumentConventions: Could not find conventions for February 5th, 2016, using conventions from null date (no more warnings of this type will be emitted)
+NOTICE   [2025-Apr-08 20:41:23.746982]  (...ta\ored\marketdata\todaysmarket.cpp:229) : Build objects in TodaysMarket lazily, i.e. when requested.
+NOTICE   [2025-Apr-08 20:41:23.746982]  (...ta\ored\marketdata\todaysmarket.cpp:234) : TodaysMarket build stats:
+NOTICE   [2025-Apr-08 20:41:23.748125]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 1 load fixings                    :           0.254 ms         1          0.254 ms
+NOTICE   [2025-Apr-08 20:41:23.748125]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 2 load dividends                  :           0.002 ms         1          0.002 ms
+NOTICE   [2025-Apr-08 20:41:23.748125]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 3 add all fx quotes               :            1.07 ms         1           1.07 ms
+NOTICE   [2025-Apr-08 20:41:23.749154]  (...ta\ored\marketdata\todaysmarket.cpp:240) : 4 build dep graphs                :            12.4 ms         1           12.4 ms
+NOTICE   [2025-Apr-08 20:41:23.749154]  (...ta\ored\marketdata\todaysmarket.cpp:243) : Total build time              :         13.6759 ms
+NOTICE   [2025-Apr-08 20:41:23.749154]      (OREAnalytics\orea\app\analytic.cpp:214) : Market Build time 0.019473 sec
+NOTICE   [2025-Apr-08 20:41:23.750152]     (OREData\ored\portfolio\portfolio.cpp:45) : Reset portfolio of size 1
+NOTICE   [2025-Apr-08 20:41:23.750152]      (OREAnalytics\orea\app\analytic.cpp:237) : Build the portfolio
+NOTICE   [2025-Apr-08 20:41:23.750152]      (OREAnalytics\orea\app\analytic.cpp:162) : Analytic::engineFactory() called
+NOTICE   [2025-Apr-08 20:41:23.750152]      (OREAnalytics\orea\app\analytic.cpp:172) : MarketContext::pricing = default
+NOTICE   [2025-Apr-08 20:41:23.751152]  (...ta\ored\portfolio\enginefactory.cpp:184) : Building EngineFactory
+NOTICE   [2025-Apr-08 20:41:23.751976]    (OREData\ored\portfolio\portfolio.cpp:124) : Building Portfolio of size 1 for context = 'analytic/PRICING'
+ALERT    [2025-Apr-08 20:41:23.758942]  (...ta\ored\marketdata\todaysmarket.cpp:925) : error while building node DiscountCurve(EUR,Yield/EUR/EUR1D) in configuration default: yield curve building failed for curve EUR1D on date 2016-02-05: Could not find quote for Mandatory ID MM/RATE/EUR/0D/1D with as of date 2016-02-05
+ALERT    [2025-Apr-08 20:41:23.759954]  (...ta\ored\marketdata\todaysmarket.cpp:925) : error while building node IndexCurve(EUR-EURIBOR-6M,Yield/EUR/EUR6M) in configuration default: yield curve building failed for curve EUR6M on date 2016-02-05: The discount curve, Yield/EUR/EUR1D, required in the building of the curve, Yield/EUR/EUR6M, was not found.
+ALERT    [2025-Apr-08 20:41:23.760976]          (OREData\ored\utilities\log.cpp:213) : StructuredMessage { "category": "Error", "group": "Curve", "message": "yield curve building failed for curve EUR1D on date 2016-02-05: Could not find quote for Mandatory ID MM/RATE/EUR/0D/1D with as of date 2016-02-05", "sub_fields": [ { "name": "curveId", "value": "Yield/EUR/EUR1D" }, { "name": "exceptionType", "value": "Failed to Build Curve" } ] }
+ALERT    [2025-Apr-08 20:41:23.762440]          (OREData\ored\utilities\log.cpp:213) : StructuredMessage { "category": "Error", "group": "Curve", "message": "yield curve building failed for curve EUR6M on date 2016-02-05: The discount curve, Yield/EUR/EUR1D, required in the building of the curve, Yield/EUR/EUR6M, was not found.", "sub_fields": [ { "name": "curveId", "value": "Yield/EUR/EUR6M" }, { "name": "exceptionType", "value": "Failed to Build Curve" } ] }
+ALERT    [2025-Apr-08 20:41:23.763550]          (OREData\ored\utilities\log.cpp:213) : StructuredMessage { "category": "Error", "group": "Trade", "message": "did not find object 'EUR-EURIBOR-6M' of type ibor index under configuration 'default' or 'default'", "sub_fields": [ { "name": "exceptionType", "value": "Error building trade for context 'analytic/PRICING'" }, { "name": "tradeId", "value": "Swap" }, { "name": "tradeType", "value": "Swap" } ] }
+NOTICE   [2025-Apr-08 20:41:23.763550]    (OREData\ored\portfolio\portfolio.cpp:142) : Built Portfolio. Initial size = 1, size now 0, built 0 failed trades, context is analytic/PRICING
+ALERT    [2025-Apr-08 20:41:23.764938]        (OREAnalytics\orea\app\oreapp.cpp:303) : Error in ORE analytics: Portfolio does not contain any built trades, context is 'analytic/PRICING'
+WARNING  [2025-Apr-08 20:41:23.764938]        (OREAnalytics\orea\app\oreapp.cpp:304) : 154865664|154865664
+WARNING  [2025-Apr-08 20:41:23.764938]          (OREData\ored\utilities\log.cpp:213) : StructuredMessage { "category": "Warning", "group": "Analytics", "message": "Error in ORE analytics: Portfolio does not contain any built trades, context is 'analytic/PRICING'", "sub_fields": [ { "name": "analyticType", "value": "OREApp::run()" }, { "name": "warningType", "value": "Error" } ] }

@@ -2,6 +2,7 @@ import os
 from langchain.prompts import ChatPromptTemplate, PromptTemplate
 from langchain_core.messages import HumanMessage, SystemMessage
 
+
 tex_path = os.path.join("Docs", "UserGuide", "parameterisation")
 tex_files = os.listdir(tex_path)
 
@@ -10,24 +11,124 @@ for tex_f in tex_files:
     with open(os.path.join(tex_path, tex_f), "r") as f:
         tex_dict[tex_f] = f.read()
 
-ore_agent_system_prompt_content = """
-You are a ReAct (Reasoning and Acting) agent working as a copilot to a quant or risk analyst, designed to function as a ReAct (Reasoning and Acting) agent specializing in the management and manipulation of the ore.xml file, a critical configuration file for the Open Source Risk Engine (ORE). ORE is an open-source framework used by quants and financial professionals to compute derivative prices, perform risk model analysis, and generate analytics such as NPV, cash flows, sensitivities, XVAs, and Value-at-Risk (VaR). The ore.xml file serves as the master input file that defines the general setup, market configurations, and analytics for an ORE run. It is an XML file with a root element <ORE> and three main sections: <Setup>, <Markets>, and <Analytics>, each containing parameters that control the behavior of ORE.
+ore_xml_agent_system_prompt_content = """Below is a detailed and clear system prompt for a React agent designed to manage the `ore.xml` file, based on the provided documentation and tool descriptions. The prompt captures the nuances of the `ore.xml` structure and functionality as outlined in the ORE User Guide and the TeX documentation, ensuring the agent can handle a variety of user queries effectively. It includes examples of sample user queries with corresponding thoughts and actions to illustrate its application.
 
-Your role is to assist users—typically quants or risk analysts at an investment bank—in understanding, editing, modifying, validating, and saving the ore.xml file to meet specific financial modeling or risk analysis requirements. You are equipped with a deep understanding of the ore.xml structure (as detailed below) and a suite of tools to perform tasks efficiently.
-The details of ore.xml are given below to you in a tex format:
+---
 
-{tex_doc}
+### System Prompt for React Agent Managing `ore.xml`
 
+**Introduction:**
 
-Respond to user queries based on the knowledge you have.
-Remember to use xml save tool whenever you have modified the xml file during a particular action and if you want to use the modified xml for further actions.
-You will be given a task and a stopping criteria. Using the tools available, complete the task and stop when the stopping criteria is met.
-Check at every step assess if the stopping criteria is met and proceed only if stopping criteria is not met.
-If stopping criteria is met, stop then return to supervisor.
-DO NOT ASK FOLLOW UP QUESTIONS.
+You are an advanced AI assistant specialized in managing the `ore.xml` file, the master input file for the Open Source Risk Engine (ORE). Your role is to assist users in reading, editing, and modifying the analytics section of the `ore.xml` file, leveraging a suite of specialized tools. The `ore.xml` file contains general setup information, market configurations, and a critical analytics section that defines various risk and valuation analyses. Your primary focus is on the `<Analytics>` section, which lists permissible analytics such as `npv`, `cashflow`, `curves`, `simulation`, `xva`, `sensitivity`, `stress`, `parametricVar`, and `scenarioStatistics`, each with configurable parameters.
+
+**Purpose:**
+
+Your goal is to interpret user queries related to the `ore.xml` file, execute precise actions using the provided tools, and deliver clear, concise, and accurate responses. You must ensure that all modifications align with the ORE framework’s structure and requirements, as detailed in the ORE User Guide and the accompanying TeX documentation.
+
+**Capabilities:**
+
+You have access to the following tools to manage the analytics section of the `ore.xml` file:
+
+- **`list_analytics`**: Lists all analytics present in the `ore.xml` file.
+  - **Returns**: A tuple with a comma-separated string of analytic types and a list of analytic types (e.g., `("npv,cashflow,curves", ["npv", "cashflow", "curves"])`).
+- **`get_analytic_parameters`**: Retrieves all parameters for a specified analytic.
+  - **Args**: `analytic_type` (str) — e.g., `"npv"`.
+  - **Returns**: A string of parameters and their values (e.g., `"active=Y,baseCurrency=EUR,outputFileName=npv.csv"`).
+- **`set_analytic_active`**: Sets the `active` parameter of a specific analytic to `"Y"` (activate) or `"N"` (deactivate).
+  - **Args**: `analytic_type` (str), `active` (str) — e.g., `"npv"`, `"Y"`.
+  - **Returns**: A confirmation message (e.g., `"The npv analytic has been activated."`).
+- **`add_analytic`**: Adds a new analytic with the specified type and sets `active` to `"Y"`.
+  - **Args**: `analytic_type` (str) — e.g., `"newAnalytic"`.
+  - **Returns**: A confirmation message (e.g., `"A new analytic of type 'newAnalytic' has been added and activated."`).
+- **`remove_analytic`**: Removes a specified analytic from the `ore.xml` file.
+  - **Args**: `analytic_type` (str) — e.g., `"stress"`.
+  - **Returns**: A confirmation message (e.g., `"The stress analytic has been removed."`).
+- **`list_active_analytics`**: Lists all analytics with `active="Y"`.
+  - **Returns**: A tuple with a comma-separated string and a list of active analytic types (e.g., `("npv,cashflow", ["npv", "cashflow"])`).
+- **`seek_advice_on_ore_xml`**: Provides advice on `ore.xml`-related tasks when other tools are insufficient.
+  - **Args**: `query` (str) — e.g., `"How do I configure the simulation analytic?"`.
+  - **Returns**: A detailed answer (e.g., `"To configure the simulation analytic, set parameters like simulationConfigFile, baseCurrency, etc. in the ore.xml file..."`).
+
+**Understanding `ore.xml`:**
+
+The `ore.xml` file is structured with a root element `<ORE>` containing three main sections: `<Setup>`, `<Markets>`, and `<Analytics>`. Your focus is the `<Analytics>` section, which lists analytics with their configurations. Each analytic is enclosed in `<Analytic type="...">` tags and contains `<Parameter>` elements as key/value pairs (e.g., `<Parameter name="active">Y</Parameter>`). Permissible analytic types include:
+
+- `npv`: Calculates net present value.
+- `cashflow`: Generates cash flow reports.
+- `curves`: Exports yield curves.
+- `additionalResults`: Reports additional pricing results.
+- `todaysMarketCalibration`: Reports market calibration details.
+- `simulation`: Runs Monte Carlo simulations.
+- `xva`: Computes XVAs (CVA, DVA, FVA, etc.).
+- `sensitivity`: Performs bump-and-revalue sensitivity analysis.
+- `stress`: Applies stress scenarios.
+- `parametricVar`: Computes Value-at-Risk.
+- `scenarioStatistics`: Analyzes simulation scenario statistics.
+
+Each analytic must include an `active` parameter (`Y` or `N`) to enable or disable it, along with type-specific parameters (e.g., `baseCurrency`, `outputFileName`, `simulationConfigFile`).
+
+**Guidelines:**
+
+- **Tool Selection**: Use the most appropriate tool for each query. For example, use `list_analytics` to list all analytics, not `list_active_analytics` unless specifically requested.
+- **Validation**: Verify that `analytic_type` exists before operations like `get_analytic_parameters`, `set_analytic_active`, or `remove_analytic`. If it doesn’t exist, inform the user clearly.
+- **Adding Analytics**: Ensure new analytic types added via `add_analytic` are unique and valid within ORE’s permissible types. Set `active="Y"` by default and inform the user of minimal required parameters.
+- **Advice Fallback**: Use `seek_advice_on_ore_xml` only when other tools cannot address the query, providing detailed guidance based on the ORE documentation.
+- **Clarity**: Respond with concise, user-friendly messages, avoiding technical jargon unless necessary.
+- **Error Handling**: If a tool fails (e.g., due to a missing analytic), return the failure message and suggest next steps.
+
+**Sample User Queries, Thoughts, and Actions:**
+
+1. **Query: "List all analytics in the ore.xml file."**
+   - **Thought**: The user wants a complete list of analytics, regardless of their active status. The `list_analytics` tool is designed for this.
+   - **Action**: Call `list_analytics()`.
+   - **Response**: "The analytics present in the ore.xml file are: npv, cashflow, curves, simulation, xva, sensitivity, stress, parametricVar, scenarioStatistics."
+
+2. **Query: "Show me the parameters for the npv analytic."**
+   - **Thought**: The user requests parameters for a specific analytic (`npv`). The `get_analytic_parameters` tool fits this need, assuming `npv` exists.
+   - **Action**: Call `get_analytic_parameters("npv")`.
+   - **Response**: "The parameters for the npv analytic are: active=Y, baseCurrency=EUR, outputFileName=npv.csv."
+
+3. **Query: "Activate the cashflow analytic."**
+   - **Thought**: The user wants to enable the `cashflow` analytic by setting `active` to `"Y"`. The `set_analytic_active` tool is appropriate, assuming `cashflow` exists.
+   - **Action**: Call `set_analytic_active("cashflow", "Y")`.
+   - **Response**: "The cashflow analytic has been activated."
+
+4. **Query: "Add a new sensitivity analytic."**
+   - **Thought**: The user wants to add a `sensitivity` analytic, which should be activated by default. The `add_analytic` tool will add it with `active="Y"`, but I’ll note additional configuration is needed.
+   - **Action**: Call `add_analytic("sensitivity")`.
+   - **Response**: "A new analytic of type 'sensitivity' has been added and activated. You’ll need to configure parameters like `marketConfigFile`, `sensitivityConfigFile`, and `pricingEnginesFile` for it to function properly."
+
+5. **Query: "Remove the stress analytic."**
+   - **Thought**: The user requests deletion of the `stress` analytic. The `remove_analytic` tool handles this, assuming `stress` exists.
+   - **Action**: Call `remove_analytic("stress")`.
+   - **Response**: "The stress analytic has been removed."
+
+6. **Query: "Which analytics are currently active?"**
+   - **Thought**: The user seeks only active analytics (`active="Y"`). The `list_active_analytics` tool is tailored for this.
+   - **Action**: Call `list_active_analytics()`.
+   - **Response**: "The active analytics are: npv, cashflow, curves, simulation."
+
+7. **Query: "How do I configure the simulation analytic?"**
+   - **Thought**: This query asks for guidance on configuration, not a direct action on the file. None of the primary tools modify parameters beyond `active`, so `seek_advice_on_ore_xml` is necessary.
+   - **Action**: Call `seek_advice_on_ore_xml("How do I configure the simulation analytic?")`.
+   - **Response**: "To configure the simulation analytic in ore.xml, include it within the `<Analytics>` section as `<Analytic type=\"simulation\">`. Set `active=Y` to enable it, and specify parameters such as `simulationConfigFile` (e.g., `simulation.xml`), `pricingEnginesFile` (e.g., `../../Input/pricingengine.xml`), `baseCurrency` (e.g., `EUR`), `storeFlows` (Y/N), `cubeFile` (e.g., `cube.dat`), and others as needed. Refer to the ORE User Guide section 7.4 for simulation-specific details."
+
+8. **Query: "Deactivate an analytic that doesn’t exist."**
+   - **Thought**: The user wants to deactivate a non-existent analytic. I’ll assume they meant `nonexistent` as a placeholder. The `set_analytic_active` tool will fail if it doesn’t exist.
+   - **Action**: Call `set_analytic_active("nonexistent", "N")`.
+   - **Response**: "The operation failed: 'nonexistent' is not found in the ore.xml file. Please check the analytic type and try again."
+
+**Additional Notes:**
+
+- **Analytic Existence**: Before using `get_analytic_parameters`, `set_analytic_active`, or `remove_analytic`, assume the analytic exists unless the tool returns a failure message indicating otherwise.
+- **New Analytic Configuration**: When adding an analytic, it starts with `active="Y"` but requires additional parameters for full functionality. Advise users accordingly.
+- **ORE Context**: Analytics in `ore.xml` drive ORE’s risk calculations (e.g., NPV, XVA, VaR). Ensure responses align with this purpose.
+- **Documentation Reference**: Base advice on the ORE User Guide (e.g., section 7.1.4 for analytics) and the TeX documentation for parameter details.
 """
 
-ore_agent_system_prompt_content = ore_agent_system_prompt_content.format(tex_doc=tex_dict['ore.tex'])
+ore_xml_agent_system_prompt_content = ore_xml_agent_system_prompt_content.format(tex_doc=tex_dict['ore.tex'])
+
+test = 0
 
 sensitivity_agent_system_prompt_content = """
 You are a React agent built with LangGraph, designed to assist users in managing the sensitivity.xml file for ORE (Open Source Risk Engine). The sensitivity.xml file is a key configuration file in ORE that governs sensitivity analysis for financial risk management. Its primary purpose is to define how sensitivities (e.g., delta, gamma) are computed for various market components, such as discount curves, FX spots, yield curves, volatilities (e.g., swaption, cap/floor, FX), default probability curves, and correlations. This enables ORE to assess the impact of market changes on portfolios by specifying shift parameters and computation settings.
@@ -51,7 +152,7 @@ DO NOT ASK FOLLOW UP QUESTIONS.
 """
 
 sensitivity_agent_system_prompt_content = sensitivity_agent_system_prompt_content.format(tex_doc=tex_dict['sensitivity.tex'])
-
+test = 0
 ore_execution_agent_system_prompt_content = """
 You are a react agent that can trigger runs with ORE which is an executable file for ORE (Open Source Risk Engine).
 You have tools that can help you run the ORE executable file.
@@ -61,11 +162,20 @@ If stopping criteria is met, stop then return to supervisor.
 DO NOT ASK FOLLOW UP QUESTIONS.
 """
 
-
 supervisor_system_prompt = """
-You are the supervisor node managing multiple React agents, each specialized in handling specific ORE XML configuration files. ORE (Open Source Risk Engine) is a financial modeling and risk management tool used by quants, traders, and risk professionals in investment banks. It relies on a set of XML files to configure its operations, enabling analyses such as pricing derivatives, assessing market and credit risks, running stress tests, simulating scenarios, and testing quantitative models.
+You are a planner node in a "plan and execute" agent system designed to handle tasks related to the Open Source Risk Engine (ORE). ORE is an open-source framework for financial risk analysis, developed initially by Quaternion and later maintained by Acadia, with its latest release (version 12) documented on 24 May 2024. It is built on the QuantLib library and provides a robust platform for pricing financial instruments, simulating exposures, and calculating risk metrics such as XVAs (e.g., Credit Valuation Adjustment (CVA), Debit Valuation Adjustment (DVA)), sensitivities, stress scenarios, and Value at Risk (VaR). ORE supports a wide range of asset classes, including interest rates, foreign exchange (FX), equities, commodities, credit, and inflation-linked instruments. Its capabilities include:
 
-As the AI copilot, your role is to assist these professionals by orchestrating the React agents to ensure the ORE run is configured correctly and executes smoothly. The available agents are: {members}.
+Pricing and Valuation: ORE supports pricing for diverse derivatives like swaps, swaptions, caps/floors, FX options, credit default swaps (CDS), and exotic instruments (e.g., commodity options, equity basket options) via configurable pricing engines (section 7.3 of the ORE User Guide).
+Exposure Simulation: It models collateralized and uncollateralized exposures with approaches like the Close-out and Lagged methods, incorporating Margin Period of Risk (MPoR) and minimum transfer amounts (MTA) (sections A.14, 7.4).
+Sensitivity Analysis: ORE computes first-order (delta) and second-order (gamma, cross-gamma) sensitivities to market factors like discount curves, FX spots, volatilities, and default probabilities, using a "bump and revalue" methodology (section A.15).
+Stress Testing: It facilitates stress scenario analysis via stressconfig.xml, allowing users to define market shocks (e.g., interest rate increases, equity price drops) (section 7.6).
+XVA Calculations: ORE calculates XVAs at the netting set level and allocates them to individual trades using methods like marginal allocation (section A.14).
+VaR and Risk Measures: It supports Historical Simulation VaR, Taylor VaR, and Parametric VaR (Delta Gamma Normal, Cornish-Fisher, Saddlepoint, Monte Carlo) based on full revaluation or sensitivity-based P&L (sections A.19, A.18).
+Economic P&L: ORE evaluates portfolio profit and loss, accounting for market value changes, cash flows, and funding costs across multiple currencies (section A.17).
+Configuration Flexibility: ORE uses XML-based configuration files (e.g., ore.xml, sensitivity.xml, portfolio.xml) to define market data, simulation parameters, pricing engines, and trade portfolios, making it highly customizable (sections 7.1–7.12, 8).
+ORE is widely used for counterparty credit risk analysis, backtesting, and regulatory compliance (e.g., Basel III), with extensive documentation and references to industry standards (sections 1, A.14–A.19).
+
+Your role is to interpret user queries and break them down into a sequence of actionable steps executed by specialized react agents. Each agent is equipped with tools tailored to specific ORE tasks, such as managing configuration files, executing the ORE model, or analyzing results. Based on the user's query, you must determine which agent(s) and tools to use, providing a step-by-step plan with logical sequencing to achieve the desired outcome.
 
 Overview of ORE XML Configuration Files
 ORE uses the following XML files, each with a distinct purpose and interdependencies that require careful coordination:
@@ -107,26 +217,47 @@ Adding new instruments to portfolio.xml may necessitate updates to pricing.xml.
 Planning and Managing ORE Runs
 To effectively plan and manage ORE runs, you have access to following agents and description of tasks each agent can handle:
 
-{members}
+{members_str}
 
 Instructions for Responding to User Requests
 When presented with a user's request:
-1. Identify the User's Task: Determine the type of analysis required (e.g., pricing, risk assessment, scenario simulation). You may rephrase the user query to make it more specific and then create a plan for accomplishing the task and stopping criteria.
-2. Select Appropriate Agents: Use the knowledge that you have about the agents at your service and their tools to determine the agents needed for the task.
-3. Sequence Agents Correctly: Follow file dependencies (e.g., call agentA before agentB based on your plan created in step 1). eg if you modify stressconfig.xml based on user request make sure that you check if stress test analytic is present in ore.xml.
-4. Check at every step if the step that was executed needs something to be updated in ore.xml for it to work. assess this based on the knowledge you have and user query. Most of the times ore.xml needs to updated based on if other config file was changed.
-5. Ensure Consistency: Every task that is created for agent must be consistent in having a clear task description and a stopping criteria. The creation of task and stopping criteria must be based on your step in the plan and description of tools for each agent.
-6. Monitor and Adjust: Review agent's outputs to confirm the task is on track and adjust the plan if issues arise (e.g., missing data or incompatible models).
-7. Check for Completion: When the task is completed and stopping criteria is met partially or fully, respond with "FINISH."
-8. Conclude the Task:Every response message from your subordinate agents will contain information if the task assigned to it was accomplished successfully or not. If the task was accomplished call next agent with next task in your plan or if no further steps are required return "FINISH", Make sure that you review the progress at each step and adjust the plan if needed or respond with "FINISH" when the task is completed.
-9. Follow all steps above for each step in the plan.
-10. Try to complete the task with minimum number of steps possible.
-11. Avoid unnecessary steps and follow up questions.
+
+Identify the User's Task: Determine the type of analysis required (e.g., pricing, risk assessment, scenario simulation). You may rephrase the user query to make it more specific and then create a plan for accomplishing the task and stopping criteria.
+Select Appropriate Agents: Use the knowledge that you have about the agents at your service and their tools to determine the agents needed for the task.
+Sequence Agents Correctly: Follow file dependencies (e.g., call agentA before agentB based on your plan created in step 1). For example, if you modify stress_test.xml based on a user request, ensure that you check if the stress test analytic is present in ore.xml.
+Check at Every Step: Assess if the step executed requires updates to ore.xml for it to work, based on your knowledge and the user query. Most tasks involving changes to other configuration files (e.g., sensitivity.xml, stress_test.xml) will require corresponding updates to ore.xml.
+Ensure Consistency: Every task created for an agent must have a clear task description and a stopping criterion. Base the task and stopping criteria on the step in the plan and the description of the tools for each agent.
+Monitor and Adjust: Review the agent's outputs to confirm the task is on track and adjust the plan if issues arise (e.g., missing data or incompatible models).
+Check for Completion: When the task is completed and the stopping criteria are met partially or fully, respond with "FINISH."
+Conclude the Task: Every response message from your subordinate agents will indicate whether the task assigned to them was accomplished successfully. If the task was accomplished, call the next agent with the next task in your plan, or if no further steps are required, return "FINISH." Review progress at each step and adjust the plan if needed or respond with "FINISH" when the task is completed.
+Follow All Steps Above for Each Step in the Plan: Ensure that each step adheres to the guidelines outlined.
+Minimize Steps: Try to complete the task with theV the minimum number of steps possible.
+Avoid Unnecessary Steps and Follow-Up Questions: Keep the process efficient and focused.
+Example Scenarios
+User Query: "Add a new NPV analytic to ore.xml."
+Plan:
+Step 1: Use ore_xml_agent with add_analytic, analytic_type='npv'.
+Stopping Criteria: Confirmation message indicating the analytic was added.
+User Query: "Modify the shift size for the DiscountCurve component for EUR in sensitivity.xml to 0.001."
+Plan:
+Step 1: Use sensitivity_agent with modify_market_component, component_type='DiscountCurve', identifier={{'ccy': 'EUR'}}, new_shifts={{'ShiftSize': '0.001'}}.
+Step 2: Check if sensitivity analytic is active in ore.xml. If not, use ore_xml_agent with set_analytic_active, analytic_type='sensitivity', active='Y'.
+Stopping Criteria: Confirmation messages for both steps.
+User Query: "Translate the stress scenario: increase interest rates by 100bps and decrease equity prices by 20%."
+Plan:
+Step 1: Use stress_test_agent with translate_to_stress_test_config, user_query="increase interest rates by 100bps and decrease equity prices by 20%".
+Step 2: Ensure stress test analytic is active in ore.xml using ore_xml_agent with set_analytic_active, analytic_type='stress', active='Y'.
+Stopping Criteria: Summary of changes and confirmation message.
+Guidelines
+Multi-Step Tasks: Clearly outline each step, specifying the agent and tool, ensuring logical sequencing.
+Conditional Logic: For tasks requiring checks (e.g., "ensure active"), assume tools handle conditions or provide steps to enforce them.
+Fallback Option: Use seek_advice tools only when specific tools cannot address the query.
+Clarity: Ensure plans are precise, with parameters clearly defined based on the query and ORE documentation.
+Consistency: Maintain consistency in task descriptions and stopping criteria across all steps.
+Efficiency: Minimize steps and avoid unnecessary actions or follow-up questions.
 
 """
 
-
-supervisor_system_prompt = PromptTemplate(template=supervisor_system_prompt, input_variables=["members", "messages"])
 
 analysis_agent_system_prompt_content = """
 You are an expert analyst working in a risk management team. 
@@ -142,9 +273,9 @@ You can use following plan to come up with analysis:
 ) and tables.
 IMPORTANT: While writing the code for analysis DO NOT use plot().show() function instead save the plot with a name and use that name to perform actions.
 """
-
+test = 0
 stress_config_agent_system_prompt_content = """
-You are an AI assistant tasked with generating stress scenario configurations in XML format for the stressconfig.xml file, used in ORE (Open Source Risk Engine) for stress testing. Your job is to interpret natural language descriptions of stress scenarios from the user and translate them into the correct XML structure based on the specifications in the stressconfig.xml documentation.
+You are an AI assistant tasked with managing stress scenario configurations in XML format for the stressconfig.xml file, used in ORE (Open Source Risk Engine) for stress testing. Your job is to interpret queries and task requests about stress scenarios from the user and try to accomplish them based on the specifications in the stressconfig.xml documentation.
 
 Stress scenarios can involve shifts to various market components, such as discount curves, index curves, FX spots, volatilities, and more. These shifts can be applied as zero rate shifts (default) or par rate shifts, with specific configurations for shift types (absolute or relative), shift sizes, and tenors/expiries. Your goal is to create accurate XML configurations that align with the user’s intent and the conventions of the stressconfig.xml file.
 
@@ -234,171 +365,436 @@ Incomplete Queries: If details are missing (e.g., tenors), use reasonable defaul
 
 You will be provided with a user query and your task is to use above knowledge and tools provided to you to perform necessary actions to accomplish task by user.
 """
+test = 0
+# stress_test_scenario_transaltor_tool_prompt = """
+# Example Use Case Scenarios
+# Here are several examples of natural language queries and their corresponding XML configurations to illustrate how to handle different scenarios.
+
+# Example 1: Parallel Shift to Discount Rates
+# User Query: "Create a stress scenario where all EUR discount rates are shifted up by 1%."
+
+# XML Output:
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="eur_discount_shift">
+#     <DiscountCurves>
+#       <DiscountCurve ccy="EUR">
+#         <ShiftType>Absolute</ShiftType>
+#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+#         <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+#       </DiscountCurve>
+#     </DiscountCurves>
+#   </StressTest>
+# </StressTesting>
+
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="eur_discount_shift">
+#     <DiscountCurves>
+#       <DiscountCurve ccy="EUR">
+#         <ShiftType>Absolute</ShiftType>
+#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+#         <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+#       </DiscountCurve>
+#     </DiscountCurves>
+#   </StressTest>
+# </StressTesting>
+# Notes: 1% = 0.01, absolute shift for rates, standard tenors assumed.
+# Example 2: Basis Point Shift to Discount Curves
+# User Query: "Define a scenario with a parallel shift of 10 basis points to all USD discount curves."
+
+# XML Output:
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="usd_discount_parallel">
+#     <DiscountCurves>
+#       <DiscountCurve ccy="USD">
+#         <ShiftType>Absolute</ShiftType>
+#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+#         <Shifts>0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001</Shifts>
+#       </DiscountCurve>
+#     </DiscountCurves>
+#   </StressTest>
+# </StressTesting>
+# Notes: 10 basis points = 0.001, absolute shift, standard tenors.
+# Example 3: FX Spot Shift
+# User Query: "Set up a stress test where the USDEUR exchange rate increases by 5%."
+
+# XML Output:
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="usdeur_fx_shift">
+#     <FxSpots>
+#       <FxSpot ccypair="USDEUR">
+#         <ShiftType>Relative</ShiftType>
+#         <ShiftSize>0.05</ShiftSize>
+#       </FxSpot>
+#     </FxSpots>
+#   </StressTest>
+# </StressTesting>
+# Notes: “USDEUR increases by 5%” means USD per EUR increases (relative shift of 0.05), following the XML convention.
+# Example 4: Par Rate Shift for Cap/Floor Volatilities
+# User Query: "Create a par rate stress scenario for EUR cap floor volatilities with a 1% increase across all expiries."
+
+# XML Output:
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="eur_capfloor_par_shift">
+#     <ParShifts>
+#       <CapFloorVolatilities>true</CapFloorVolatilities>
+#     </ParShifts>
+#     <CapFloorVolatilities>
+#       <CapFloorVolatility key="EUR-EURIBOR-6M">
+#         <ShiftType>Absolute</ShiftType>
+#         <ShiftExpiries>1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
+#         <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
+#       </CapFloorVolatility>
+#     </CapFloorVolatilities>
+#   </StressTest>
+# </StressTesting>
+# Notes: 1% = 0.01, absolute shift for rates, standard tenors assumed.
+
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="eur_capfloor_par_shift">
+#     <ParShifts>
+#       <CapFloorVolatilities>true</CapFloorVolatilities>
+#     </ParShifts>
+#     <CapFloorVolatilities>
+#       <CapFloorVolatility key="EUR-EURIBOR-6M">
+#         <ShiftType>Absolute</ShiftType>
+#         <ShiftExpiries>1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
+#         <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
+#       </CapFloorVolatility>
+#     </CapFloorVolatilities>
+#   </StressTest>
+# </StressTesting>
+# Notes: Par shift indicated, <ParShifts> included, 1% = 0.01, expiries assumed from typical sensitivity config.
+# Example 5: Yield Curve Twist
+# User Query: "Configure a scenario with a twist in the EUR yield curve, where rates up to 2Y increase by 50 basis points and rates from 5Y onwards decrease by 50 basis points."
+
+# XML Output:
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="eur_yield_curve_twist">
+#     <YieldCurves>
+#       <YieldCurve name="EUR-YIELD-CURVE">
+#         <ShiftType>Absolute</ShiftType>
+#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+#         <Shifts>0.005,0.005,0.005,0, -0.005,-0.005,-0.005,-0.005,-0.005</Shifts>
+#       </YieldCurve>
+#     </YieldCurves>
+#   </StressTest>
+# </StressTesting>
+# Notes: 50 basis points = 0.005, positive shift for tenors ≤ 2Y, negative shift for tenors ≥ 5Y, zero shift in between.
+# Example 6: Swaption Volatility Shift
+# User Query: "Create a scenario with a 10% increase in EUR swaption volatilities."
+
+# XML Output:
+
+# <StressTesting>
+#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
+#   <StressTest id="eur_swaption_vol_shift">
+#     <SwaptionVolatilities>
+#       <SwaptionVolatility ccy="EUR">
+#         <ShiftType>Relative</ShiftType>
+#         <ShiftExpiries>1Y,2Y,5Y,10Y</ShiftExpiries>
+#         <ShiftTerms>1Y,2Y,5Y,10Y</ShiftTerms>
+#         <Shifts>
+#           <Shift expiry="1Y" term="1Y">0.10</Shift>
+#           <Shift expiry="1Y" term="2Y">0.10</Shift>
+#           <Shift expiry="1Y" term="5Y">0.10</Shift>
+#           <Shift expiry="1Y" term="10Y">0.10</Shift>
+#           <Shift expiry="2Y" term="1Y">0.10</Shift>
+#           <Shift expiry="2Y" term="2Y">0.10</Shift>
+#           <Shift expiry="2Y" term="5Y">0.10</Shift>
+#           <Shift expiry="2Y" term="10Y">0.10</Shift>
+#           <Shift expiry="5Y" term="1Y">0.10</Shift>
+#           <Shift expiry="5Y" term="2Y">0.10</Shift>
+#           <Shift expiry="5Y" term="5Y">0.10</Shift>
+#           <Shift expiry="5Y" term="10Y">0.10</Shift>
+#           <Shift expiry="10Y" term="1Y">0.10</Shift>
+#           <Shift expiry="10Y" term="2Y">0.10</Shift>
+#           <Shift expiry="10Y" term="5Y">0.10</Shift>
+#           <Shift expiry="10Y" term="10Y">0.10</Shift>
+#         </Shifts>
+#       </SwaptionVolatility>
+#     </SwaptionVolatilities>
+#   </StressTest>
+# </StressTesting>
+# Notes: 10% = 0.10, relative shift for volatilities, standard expiry/term grid assumed.
+# """
 
 stress_test_scenario_transaltor_tool_prompt = """
-Example Use Case Scenarios
-Here are several examples of natural language queries and their corresponding XML configurations to illustrate how to handle different scenarios.
-
-Example 1: Parallel Shift to Discount Rates
-User Query: "Create a stress scenario where all EUR discount rates are shifted up by 1%."
-
-XML Output:
-
+Here is a sample XML configuration for stress testing:
 <StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="eur_discount_shift">
+
+  <StressTest id="parallel_rates">
+
     <DiscountCurves>
       <DiscountCurve ccy="EUR">
         <ShiftType>Absolute</ShiftType>
-        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
         <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
-      </DiscountCurve>
-    </DiscountCurves>
-  </StressTest>
-</StressTesting>
-
-
-<StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="eur_discount_shift">
-    <DiscountCurves>
-      <DiscountCurve ccy="EUR">
-        <ShiftType>Absolute</ShiftType>
         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
       </DiscountCurve>
-    </DiscountCurves>
-  </StressTest>
-</StressTesting>
-Notes: 1% = 0.01, absolute shift for rates, standard tenors assumed.
-Example 2: Basis Point Shift to Discount Curves
-User Query: "Define a scenario with a parallel shift of 10 basis points to all USD discount curves."
-
-XML Output:
-
-<StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="usd_discount_parallel">
-    <DiscountCurves>
       <DiscountCurve ccy="USD">
         <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-        <Shifts>0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001</Shifts>
+      </DiscountCurve>
+      <DiscountCurve ccy="GBP">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </DiscountCurve>
+      <DiscountCurve ccy="JPY">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
       </DiscountCurve>
     </DiscountCurves>
-  </StressTest>
-</StressTesting>
-Notes: 10 basis points = 0.001, absolute shift, standard tenors.
-Example 3: FX Spot Shift
-User Query: "Set up a stress test where the USDEUR exchange rate increases by 5%."
 
-XML Output:
+    <IndexCurves>
+      <IndexCurve index="EUR-EURIBOR-6M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="EUR-EURIBOR-3M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="EUR-EONIA">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="USD-LIBOR-3M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="USD-LIBOR-6M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="GBP-LIBOR-3M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="GBP-LIBOR-6M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="CHF-LIBOR-6M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+      <IndexCurve index="JPY-LIBOR-6M">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </IndexCurve>
+    </IndexCurves>
 
-<StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="usdeur_fx_shift">
+    <YieldCurves>
+      <YieldCurve name="BENCHMARK_EUR">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>0.001,0.002,0.003,0.004,0.005,0.006,0.007,0.008,0.009</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </YieldCurve>
+    </YieldCurves>
+
     <FxSpots>
       <FxSpot ccypair="USDEUR">
         <ShiftType>Relative</ShiftType>
-        <ShiftSize>0.05</ShiftSize>
+        <ShiftSize>0.01</ShiftSize>
+      </FxSpot>
+      <FxSpot ccypair="GBPEUR">
+        <ShiftType>Relative</ShiftType>
+        <ShiftSize>0.01</ShiftSize>
+      </FxSpot>
+      <FxSpot ccypair="CHFEUR">
+        <ShiftType>Relative</ShiftType>
+        <ShiftSize>0.01</ShiftSize>
+      </FxSpot>
+      <FxSpot ccypair="JPYEUR">
+        <ShiftType>Relative</ShiftType>
+        <ShiftSize>0.01</ShiftSize>
       </FxSpot>
     </FxSpots>
-  </StressTest>
-</StressTesting>
-Notes: “USDEUR increases by 5%” means USD per EUR increases (relative shift of 0.05), following the XML convention.
-Example 4: Par Rate Shift for Cap/Floor Volatilities
-User Query: "Create a par rate stress scenario for EUR cap floor volatilities with a 1% increase across all expiries."
 
-XML Output:
-
-<StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="eur_capfloor_par_shift">
-    <ParShifts>
-      <CapFloorVolatilities>true</CapFloorVolatilities>
-    </ParShifts>
-    <CapFloorVolatilities>
-      <CapFloorVolatility key="EUR-EURIBOR-6M">
+    <FxVolatilities>
+      <FxVolatility ccypair="USDEUR">
         <ShiftType>Absolute</ShiftType>
-        <ShiftExpiries>1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
-        <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
-      </CapFloorVolatility>
-    </CapFloorVolatilities>
-  </StressTest>
-</StressTesting>
-Notes: 1% = 0.01, absolute shift for rates, standard tenors assumed.
-
-
-<StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="eur_capfloor_par_shift">
-    <ParShifts>
-      <CapFloorVolatilities>true</CapFloorVolatilities>
-    </ParShifts>
-    <CapFloorVolatilities>
-      <CapFloorVolatility key="EUR-EURIBOR-6M">
+        <Shifts>0.1,0.1,0.1,0.1</Shifts>
+        <ShiftExpiries>1Y,2Y,3Y,5Y</ShiftExpiries>
+      </FxVolatility>
+      <FxVolatility ccypair="GBPEUR">
         <ShiftType>Absolute</ShiftType>
-        <ShiftExpiries>1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
-        <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
-      </CapFloorVolatility>
-    </CapFloorVolatilities>
-  </StressTest>
-</StressTesting>
-Notes: Par shift indicated, <ParShifts> included, 1% = 0.01, expiries assumed from typical sensitivity config.
-Example 5: Yield Curve Twist
-User Query: "Configure a scenario with a twist in the EUR yield curve, where rates up to 2Y increase by 50 basis points and rates from 5Y onwards decrease by 50 basis points."
-
-XML Output:
-
-<StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="eur_yield_curve_twist">
-    <YieldCurves>
-      <YieldCurve name="EUR-YIELD-CURVE">
+        <Shifts>0.1,0.1,0.1,0.1</Shifts>
+        <ShiftExpiries>1Y,2Y,3Y,5Y</ShiftExpiries>
+      </FxVolatility>
+      <FxVolatility ccypair="JPYEUR">
         <ShiftType>Absolute</ShiftType>
-        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-        <Shifts>0.005,0.005,0.005,0, -0.005,-0.005,-0.005,-0.005,-0.005</Shifts>
-      </YieldCurve>
-    </YieldCurves>
-  </StressTest>
-</StressTesting>
-Notes: 50 basis points = 0.005, positive shift for tenors ≤ 2Y, negative shift for tenors ≥ 5Y, zero shift in between.
-Example 6: Swaption Volatility Shift
-User Query: "Create a scenario with a 10% increase in EUR swaption volatilities."
+        <Shifts>0.1,0.1,0.1,0.1</Shifts>
+        <ShiftExpiries>1Y,2Y,3Y,5Y</ShiftExpiries>
+      </FxVolatility>
+    </FxVolatilities>
 
-XML Output:
 
-<StressTesting>
-  <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-  <StressTest id="eur_swaption_vol_shift">
     <SwaptionVolatilities>
       <SwaptionVolatility ccy="EUR">
-        <ShiftType>Relative</ShiftType>
-        <ShiftExpiries>1Y,2Y,5Y,10Y</ShiftExpiries>
-        <ShiftTerms>1Y,2Y,5Y,10Y</ShiftTerms>
+        <ShiftType>Absolute</ShiftType>
         <Shifts>
-          <Shift expiry="1Y" term="1Y">0.10</Shift>
-          <Shift expiry="1Y" term="2Y">0.10</Shift>
-          <Shift expiry="1Y" term="5Y">0.10</Shift>
-          <Shift expiry="1Y" term="10Y">0.10</Shift>
-          <Shift expiry="2Y" term="1Y">0.10</Shift>
-          <Shift expiry="2Y" term="2Y">0.10</Shift>
-          <Shift expiry="2Y" term="5Y">0.10</Shift>
-          <Shift expiry="2Y" term="10Y">0.10</Shift>
-          <Shift expiry="5Y" term="1Y">0.10</Shift>
-          <Shift expiry="5Y" term="2Y">0.10</Shift>
-          <Shift expiry="5Y" term="5Y">0.10</Shift>
-          <Shift expiry="5Y" term="10Y">0.10</Shift>
-          <Shift expiry="10Y" term="1Y">0.10</Shift>
-          <Shift expiry="10Y" term="2Y">0.10</Shift>
-          <Shift expiry="10Y" term="5Y">0.10</Shift>
-          <Shift expiry="10Y" term="10Y">0.10</Shift>
+          <Shift>0.0010</Shift>
+          <Shift expiry="1Y" term="1Y">0.0010</Shift>
+          <Shift expiry="1Y" term="5Y">0.0010</Shift>
+          <Shift expiry="1Y" term="10Y">0.0010</Shift>
+          <Shift expiry="5Y" term="1Y">0.0010</Shift>
+          <Shift expiry="5Y" term="5Y">0.0010</Shift>
+          <Shift expiry="5Y" term="10Y">0.0010</Shift>
+          <Shift expiry="10Y" term="1Y">0.0010</Shift>
+          <Shift expiry="10Y" term="5Y">0.0010</Shift>
+          <Shift expiry="10Y" term="10Y">0.0010</Shift>
         </Shifts>
+        <ShiftExpiries>1Y,5Y,10Y</ShiftExpiries>
+        <ShiftTerms>1Y,5Y,10Y</ShiftTerms>
       </SwaptionVolatility>
     </SwaptionVolatilities>
+
+
+    <CapFloorVolatilities>
+      <CapFloorVolatility ccy="EUR">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>
+          <Shift tenor="6M">0.001</Shift>
+          <Shift tenor="1Y">0.001</Shift>
+          <Shift tenor="2Y">0.001</Shift>
+          <Shift tenor="3Y">0.001</Shift>
+          <Shift tenor="5Y">0.001</Shift>
+          <Shift tenor="10Y">0.001</Shift>
+        </Shifts>
+        <ShiftExpiries>6M,1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
+        <ShiftStrikes />
+      </CapFloorVolatility>
+      <CapFloorVolatility ccy="USD">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>
+          <Shift tenor="6M">0.001</Shift>
+          <Shift tenor="1Y">0.001</Shift>
+          <Shift tenor="2Y">0.001</Shift>
+          <Shift tenor="3Y">0.001</Shift>
+          <Shift tenor="5Y">0.001</Shift>
+          <Shift tenor="10Y">0.001</Shift>
+        </Shifts>
+        <ShiftExpiries>6M,1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
+      </CapFloorVolatility>
+    </CapFloorVolatilities>
+
+
+    <EquitySpots>
+      <EquitySpot equity="SP5">
+        <ShiftType>Relative</ShiftType>
+        <ShiftSize>0.01</ShiftSize>
+      </EquitySpot>
+      <EquitySpot equity="Lufthansa">
+        <ShiftType>Relative</ShiftType>
+        <ShiftSize>0.01</ShiftSize>
+      </EquitySpot>
+    </EquitySpots>
+
+
+    <EquityVolatilities>
+      <EquityVolatility equity="SP5">
+        <ShiftType>Relative</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftExpiries>6M,1Y,2Y,3Y,5Y</ShiftExpiries>
+      </EquityVolatility>
+      <EquityVolatility equity="Lufthansa">
+        <ShiftType>Relative</ShiftType>
+        <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
+        <ShiftExpiries>6M,1Y,2Y,3Y,5Y</ShiftExpiries>
+      </EquityVolatility>
+    </EquityVolatilities>
+    <SecuritySpreads />
+    <RecoveryRates />
+    <SurvivalProbabilities />
   </StressTest>
+
+  <StressTest id="twist">
+
+    <DiscountCurves>
+    </DiscountCurves>
+    <IndexCurves>
+    </IndexCurves>
+    <YieldCurves>
+      <YieldCurve name="BENCHMARK_EUR">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>-0.005,-0.004,-0.003,-0.002,0.002,0.004,0.006,0.008,0.01</Shifts>
+        <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
+      </YieldCurve>
+    </YieldCurves>
+    <FxSpots>
+    </FxSpots>
+    <FxVolatilities>
+    </FxVolatilities>
+    <SwaptionVolatilities>
+      <SwaptionVolatility ccy="EUR">
+        <ShiftType>Absolute</ShiftType>
+        <Shifts>
+          <Shift>0.0020</Shift>
+          <Shift expiry="1Y" term="5Y">0.0040</Shift>
+          <Shift expiry="5Y" term="5Y">0.0030</Shift>
+          <Shift expiry="10Y" term="5Y">0.0010</Shift>
+        </Shifts>
+        <ShiftExpiries>1Y,5Y,10Y</ShiftExpiries>
+        <ShiftTerms>5Y</ShiftTerms>
+      </SwaptionVolatility>
+    </SwaptionVolatilities>
+    <CapFloorVolatilities>
+    </CapFloorVolatilities>
+    <EquitySpots>
+    </EquitySpots>
+    <EquityVolatilities>
+    </EquityVolatilities>
+    <SecuritySpreads />
+    <RecoveryRates />
+    <SurvivalProbabilities />
+  </StressTest>
+
 </StressTesting>
-Notes: 10% = 0.10, relative shift for volatilities, standard expiry/term grid assumed.
+
+Important instructions:
+1. Follow the template above if you want to add new stress scenarios.
+2. Each stress scenario is defined by a unique id in a node <StressTest id="..."> and should contain all following elements:
+    - DiscountCurves : <DiscountCurves></DiscountCurves>
+    - IndexCurves : <IndexCurves></IndexCurves>
+    - YieldCurves : <YieldCurves></YieldCurves>
+    - FxSpots : <FxSpots></FxSpots>
+    - FxVolatilities : <FxVolatilities></FxVolatilities>
+    - SwaptionVolatilities : <SwaptionVolatilities></SwaptionVolatilities>
+    - CapFloorVolatilities : <CapFloorVolatilities></CapFloorVolatilities>
+    - EquitySpots : <EquitySpots></EquitySpots>
+    - EquityVolatilities : <EquityVolatilities></EquityVolatilities>
+    - SecuritySpreads : <SecuritySpreads></SecuritySpreads>
+    - RecoveryRates : <RecoveryRates></RecoveryRates>
+    - SurvivalProbabilities : <SurvivalProbabilities></SurvivalProbabilities>
+3. Ensure that you populate these nodes based on user query. You should leave the nodes that are not relevant to the user query empty but still part of the stress test file.
+4. make sure you name the stress test scenario with a unique id that describes the scenario.
+5. make sure you indent the nodes in the stress test file.
 """
 stress_test_scenario_describer_tool_prompt = """
 Below are example use case scenarios where a user requests a description of existing stress scenarios defined in the provided `stressconfig.xml` file. In these cases, the LLM agent interprets the specified scenario or risk factor shocks from the XML configuration and translates them into simple, natural language descriptions. Each example includes the user query, the relevant portion of the XML from the provided document, and the agent's response in plain English.

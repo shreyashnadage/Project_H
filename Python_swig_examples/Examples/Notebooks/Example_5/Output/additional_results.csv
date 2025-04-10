@@ -1,0 +1,35 @@
+#TradeId,ResultId,ResultType,ResultValue
+FX_TaRF,isdaAssetClass,string,Foreign Exchange
+FX_TaRF,isdaBaseProduct,string,Complex Exotic
+FX_TaRF,isdaSubProduct,string,Generic
+FX_TaRF,isdaTransaction,string,
+FX_TaRF,NPV_MCErrEst,double,2182.385586
+FX_TaRF,cashFlowResults[0],cashflows,3629.319589 USD @ 2023-02-22
+FX_TaRF,cashFlowResults[1],cashflows,8000.619404 USD @ 2023-03-22
+FX_TaRF,cashFlowResults[2],cashflows,9289.697000 USD @ 2023-04-24
+FX_TaRF,cashFlowResults[3],cashflows,6964.808441 USD @ 2023-05-23
+FX_TaRF,cashFlowResults[4],cashflows,4321.964338 USD @ 2023-06-22
+FX_TaRF,cashFlowResults[5],cashflows,1843.333554 USD @ 2023-07-24
+FX_TaRF,cashFlowResults[6],cashflows,-330.430863 USD @ 2023-08-22
+FX_TaRF,cashFlowResults[7],cashflows,-2196.086841 USD @ 2023-09-22
+FX_TaRF,cashFlowResults[8],cashflows,-3844.000095 USD @ 2023-10-24
+FX_TaRF,cashFlowResults[9],cashflows,-5286.361448 USD @ 2023-11-22
+FX_TaRF,cashFlowResults[10],cashflows,-6566.034242 USD @ 2023-12-22
+FX_TaRF,cashFlowResults[11],cashflows,-7588.008255 USD @ 2024-01-23
+FX_TaRF,cashFlowResults[12],cashflows,-8758.521637 USD @ 2024-02-22
+FX_TaRF,cashflow_0_10_MCErrEst,double,309.199894
+FX_TaRF,cashflow_0_11_MCErrEst,double,326.601166
+FX_TaRF,cashflow_0_12_MCErrEst,double,345.208244
+FX_TaRF,cashflow_0_13_MCErrEst,double,370.680502
+FX_TaRF,cashflow_0_1_MCErrEst,double,84.213562
+FX_TaRF,cashflow_0_2_MCErrEst,double,153.937274
+FX_TaRF,cashflow_0_3_MCErrEst,double,180.936239
+FX_TaRF,cashflow_0_4_MCErrEst,double,183.331134
+FX_TaRF,cashflow_0_5_MCErrEst,double,198.432538
+FX_TaRF,cashflow_0_6_MCErrEst,double,217.128612
+FX_TaRF,cashflow_0_7_MCErrEst,double,239.345628
+FX_TaRF,cashflow_0_8_MCErrEst,double,262.627436
+FX_TaRF,cashflow_0_9_MCErrEst,double,288.443714
+FX_TaRF,instMultiplier,double,1.000000
+FX_TaRF,isTriggered,double,0.525500
+FX_TaRF,isTriggered_MCErrEst,double,0.004993

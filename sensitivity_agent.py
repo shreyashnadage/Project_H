@@ -17,7 +17,7 @@ sensitivity_agent = create_react_agent(llm,
 )
 
 def sensitivity_agent_node(state: PlanExecuteState) -> Command[Literal["replanner"]]:
-    messages_list = input_messages["messages"] + [HumanMessage(content=state["next_task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria"])]
+    messages_list = input_messages["messages"] + [HumanMessage(content='\n\nTask: ' + state["next_task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria"])]
     messages = {'messages': messages_list}
     response = sensitivity_agent.invoke(messages)
     response_structured = response['structured_response']

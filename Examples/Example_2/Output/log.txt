@@ -1,0 +1,7 @@
+WARNING  [2025-Apr-09 21:21:37.692739]        (OREAnalytics\orea\app\oreapp.cpp:589) : Calendar adjustments not found, using defaults
+WARNING  [2025-Apr-09 21:21:37.692739]        (OREAnalytics\orea\app\oreapp.cpp:600) : Currency configurations not found, using defaults
+WARNING  [2025-Apr-09 21:21:37.692739]        (OREAnalytics\orea\app\oreapp.cpp:677) : Reference data not found
+WARNING  [2025-Apr-09 21:21:37.693800]        (OREAnalytics\orea\app\oreapp.cpp:687) : Script library not loaded
+WARNING  [2025-Apr-09 21:21:37.711737]        (OREAnalytics\orea\app\oreapp.cpp:703) : Using default Ibor fallback config
+WARNING  [2025-Apr-09 21:21:37.767951]  (...rketdata\todaysmarketparameters.cpp:190) : TodaysMarketParameters: the attribute 'currency' is deprecated for 'SwaptionVolatilities', use 'key' instead.
+WARNING  [2025-Apr-09 21:21:37.768475]  (...rketdata\todaysmarketparameters.cpp:190) : TodaysMarketParameters: the attribute 'currency' is deprecated for 'CapFloorVolatilities', use 'key' instead.

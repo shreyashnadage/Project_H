@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <ORE>
   <Setup>
     <Parameter name="asofDate">2016-02-05</Parameter>
@@ -6,12 +5,12 @@
     <Parameter name="outputPath">Output</Parameter>
     <Parameter name="logFile">log.txt</Parameter>
     <Parameter name="logMask">255</Parameter>
-    <Parameter name="marketDataFile">../../Input/market_20160205.txt</Parameter>
-    <Parameter name="fixingDataFile">../../Input/fixings_20160205.txt</Parameter>
+    <Parameter name="marketDataFile">market_20160205.txt</Parameter>
+    <Parameter name="fixingDataFile">fixings_20160205.txt</Parameter>
     <Parameter name="implyTodaysFixings">N</Parameter>
-    <Parameter name="curveConfigFile">../../Input/curveconfig.xml</Parameter>
-    <Parameter name="conventionsFile">../../Input/conventions.xml</Parameter>
-    <Parameter name="marketConfigFile">../../Input/todaysmarket.xml</Parameter>
+    <Parameter name="curveConfigFile">curveconfig.xml</Parameter>
+    <Parameter name="conventionsFile">conventions.xml</Parameter>
+    <Parameter name="marketConfigFile">todaysmarket.xml</Parameter>
     <Parameter name="pricingEnginesFile">pricingengine.xml</Parameter>
     <Parameter name="portfolioFile">portfolio.xml</Parameter>
     <Parameter name="observationModel">None</Parameter>
@@ -73,7 +72,7 @@
     </Analytic>
     <Analytic type="initialMargin">
       <Parameter name="active">N</Parameter>
-      <Parameter name="method"/>
+      <Parameter name="method" />
     </Analytic>
     <Analytic type="sensitivity">
       <Parameter name="active">Y</Parameter>
@@ -94,20 +93,20 @@
       <Parameter name="outputThreshold">0.000001</Parameter>
     </Analytic>
     <Analytic type="parametricVar">
-      <Parameter name="active">N</Parameter>
+      <Parameter name="active">Y</Parameter>
       <Parameter name="sensitivityInputFile">../Output/sensitivity.csv</Parameter>
       <Parameter name="covarianceInputFile">covariance.csv</Parameter>
       <Parameter name="salvageCovarianceMatrix">N</Parameter>
       <Parameter name="quantiles">0.01,0.05,0.95,0.99</Parameter>
-      <!-- Breakdown of risk classes and types -->
+      
       <Parameter name="breakdown">Y</Parameter>
-      <!-- Portfolio filter (regex), may be empty or not given -->
+      
       <Parameter name="portfolioFilter">PF1|PF2</Parameter>
-      <!-- VaR method (Delta, DeltaGammaNormal, MonteCarlo) -->
+      
       <Parameter name="method">DeltaGammaNormal</Parameter>
-      <!-- Only required for method = MonteCarlo -->
-      <!-- <Parameter name="mcSamples">100000</Parameter> -->
-      <!-- <Parameter name="mcSeed">42</Parameter> -->
+      
+      
+      
       <Parameter name="outputFile">var.csv</Parameter>
     </Analytic>
   </Analytics>

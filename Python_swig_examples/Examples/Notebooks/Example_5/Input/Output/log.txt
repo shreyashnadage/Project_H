@@ -1,0 +1,86 @@
+NOTICE   [2025-Apr-09 13:47:20.847950]    (OREAnalytics\orea\app\parameters.cpp:133) : Parameters:
+NOTICE   [2025-Apr-09 13:47:20.847950]    (OREAnalytics\orea\app\parameters.cpp:136) : group = additionalResults : active = Y
+NOTICE   [2025-Apr-09 13:47:20.847950]    (OREAnalytics\orea\app\parameters.cpp:136) : group = additionalResults : outputFileName = additional_results.csv
+NOTICE   [2025-Apr-09 13:47:20.849431]    (OREAnalytics\orea\app\parameters.cpp:136) : group = cashflow : active = Y
+NOTICE   [2025-Apr-09 13:47:20.849431]    (OREAnalytics\orea\app\parameters.cpp:136) : group = cashflow : outputFileName = flows.csv
+NOTICE   [2025-Apr-09 13:47:20.849431]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : active = Y
+NOTICE   [2025-Apr-09 13:47:20.850465]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : configuration = default
+NOTICE   [2025-Apr-09 13:47:20.850465]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : grid = 240,1M
+NOTICE   [2025-Apr-09 13:47:20.850465]    (OREAnalytics\orea\app\parameters.cpp:136) : group = curves : outputFileName = curves.csv
+NOTICE   [2025-Apr-09 13:47:20.850465]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : fxcalibration = default
+NOTICE   [2025-Apr-09 13:47:20.851470]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : infcalibration = inccy
+NOTICE   [2025-Apr-09 13:47:20.851470]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : lgmcalibration = inccy
+NOTICE   [2025-Apr-09 13:47:20.851470]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : pricing = default
+NOTICE   [2025-Apr-09 13:47:20.852464]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : sensitivity = default
+NOTICE   [2025-Apr-09 13:47:20.852464]    (OREAnalytics\orea\app\parameters.cpp:136) : group = markets : simulation = default
+NOTICE   [2025-Apr-09 13:47:20.852464]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : active = Y
+NOTICE   [2025-Apr-09 13:47:20.853461]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : additionalResults = true
+NOTICE   [2025-Apr-09 13:47:20.853461]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : baseCurrency = USD
+NOTICE   [2025-Apr-09 13:47:20.854461]    (OREAnalytics\orea\app\parameters.cpp:136) : group = npv : outputFileName = npv.csv
+NOTICE   [2025-Apr-09 13:47:20.854461]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : asofDate = 2023-01-31
+NOTICE   [2025-Apr-09 13:47:20.855462]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : conventionsFile = conventions.xml
+NOTICE   [2025-Apr-09 13:47:20.855462]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : curveConfigFile = curveconfig.xml
+NOTICE   [2025-Apr-09 13:47:20.855462]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : fixingDataFile = fixings.txt
+NOTICE   [2025-Apr-09 13:47:20.857058]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : implyTodaysFixings = N
+NOTICE   [2025-Apr-09 13:47:20.857058]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : inputPath = Input
+NOTICE   [2025-Apr-09 13:47:20.857058]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logFile = log.txt
+NOTICE   [2025-Apr-09 13:47:20.858241]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : logMask = 255
+NOTICE   [2025-Apr-09 13:47:20.858241]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketConfigFile = todaysmarket.xml
+NOTICE   [2025-Apr-09 13:47:20.859240]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : marketDataFile = market.txt
+NOTICE   [2025-Apr-09 13:47:20.859240]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : observationModel = None
+NOTICE   [2025-Apr-09 13:47:20.859240]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : outputPath = Output
+NOTICE   [2025-Apr-09 13:47:20.860259]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : portfolioFile = tarf_exposure.xml
+NOTICE   [2025-Apr-09 13:47:20.860259]    (OREAnalytics\orea\app\parameters.cpp:136) : group = setup : pricingEnginesFile = pricingengine.xml
+NOTICE   [2025-Apr-09 13:47:20.860790]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : active = Y
+NOTICE   [2025-Apr-09 13:47:20.860790]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : aggregationScenarioDataDump = scenariodata.csv
+NOTICE   [2025-Apr-09 13:47:20.861364]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : aggregationScenarioDataFileName = scenariodata.dat
+NOTICE   [2025-Apr-09 13:47:20.861364]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : amc = Y
+NOTICE   [2025-Apr-09 13:47:20.861364]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : amcPricingEnginesFile = pricingengine.xml
+NOTICE   [2025-Apr-09 13:47:20.862411]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : amcTradeTypes = ScriptedTrade
+NOTICE   [2025-Apr-09 13:47:20.862411]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : baseCurrency = USD
+NOTICE   [2025-Apr-09 13:47:20.862411]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : cubeFile = cube.dat
+NOTICE   [2025-Apr-09 13:47:20.862411]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : pricingEnginesFile = pricingengine.xml
+NOTICE   [2025-Apr-09 13:47:20.863461]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : simulationConfigFile = simulation.xml
+NOTICE   [2025-Apr-09 13:47:20.863461]    (OREAnalytics\orea\app\parameters.cpp:136) : group = simulation : storeScenarios = N
+NOTICE   [2025-Apr-09 13:47:20.863461]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : active = Y
+NOTICE   [2025-Apr-09 13:47:20.864458]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : allocationMethod = None
+NOTICE   [2025-Apr-09 13:47:20.864458]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : baseCurrency = USD
+NOTICE   [2025-Apr-09 13:47:20.864458]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : calculationType = Symmetric
+NOTICE   [2025-Apr-09 13:47:20.864458]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : collateralFloor = N
+NOTICE   [2025-Apr-09 13:47:20.865576]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : collateralSpread = 0.0000
+NOTICE   [2025-Apr-09 13:47:20.865576]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : colva = N
+NOTICE   [2025-Apr-09 13:47:20.865576]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : csaFile = netting.xml
+NOTICE   [2025-Apr-09 13:47:20.865576]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : cubeFile = cube.dat
+NOTICE   [2025-Apr-09 13:47:20.866618]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : cva = N
+NOTICE   [2025-Apr-09 13:47:20.866618]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dim = N
+NOTICE   [2025-Apr-09 13:47:20.866618]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimEvolutionFile = dim_evolution.csv
+NOTICE   [2025-Apr-09 13:47:20.866618]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimHorizonCalendarDays = 14
+NOTICE   [2025-Apr-09 13:47:20.866618]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimLocalRegressionBandwidth = 1.0
+NOTICE   [2025-Apr-09 13:47:20.868190]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimLocalRegressionEvaluations = 0
+NOTICE   [2025-Apr-09 13:47:20.868190]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimOutputGridPoints = 0
+NOTICE   [2025-Apr-09 13:47:20.868190]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimOutputNettingSet = CPTY_A
+NOTICE   [2025-Apr-09 13:47:20.868190]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimQuantile = 0.99
+NOTICE   [2025-Apr-09 13:47:20.868190]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimRegressionFiles = dim_regression.txt
+NOTICE   [2025-Apr-09 13:47:20.869764]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimRegressionOrder = 2
+NOTICE   [2025-Apr-09 13:47:20.869764]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimRegressors = 
+NOTICE   [2025-Apr-09 13:47:20.869764]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dimScaling = 1.0
+NOTICE   [2025-Apr-09 13:47:20.870802]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dva = N
+NOTICE   [2025-Apr-09 13:47:20.870802]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : dvaName = BANK
+NOTICE   [2025-Apr-09 13:47:20.870802]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : exerciseNextBreak = N
+NOTICE   [2025-Apr-09 13:47:20.870802]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : exposureProfiles = Y
+NOTICE   [2025-Apr-09 13:47:20.871839]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : exposureProfilesByTrade = Y
+NOTICE   [2025-Apr-09 13:47:20.871839]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : fva = N
+NOTICE   [2025-Apr-09 13:47:20.871839]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : fvaBorrowingCurve = USD-SOFR
+NOTICE   [2025-Apr-09 13:47:20.871839]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : fvaLendingCurve = USD-SOFR
+NOTICE   [2025-Apr-09 13:47:20.871839]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : marginalAllocationLimit = 1.0
+NOTICE   [2025-Apr-09 13:47:20.873372]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : netCubeOutputFile = netcube.csv
+NOTICE   [2025-Apr-09 13:47:20.873372]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : quantile = 0.95
+NOTICE   [2025-Apr-09 13:47:20.873372]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : rawCubeOutputFile = rawcube.csv
+NOTICE   [2025-Apr-09 13:47:20.873372]    (OREAnalytics\orea\app\parameters.cpp:136) : group = xva : scenarioFile = scenariodata.dat
+NOTICE   [2025-Apr-09 13:47:20.874423]        (OREAnalytics\orea\app\oreapp.cpp:567) : load OREAppInputParameters called
+WARNING  [2025-Apr-09 13:47:20.874423]        (OREAnalytics\orea\app\oreapp.cpp:589) : Calendar adjustments not found, using defaults
+WARNING  [2025-Apr-09 13:47:20.874423]        (OREAnalytics\orea\app\oreapp.cpp:600) : Currency configurations not found, using defaults
+NOTICE   [2025-Apr-09 13:47:20.875821]        (OREAnalytics\orea\app\oreapp.cpp:664) : Observation Mode is None
+WARNING  [2025-Apr-09 13:47:20.875821]        (OREAnalytics\orea\app\oreapp.cpp:677) : Reference data not found
+WARNING  [2025-Apr-09 13:47:20.875821]        (OREAnalytics\orea\app\oreapp.cpp:687) : Script library not loaded
+NOTICE   [2025-Apr-09 13:47:20.876829]        (OREAnalytics\orea\app\oreapp.cpp:692) : Loading conventions from file: "Input\\conventions.xml"
