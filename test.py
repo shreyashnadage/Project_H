@@ -75,6 +75,12 @@ main_graph = main_agent_builder.compile()
 # user_query = """Please compute var for given setup and analyze the results from var"""
 # user_query = """analyze the stress scenario results. describe how it impacted the trades in portfolio. provide a detailed summary with plots and tabular analysis."""
 # user_query = """Add scenario where EUR discounting curve is shocked parallely by 5bps.run ore for stress test and analyze the stress test results"""
+# user_query = """Compute exposure and then report peak exposure for each trades. plot the exposures."""
+# user_query = """add exposure analytics and turn it on."""
+# user_query = """remove exposure analytics then add it back.then run ore to produce exposure results and then analyze the results of exposure results and provide summary of peak exposure."""
+# user_query = """analyze results for exposure. provide a detailed summary report with plots for exposure."""
+# user_query = """add a stress scenario where eur discounting curve is shocked parallely by 5% up and other scenario with 5% down. run ore for stress test and analyze the stress test results."""
+# user_query = """run ore for stress test and analyze the stress test results."""
 
 # # test = []
 # for s in main_graph.stream(
@@ -82,7 +88,7 @@ main_graph = main_agent_builder.compile()
 #     print(s)
 #     print("---")
 
-# ab= 0 
+ab= 0 
 
 import streamlit as st
 st.set_page_config(page_title="ORE Agent", page_icon="Logo.jpg", layout="wide")
@@ -91,19 +97,52 @@ st.logo(
     link="https://quantcatalysts.com",
     icon_image="Logo.jpg",
 )
-st.header("Project Hanumaan", divider=True)
 
-with st.sidebar:
-    pass
-    
+header_col, _, stop_button_col = st.columns(3)
+with header_col:
+    st.header("Risk Engine Copilot", divider=True)
+
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+    if message["role"] == "user":
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+    elif message["role"] == "assistant":
+        with st.chat_message(message["role"]):
+            stream = message["content"]
+            node_name = next(iter(stream))
+            if node_name in ['planner', 'replanner']:
+                with st.status("Creating plan..."):
 
-if user_prompt := st.chat_input("What is up?"):
+                    if (stream[node_name].get('plan_steps') is not None) and (stream[node_name].get('action') is None):
+                        for step in stream[node_name]['plan_steps']:
+                            st.write(f"Agent: {step[0]} | Task: {step[1]} | Stopping Criteria: {step[2]}")
+                    
+                if stream[node_name].get('action') == "FINISH":
+                    with st.expander('See detailed report...'):
+                        st.markdown(stream[node_name].get('markdown_report'))
+                    st.success("Completed successfully.", icon="✅")
+            elif (node_name=='router'):
+                if stream[node_name].get('action') == "FINISH":
+                    with st.expander('See detailed report...'):
+                        st.markdown(stream[node_name].get('markdown_report'))
+                    st.success("Completed successfully.", icon="✅")
+                elif stream[node_name] is not None:
+                    with st.spinner('Working on task:'):
+                        st.write(f"👤 {stream['router']['next_agent']} 🎯 {stream['router']['next_task']}  ⏹️ {stream['router']['stopping_criteria']}")
+            else:
+                summary_response = stream[node_name]['past_steps'][0][1]
+                with st.expander('See detailed report...'):
+                    st.markdown(summary_response)
+                    plot_dict = stream[node_name].get('plot_file_dict')
+                    if plot_dict is not None:
+                        for plot_name, plot_description in plot_dict.items():
+                            st.image(plot_name, caption=plot_description)
+
+if user_prompt := st.chat_input("What do you want to get done from ORE today?"):
     st.session_state.messages.append({"role": "user", "content": user_prompt})
     with st.chat_message("user"):
         st.markdown(user_prompt)

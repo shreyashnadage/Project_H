@@ -153,6 +153,11 @@ def analyze_and_plot_relevant_files(query: str) -> Tuple[str, List[str]]:
             file_name = results_summary.plot_file_name
             if len(file_name) == 0:
                 return "Plot was not created or saved successfully.",[]
+            elif len(file_name) !=0:
+                for i in file_name:
+                    if not os.path.exists(i):
+                        return "Plot was not created or saved successfully.",[]
+                return f"Plot successfully created and saved with name {','.join(file_name)}", file_name
             else:
                 return f"Plot successfully created and saved with name {','.join(file_name)}", file_name
                 
@@ -160,9 +165,17 @@ def analyze_and_plot_relevant_files(query: str) -> Tuple[str, List[str]]:
     except Exception as e:
         return 'There was an error while analyzing the file: \n Try again with rephrased query which is more specific in its ask.'
 
+@tool
+def get_list_of_relevant_files() -> List[str]:
+    """Returns a list of all results files in the f_path_out directory.
+    
+    Returns:
+        List[str]: A list of paths to all csv files in the f_path_out directory.
+    """
 
+    return glob(os.path.join(f_path_out, "*.csv"))
 
-list_analysis_tools = [analyze_and_plot_relevant_files, analyze_relevant_files]
+list_analysis_tools = [analyze_and_plot_relevant_files, analyze_relevant_files, get_list_of_relevant_files]
 list_analysis_tools_description = [i.name+" : "+i.description + '\n\n' for n, i in enumerate(list_analysis_tools)]
 
 

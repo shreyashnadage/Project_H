@@ -11,4 +11,10 @@ llm = ChatAnthropic(
     # other params...
 )
 
-
+llm_37 = ChatAnthropic(
+    model="claude-3-7-sonnet-latest",
+    temperature=0,
+    timeout=None,
+    max_retries=2,
+    # other params...
+)

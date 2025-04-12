@@ -1,14 +1,134 @@
-{ "@timestamp": "2025-04-06T08:56:10.063272", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 0, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.064113", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 1, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.064113", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 2, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.065149", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 3, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.066278", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 4, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.066848", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 5, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.066848", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 6, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.067905", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 7, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.067905", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 8, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.068894", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 9, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.068894", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 10, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.069907", "detail": "1 trade, 11 samples", "key": "sensitivities", "progress": 11, "total": 11 }
-{ "@timestamp": "2025-04-06T08:56:10.425131", "detail": "1 trade, 1 sample", "key": "stress scenarios", "progress": 0, "total": 1 }
-{ "@timestamp": "2025-04-06T08:56:10.426137", "detail": "1 trade, 1 sample", "key": "stress scenarios", "progress": 1, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:17.543279", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 0, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.545820", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 1, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.547779", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 2, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.548349", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 3, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.549366", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 4, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.550392", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 5, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.551421", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 6, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.551421", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 7, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.552447", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 8, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.553447", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 9, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.553447", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 10, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.554984", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 11, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.555519", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 12, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.556579", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 13, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.556579", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 14, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.558135", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 15, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.558672", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 16, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.558672", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 17, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.560185", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 18, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.560185", "detail": "1 trade, 19 samples", "key": "sensitivities", "progress": 19, "total": 19 }
+{ "@timestamp": "2025-04-11T13:34:17.949466", "detail": "1 trade, 2 samples", "key": "stress scenarios", "progress": 0, "total": 2 }
+{ "@timestamp": "2025-04-11T13:34:17.950592", "detail": "1 trade, 2 samples", "key": "stress scenarios", "progress": 1, "total": 2 }
+{ "@timestamp": "2025-04-11T13:34:17.951613", "detail": "1 trade, 2 samples", "key": "stress scenarios", "progress": 2, "total": 2 }
+{ "@timestamp": "2025-04-11T13:34:17.955268", "key": "Running XVA Analytic", "progress": 0, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:17.955806", "key": "XVA: Build Today's Market", "progress": 0, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:18.148394", "key": "XVA: Build Today's Market", "progress": 1, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:18.703378", "key": "XVA: Build Portfolio", "progress": 0, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:18.708323", "key": "XVA: Build Portfolio", "progress": 1, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:20.939146", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 0, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:21.102661", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 10, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:21.245761", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 20, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:21.401231", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 30, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:21.575819", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 40, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:21.755863", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 50, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:21.908906", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 60, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:22.063453", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 70, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:22.215485", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 80, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:22.611310", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 90, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:22.768399", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 100, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:22.921541", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 110, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:23.067246", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 120, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:23.215553", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 130, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:23.367149", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 140, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:23.514249", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 150, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:23.669926", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 160, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:23.818629", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 170, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:23.965503", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 180, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:24.114681", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 190, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:24.281129", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 200, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:24.429575", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 210, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:24.576645", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 220, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:24.738487", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 230, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:24.892966", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 240, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:25.038345", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 250, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:25.191950", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 260, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:25.342738", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 270, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:25.501465", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 280, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:25.657230", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 290, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:25.808877", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 300, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:25.959462", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 310, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:26.106355", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 320, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:26.327443", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 330, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:26.492004", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 340, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:26.683511", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 350, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:26.843431", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 360, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:26.991357", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 370, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:27.155663", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 380, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:27.307680", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 390, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:27.463199", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 400, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:27.621880", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 410, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:27.780274", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 420, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:27.927180", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 430, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:28.077689", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 440, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:28.227844", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 450, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:28.380252", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 460, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:28.537504", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 470, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:28.693895", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 480, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:28.844035", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 490, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:29.000140", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 500, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:29.161377", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 510, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:29.329733", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 520, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:29.485308", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 530, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:29.670532", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 540, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:29.832017", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 550, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:30.105614", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 560, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:30.383056", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 570, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:30.972496", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 580, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:31.305709", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 590, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:31.785335", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 600, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:32.051388", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 610, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:32.322832", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 620, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:32.566604", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 630, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:32.800028", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 640, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:33.032975", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 650, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:33.243014", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 660, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:33.451229", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 670, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:33.648082", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 680, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:33.923132", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 690, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:34.177108", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 700, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:34.468694", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 710, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:34.792964", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 720, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:35.034900", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 730, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:35.234047", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 740, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:35.401258", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 750, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:35.557200", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 760, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:35.751471", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 770, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:35.951250", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 780, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:36.185721", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 790, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:36.401016", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 800, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:36.607177", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 810, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:36.782490", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 820, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:36.947523", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 830, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:37.113248", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 840, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:37.271086", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 850, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:37.431803", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 860, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:37.601295", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 870, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:37.765746", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 880, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:37.921407", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 890, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:38.081518", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 900, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:38.234697", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 910, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:38.385535", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 920, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:38.537347", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 930, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:38.689345", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 940, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:38.839381", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 950, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:38.990978", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 960, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:39.138055", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 970, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:39.284654", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 980, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:39.429525", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 990, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:39.570141", "detail": "1 trade, 1000 samples", "key": "XVA: Building cube", "progress": 1000, "total": 1000 }
+{ "@timestamp": "2025-04-11T13:34:39.621502", "key": "XVA: Aggregation", "progress": 0, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:39.668628", "key": "XVA: Aggregation", "progress": 1, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:39.669967", "key": "XVA: Reports", "progress": 0, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:39.714892", "key": "XVA: Reports", "progress": 1, "total": 1 }
+{ "@timestamp": "2025-04-11T13:34:39.716492", "key": "Running XVA Analytic", "progress": 1, "total": 1 }

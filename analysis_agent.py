@@ -32,7 +32,9 @@ def summarize_analysis(state: PlanExecuteState, analysis_response: str) :
     return response.summary
 
 def analysis_agent_node(state: PlanExecuteState) -> Command[Literal["replanner"]]:
-    messages_list = input_messages["messages"] + [HumanMessage(content=state["next_task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria"])]
+    conversation_str = '\n'.join([i.name + " : " + i.content if i.name is not None else "user : " + i.content for i in state["messages"]])
+    
+    messages_list = input_messages["messages"] + [HumanMessage(content=conversation_str)] + [HumanMessage(content=state["next_task"])] + [HumanMessage(content="Stopping criteria: " + state["stopping_criteria"])]
     messages = {'messages': messages_list}
     response = analysis_agent.invoke(messages)
     response_structured = response['structured_response']

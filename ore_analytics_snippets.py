@@ -167,5 +167,6 @@ ore_analytics = {
   "parametricVar": parametricVar,
   "scenarioStatistics": scenarioStatistics,
   "imschedule": imschedule,
-  "initialMargin": initialMargin
+  "initialMargin": initialMargin,
+  "exposure": xva
 }

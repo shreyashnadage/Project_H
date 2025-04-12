@@ -24,6 +24,7 @@ def planner_node(state: PlanExecuteState):
     members_str = '\n'.join([f"**{key}**: \n{value}" for key, value in members.items()])
     system_prompt = (supervisor_system_prompt.format(members_str=members_str))
     messages = [SystemMessage(content=system_prompt), HumanMessage(content="\n\nCreate a plan for following user query: \n"+state["user_query"])]
+    test = llm.invoke(messages)
     response_plan = llm.with_structured_output(CreatePlan).invoke(messages)
     return {"plan_steps": response_plan.plan_steps}
     
@@ -39,12 +40,12 @@ def replanner_node(state: PlanExecuteState):
     You are a planner and you are given a plan and a user query and list of past steps taken to accomplish the task based on the user query.
     You need to do following:
     1. Analyse the user query.
-    2. Understand the original plan created.
+    2. Understand the original plan (existing plan) created.
     3. Understand the past steps taken.
-    4. If you think the all the steps in the plan are executed successfully based on past steps return FINISH.
+    4. If you think the all the steps in the existing plan are executed successfully based on past steps return FINISH.
     5. If you think there are still some tasks remaining to be executed based on past steps return updated plan.
 
-    The user query is:
+    The user query was:
     {user_query}
     
     The existing plan was:
@@ -54,18 +55,18 @@ def replanner_node(state: PlanExecuteState):
     {past_steps}
     
     Analyze above information and return:
-    Return FINISH if you think the all the tasks requested by user are accomplished based on all past steps and existing plan.
-    Return updated plan if you think the tasks requested by user is not accomplished based on all past steps and existing plan.
+    Return FINISH only if you think the all the tasks requested by user are accomplished based on all past steps and entire existing plan.
+    Return updated plan only if you think the tasks requested by user is not accomplished based on all past steps and entire existing plan.
     Remember: 
     - The updated plan should not consist of the steps that have already been executed in past steps.
     - The updated plan should be made looking at past steps taken and user query and should only return the plan with steps that need to be executed further.
     - If no further steps left to execute return FINISH with empty list for plan steps.
     """
     messages = [
-        {"role": "system", "content": system_prompt},
-    ] + [HumanMessage(content=replan_prompt)]
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=replan_prompt)
+    ]
     should_continue = llm.with_structured_output(FinishOrReplan).invoke(messages)
-    
     if should_continue.action == "FINISH":
         return Command(goto="__end__", update={"action": "FINISH", 'markdown_report':summary_node(state)})
     else:

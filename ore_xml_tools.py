@@ -85,8 +85,6 @@ def get_output_file_name_from_analytic_parameters(analytic_type: Literal[*list(o
     except FileNotFoundError:
         return "File not found."
        
-
-
 @tool(response_format="content")
 def set_analytic_active(analytic_type: Literal[*list(ore_snippet.ore_analytics.keys())], active: str) -> str:
     """

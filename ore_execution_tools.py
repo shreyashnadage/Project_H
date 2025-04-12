@@ -22,33 +22,20 @@ def run_ore() -> str:
         os.chdir(os.path.dirname(f_path_in))
         sys.path.append('..')
         params = Parameters()
-        params.fromFile("Input/ore.xml")
+        base_folder = os.path.basename(f_path_in)
+        params.fromFile(os.path.join(base_folder, 'ore.xml'))
         ore = OREApp(params, True)
         ore.run()
         os.chdir(cwd)
-        reports_str = '\\n'.join([str(n)+'. '+i for n,i in enumerate(list(ore.getReportNames()))])
+        reports_str = '\n'.join([str(n)+'. '+i for n,i in enumerate(list(ore.getReportNames()))])
         return f"ORE run completed successfully. It generated following reports:{reports_str}"
     except Exception as e:
         return f"Error executing ORE model: {str(e)}"
-#     """
-#     Get a list of report names from the ORE model.
-
-#     Returns:
-#         List[str]: A list of report names.
-#     """
-#     try:
-#         cwd = os.getcwd()
-#         os.chdir(os.path.join(f_path_in, '..'))
-#         ore.run()
-#         os.chdir(cwd)
-#         return list(ore.getReportNames())
-#     except Exception as e:
-        return f"Error getting report list: {str(e)}"
 
 
 list_ore_execution_tools = [run_ore]
 list_ore_execution_tools_description = [i.name+" : "+i.description +'\n\n' for n, i in enumerate(list_ore_execution_tools)]
 
-test  = 0
+
 
 

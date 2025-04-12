@@ -1,6 +1,10 @@
 #Key,Factor,BaseValue,ShiftSize
 DiscountCurve/EUR/0,DiscountCurve/EUR/0/6M,0.00000000,0.00000000
 DiscountCurve/EUR/1,DiscountCurve/EUR/1/1Y,0.00000000,0.00000000
-DiscountCurve/EUR/2,DiscountCurve/EUR/2/10Y,0.00000000,0.00000000
-DiscountCurve/EUR/3,DiscountCurve/EUR/3/15Y,0.00000000,0.00000000
-DiscountCurve/EUR/4,DiscountCurve/EUR/4/20Y,0.00000000,0.00000000
+DiscountCurve/EUR/2,DiscountCurve/EUR/2/2Y,0.00000000,0.00000000
+DiscountCurve/EUR/3,DiscountCurve/EUR/3/3Y,0.00000000,0.00000000
+DiscountCurve/EUR/4,DiscountCurve/EUR/4/5Y,0.00000000,0.00000000
+DiscountCurve/EUR/5,DiscountCurve/EUR/5/7Y,0.00000000,0.00000000
+DiscountCurve/EUR/6,DiscountCurve/EUR/6/10Y,0.00000000,0.00000000
+DiscountCurve/EUR/7,DiscountCurve/EUR/7/15Y,0.00000000,0.00000000
+DiscountCurve/EUR/8,DiscountCurve/EUR/8/20Y,0.00000000,0.00000000

@@ -59,11 +59,16 @@ The `ore.xml` file is structured with a root element `<ORE>` containing three ma
 - `additionalResults`: Reports additional pricing results.
 - `todaysMarketCalibration`: Reports market calibration details.
 - `simulation`: Runs Monte Carlo simulations.
-- `xva`: Computes XVAs (CVA, DVA, FVA, etc.).
+- `xva`: Computes XVAs (CVA, DVA, FVA, etc.), also computes trade exposure and other credit risk metrics.
 - `sensitivity`: Performs bump-and-revalue sensitivity analysis.
 - `stress`: Applies stress scenarios.
 - `parametricVar`: Computes Value-at-Risk.
 - `scenarioStatistics`: Analyzes simulation scenario statistics.
+
+Very important:
+- Exposure analytics is part of `xva` analytics.
+- If user asks to add exposure analytics it means you need to add xva analytics.
+
 
 Each analytic must include an `active` parameter (`Y` or `N`) to enable or disable it, along with type-specific parameters (e.g., `baseCurrency`, `outputFileName`, `simulationConfigFile`).
 
@@ -365,172 +370,6 @@ Incomplete Queries: If details are missing (e.g., tenors), use reasonable defaul
 
 You will be provided with a user query and your task is to use above knowledge and tools provided to you to perform necessary actions to accomplish task by user.
 """
-test = 0
-# stress_test_scenario_transaltor_tool_prompt = """
-# Example Use Case Scenarios
-# Here are several examples of natural language queries and their corresponding XML configurations to illustrate how to handle different scenarios.
-
-# Example 1: Parallel Shift to Discount Rates
-# User Query: "Create a stress scenario where all EUR discount rates are shifted up by 1%."
-
-# XML Output:
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="eur_discount_shift">
-#     <DiscountCurves>
-#       <DiscountCurve ccy="EUR">
-#         <ShiftType>Absolute</ShiftType>
-#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-#         <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
-#       </DiscountCurve>
-#     </DiscountCurves>
-#   </StressTest>
-# </StressTesting>
-
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="eur_discount_shift">
-#     <DiscountCurves>
-#       <DiscountCurve ccy="EUR">
-#         <ShiftType>Absolute</ShiftType>
-#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-#         <Shifts>0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</Shifts>
-#       </DiscountCurve>
-#     </DiscountCurves>
-#   </StressTest>
-# </StressTesting>
-# Notes: 1% = 0.01, absolute shift for rates, standard tenors assumed.
-# Example 2: Basis Point Shift to Discount Curves
-# User Query: "Define a scenario with a parallel shift of 10 basis points to all USD discount curves."
-
-# XML Output:
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="usd_discount_parallel">
-#     <DiscountCurves>
-#       <DiscountCurve ccy="USD">
-#         <ShiftType>Absolute</ShiftType>
-#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-#         <Shifts>0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001</Shifts>
-#       </DiscountCurve>
-#     </DiscountCurves>
-#   </StressTest>
-# </StressTesting>
-# Notes: 10 basis points = 0.001, absolute shift, standard tenors.
-# Example 3: FX Spot Shift
-# User Query: "Set up a stress test where the USDEUR exchange rate increases by 5%."
-
-# XML Output:
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="usdeur_fx_shift">
-#     <FxSpots>
-#       <FxSpot ccypair="USDEUR">
-#         <ShiftType>Relative</ShiftType>
-#         <ShiftSize>0.05</ShiftSize>
-#       </FxSpot>
-#     </FxSpots>
-#   </StressTest>
-# </StressTesting>
-# Notes: “USDEUR increases by 5%” means USD per EUR increases (relative shift of 0.05), following the XML convention.
-# Example 4: Par Rate Shift for Cap/Floor Volatilities
-# User Query: "Create a par rate stress scenario for EUR cap floor volatilities with a 1% increase across all expiries."
-
-# XML Output:
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="eur_capfloor_par_shift">
-#     <ParShifts>
-#       <CapFloorVolatilities>true</CapFloorVolatilities>
-#     </ParShifts>
-#     <CapFloorVolatilities>
-#       <CapFloorVolatility key="EUR-EURIBOR-6M">
-#         <ShiftType>Absolute</ShiftType>
-#         <ShiftExpiries>1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
-#         <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
-#       </CapFloorVolatility>
-#     </CapFloorVolatilities>
-#   </StressTest>
-# </StressTesting>
-# Notes: 1% = 0.01, absolute shift for rates, standard tenors assumed.
-
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="eur_capfloor_par_shift">
-#     <ParShifts>
-#       <CapFloorVolatilities>true</CapFloorVolatilities>
-#     </ParShifts>
-#     <CapFloorVolatilities>
-#       <CapFloorVolatility key="EUR-EURIBOR-6M">
-#         <ShiftType>Absolute</ShiftType>
-#         <ShiftExpiries>1Y,2Y,3Y,5Y,10Y</ShiftExpiries>
-#         <Shifts>0.01,0.01,0.01,0.01,0.01</Shifts>
-#       </CapFloorVolatility>
-#     </CapFloorVolatilities>
-#   </StressTest>
-# </StressTesting>
-# Notes: Par shift indicated, <ParShifts> included, 1% = 0.01, expiries assumed from typical sensitivity config.
-# Example 5: Yield Curve Twist
-# User Query: "Configure a scenario with a twist in the EUR yield curve, where rates up to 2Y increase by 50 basis points and rates from 5Y onwards decrease by 50 basis points."
-
-# XML Output:
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="eur_yield_curve_twist">
-#     <YieldCurves>
-#       <YieldCurve name="EUR-YIELD-CURVE">
-#         <ShiftType>Absolute</ShiftType>
-#         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-#         <Shifts>0.005,0.005,0.005,0, -0.005,-0.005,-0.005,-0.005,-0.005</Shifts>
-#       </YieldCurve>
-#     </YieldCurves>
-#   </StressTest>
-# </StressTesting>
-# Notes: 50 basis points = 0.005, positive shift for tenors ≤ 2Y, negative shift for tenors ≥ 5Y, zero shift in between.
-# Example 6: Swaption Volatility Shift
-# User Query: "Create a scenario with a 10% increase in EUR swaption volatilities."
-
-# XML Output:
-
-# <StressTesting>
-#   <UseSpreadedTermStructures>false</UseSpreadedTermStructures>
-#   <StressTest id="eur_swaption_vol_shift">
-#     <SwaptionVolatilities>
-#       <SwaptionVolatility ccy="EUR">
-#         <ShiftType>Relative</ShiftType>
-#         <ShiftExpiries>1Y,2Y,5Y,10Y</ShiftExpiries>
-#         <ShiftTerms>1Y,2Y,5Y,10Y</ShiftTerms>
-#         <Shifts>
-#           <Shift expiry="1Y" term="1Y">0.10</Shift>
-#           <Shift expiry="1Y" term="2Y">0.10</Shift>
-#           <Shift expiry="1Y" term="5Y">0.10</Shift>
-#           <Shift expiry="1Y" term="10Y">0.10</Shift>
-#           <Shift expiry="2Y" term="1Y">0.10</Shift>
-#           <Shift expiry="2Y" term="2Y">0.10</Shift>
-#           <Shift expiry="2Y" term="5Y">0.10</Shift>
-#           <Shift expiry="2Y" term="10Y">0.10</Shift>
-#           <Shift expiry="5Y" term="1Y">0.10</Shift>
-#           <Shift expiry="5Y" term="2Y">0.10</Shift>
-#           <Shift expiry="5Y" term="5Y">0.10</Shift>
-#           <Shift expiry="5Y" term="10Y">0.10</Shift>
-#           <Shift expiry="10Y" term="1Y">0.10</Shift>
-#           <Shift expiry="10Y" term="2Y">0.10</Shift>
-#           <Shift expiry="10Y" term="5Y">0.10</Shift>
-#           <Shift expiry="10Y" term="10Y">0.10</Shift>
-#         </Shifts>
-#       </SwaptionVolatility>
-#     </SwaptionVolatilities>
-#   </StressTest>
-# </StressTesting>
-# Notes: 10% = 0.10, relative shift for volatilities, standard expiry/term grid assumed.
-# """
 
 stress_test_scenario_transaltor_tool_prompt = """
 Here is a sample XML configuration for stress testing:
@@ -797,9 +636,13 @@ Important instructions:
 5. make sure you indent the nodes in the stress test file.
 """
 stress_test_scenario_describer_tool_prompt = """
+You are an Quant Analyst working in a risk management team.
+You will be given a user query and a stress test configuration file.
+You will be asked to describe the stress scenario in the stress test configuration file.
+
 Below are example use case scenarios where a user requests a description of existing stress scenarios defined in the provided `stressconfig.xml` file. In these cases, the LLM agent interprets the specified scenario or risk factor shocks from the XML configuration and translates them into simple, natural language descriptions. Each example includes the user query, the relevant portion of the XML from the provided document, and the agent's response in plain English.
 
-The agent’s job is to analyze the XML, identify the shifts applied to the specified risk factors or scenarios, and describe them in an accessible way without reproducing the raw XML unless explicitly requested.
+Your job is to analyze the XML, identify the shifts applied to the specified risk factors or scenarios, and describe them in an accessible way based on user query.
 
 ---
 
@@ -972,7 +815,7 @@ The agent’s job is to analyze the XML, identify the shifts applied to the spec
 ---
 
 ### Guidelines for the LLM Agent
-1. **Locate the Scenario/Risk Factor**: Find the relevant `<StressTest>` by `id` or the specific risk factor section (e.g., `<DiscountCurves>`, `<FxSpots>`).
+1. **Locate the Scenario/Risk Factor**: Find the relevant `<StressTest>` by `id` or the specific risk factor section (e.g., `<DiscountCurves>`, `<FxSpots>`) based on user query.
 2. **Interpret Shifts**: Convert shift values to percentages or basis points (e.g., 0.01 = 1% = 100 bps for absolute, 0.01 = 1% for relative).
 3. **Simplify Terminology**: Avoid jargon like "absolute shift" unless necessary; use terms like "increases by X%" or "rises by X basis points."
 4. **Handle Missing Data**: If a scenario or risk factor isn’t defined (e.g., "twist" is incomplete), make reasonable assumptions or note the limitation.
