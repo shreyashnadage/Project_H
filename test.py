@@ -43,17 +43,17 @@ from langchain_community.document_loaders import PyPDFLoader
 
 
 
-def load_pdf(file_name):
-    loader = PyPDFLoader(file_name)
-    pages = []
-    doc_data = ''
-    for page in loader.lazy_load():
-        pages.append(page)
-        doc_data += page.page_content + '\n'
-    return pages, doc_data
+# def load_pdf(file_name):
+#     loader = PyPDFLoader(file_name)
+#     pages = []
+#     doc_data = ''
+#     for page in loader.lazy_load():
+#         pages.append(page)
+#         doc_data += page.page_content + '\n'
+#     return pages, doc_data
 
-termsheet_path = r'D:\Project_H\usd-inr-ccs-fixed-float.pdf'
-term_sheet_file.term_sheet_data = load_pdf(termsheet_path)[1]
+# termsheet_path = r'D:\Project_H\usd-inr-ccs-fixed-float.pdf'
+# term_sheet_file.term_sheet_data = load_pdf(termsheet_path)[1]
 
 # Set up memory
 memory = MemorySaver()
