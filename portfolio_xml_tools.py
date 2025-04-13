@@ -41,13 +41,12 @@ def extract_trade_sample(trade_type:str) -> str:
 
     
 @tool(response_format="content")
-def create_trade_from_term_sheet(trade_description: str) -> str:
+def create_trade_from_term_sheet() -> str:
     """
     Create a new trade in the portfolio.xml file.
 
     This tool can convert a termsheet or trade description into a trade by extracting its details and add it to the portfolio.xml file.
-    Args:
-        trade_description (str): Description of the trade to be created.
+   
     Returns:
         str: Summary of the XML generated based on trade type.
     """
@@ -55,10 +54,6 @@ def create_trade_from_term_sheet(trade_description: str) -> str:
         term_sheet_data = term_sheet_file.term_sheet_data
         if (term_sheet_data == ''):
             return "Error: Term sheet data is empty"
-        elif trade_description == '':
-            return "Error: Trade description is empty"
-        elif trade_description != '':
-            term_sheet_data = trade_description
         
         trade_type = llm.with_structured_output(ExtractTradeType).invoke([SystemMessage(content=portfolio_xml_agent_system_prompt_content), HumanMessage(content=f"\r\n\r\nYou will be given a term sheet of a financial derivative product. Your job is to identify the trade type described in the term sheet: {term_sheet_data}\r\n\r\n")])
         trade_doc = extract_trade_doc(trade_type=trade_type.trade_type)
