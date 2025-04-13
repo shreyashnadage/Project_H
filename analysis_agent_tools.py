@@ -175,6 +175,22 @@ def get_list_of_relevant_files() -> List[str]:
 
     return glob(os.path.join(f_path_out, "*.csv"))
 
+# @tool
+# def get_human_help(query: str) -> str:
+#     """
+#     Get help from a human expert.
+
+#     Args:
+#         query (str): The query to be answered.
+
+#     Returns:
+#         str: The answer to the query.
+#     """
+#     human_message = 
+#     return llm.invoke([SystemMessage(content="You are a human expert in analyzing files and providing insights. Analyze the following query: \n\n"), HumanMessage(content=query)]).content
+
+
+
 list_analysis_tools = [analyze_and_plot_relevant_files, analyze_relevant_files, get_list_of_relevant_files]
 list_analysis_tools_description = [i.name+" : "+i.description + '\n\n' for n, i in enumerate(list_analysis_tools)]
 

@@ -1,11 +1,11 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='utf-8'?>
 <Portfolio>
   <Trade id="Swap_20">
     <TradeType>Swap</TradeType>
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwapData>
       <LegData>
@@ -31,9 +31,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -63,9 +63,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -76,7 +76,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -112,9 +112,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -144,9 +144,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -157,7 +157,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -193,9 +193,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -225,9 +225,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -238,7 +238,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -274,9 +274,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -306,9 +306,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -319,7 +319,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -355,9 +355,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -387,9 +387,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -400,7 +400,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -436,9 +436,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -468,9 +468,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -481,7 +481,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -517,9 +517,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -549,9 +549,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -562,7 +562,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -598,9 +598,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -630,9 +630,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -643,7 +643,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -679,9 +679,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -711,9 +711,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -724,7 +724,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -760,9 +760,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -792,9 +792,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -805,7 +805,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -841,9 +841,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -873,9 +873,9 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -886,7 +886,7 @@
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
-      <AdditionalFields/>
+      <AdditionalFields />
     </Envelope>
     <SwaptionData>
       <OptionData>
@@ -922,9 +922,9 @@
             <Convention>F</Convention>
             <TermConvention>F</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
@@ -954,12 +954,244 @@
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
+            <EndOfMonth />
+            <FirstDate />
+            <LastDate />
           </Rules>
         </ScheduleData>
       </LegData>
     </SwaptionData>
   </Trade>
-</Portfolio>
+<Trade id="USD_INR_CCS_20231012">
+  <TradeType>CrossCurrencySwap</TradeType>
+  <Envelope>
+    <CounterParty>JPMORGAN</CounterParty>
+    <NettingSetId>JPMORGAN</NettingSetId>
+    <AdditionalFields>
+      <Field key="TradeDate">2023-10-12</Field>
+    </AdditionalFields>
+  </Envelope>
+  <CrossCurrencySwapData>
+    <LegData>
+      <LegType>Floating</LegType>
+      <Payer>true</Payer>
+      <Currency>USD</Currency>
+      <Notionals>
+        <Notional>50000000</Notional>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentConvention>ModifiedFollowing</PaymentConvention>
+      <DayCounter>A/360</DayCounter>
+      <PaymentCalendar>
+        <Calendar>US,GB</Calendar>
+      </PaymentCalendar>
+      <ScheduleData>
+        <Rules>
+          <StartDate>2023-10-12</StartDate>
+          <EndDate>2028-10-12</EndDate>
+          <Tenor>1Y</Tenor>
+          <Calendar>US,GB</Calendar>
+          <Convention>ModifiedFollowing</Convention>
+          <TermConvention>ModifiedFollowing</TermConvention>
+          <Rule>Forward</Rule>
+        </Rules>
+      </ScheduleData>
+      <FloatingLegData>
+        <Index>USD-SOFR-COMPOUND</Index>
+        <FixingDays>0</FixingDays>
+        <IsInArrears>false</IsInArrears>
+        <Spreads>
+          <Spread>0.0</Spread>
+        </Spreads>
+      </FloatingLegData>
+    </LegData>
+    <LegData>
+      <LegType>Fixed</LegType>
+      <Payer>false</Payer>
+      <Currency>INR</Currency>
+      <Notionals>
+        <Notional>4162500000</Notional>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentConvention>ModifiedFollowing</PaymentConvention>
+      <DayCounter>A/365F</DayCounter>
+      <PaymentCalendar>
+        <Calendar>US,GB</Calendar>
+      </PaymentCalendar>
+      <ScheduleData>
+        <Rules>
+          <StartDate>2023-10-12</StartDate>
+          <EndDate>2028-10-12</EndDate>
+          <Tenor>6M</Tenor>
+          <Calendar>US,GB</Calendar>
+          <Convention>ModifiedFollowing</Convention>
+          <TermConvention>ModifiedFollowing</TermConvention>
+          <Rule>Forward</Rule>
+        </Rules>
+      </ScheduleData>
+      <FixedLegData>
+        <Rates>
+          <Rate>0.073</Rate>
+        </Rates>
+      </FixedLegData>
+    </LegData>
+  </CrossCurrencySwapData>
+</Trade><Trade id="CCSWAP_USD_INR_20240115">
+  <CrossCurrencySwapData>
+    <LegData>
+      <LegType>Fixed</LegType>
+      <Payer>true</Payer>
+      <Currency>USD</Currency>
+      <Notionals>
+        <Notional>5000000</Notional>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentFrequency>6M</PaymentFrequency>
+      <DayCounter>ACT/365</DayCounter>
+      <FixedLegData>
+        <Rate>0.035</Rate>
+      </FixedLegData>
+      <ScheduleData>
+        <StartDate>2024-01-15</StartDate>
+        <EndDate>2029-01-15</EndDate>
+        <Rule>Forward</Rule>
+        <Tenor>6M</Tenor>
+      </ScheduleData>
+    </LegData>
+    <LegData>
+      <LegType>Fixed</LegType>
+      <Payer>false</Payer>
+      <Currency>INR</Currency>
+      <Notionals>
+        <Notional>415000000</Notional>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentFrequency>6M</PaymentFrequency>
+      <DayCounter>ACT/365</DayCounter>
+      <FixedLegData>
+        <Rate>0.0825</Rate>
+      </FixedLegData>
+      <ScheduleData>
+        <StartDate>2024-01-15</StartDate>
+        <EndDate>2029-01-15</EndDate>
+        <Rule>Forward</Rule>
+        <Tenor>6M</Tenor>
+      </ScheduleData>
+    </LegData>
+  </CrossCurrencySwapData>
+  <Counterparty>Global Bank</Counterparty>
+</Trade><Trade id="CCSWAP_USD_INR_20240115">
+  <CrossCurrencySwapData>
+    <LegData>
+      <LegType>Fixed</LegType>
+      <Payer>true</Payer>
+      <Currency>USD</Currency>
+      <Notionals>
+        <Notional>5000000</Notional>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentFrequency>6M</PaymentFrequency>
+      <DayCounter>ACT/365</DayCounter>
+      <ScheduleData>
+        <StartDate>2024-01-15</StartDate>
+        <EndDate>2029-01-15</EndDate>
+        <Rule>Forward</Rule>
+        <Tenor>6M</Tenor>
+      </ScheduleData>
+      <FixedLegData>
+        <Rate>0.035</Rate>
+      </FixedLegData>
+    </LegData>
+    <LegData>
+      <LegType>Fixed</LegType>
+      <Payer>false</Payer>
+      <Currency>INR</Currency>
+      <Notionals>
+        <Notional>415000000</Notional>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentFrequency>6M</PaymentFrequency>
+      <DayCounter>ACT/365</DayCounter>
+      <ScheduleData>
+        <StartDate>2024-01-15</StartDate>
+        <EndDate>2029-01-15</EndDate>
+        <Rule>Forward</Rule>
+        <Tenor>6M</Tenor>
+      </ScheduleData>
+      <FixedLegData>
+        <Rate>0.0825</Rate>
+      </FixedLegData>
+    </LegData>
+  </CrossCurrencySwapData>
+</Trade><Trade id="CCS_USD_INR_20240115">
+  <CrossCurrencySwapData>
+    <LegData>
+      <LegType>Fixed</LegType>
+      <Payer>true</Payer>
+      <Currency>USD</Currency>
+      <Notionals>
+        <Notional>5000000</Notional>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentFrequency>6M</PaymentFrequency>
+      <DayCounter>ACT/365</DayCounter>
+      <ScheduleData>
+        <StartDate>2024-01-15</StartDate>
+        <EndDate>2029-01-15</EndDate>
+        <Rule>Forward</Rule>
+        <Tenor>6M</Tenor>
+      </ScheduleData>
+      <FixedLegData>
+        <Rates>
+          <Rate>0.035</Rate>
+        </Rates>
+      </FixedLegData>
+    </LegData>
+    <LegData>
+      <LegType>Floating</LegType>
+      <Payer>false</Payer>
+      <Currency>INR</Currency>
+      <Notionals>
+        <Exchanges>
+          <NotionalInitialExchange>true</NotionalInitialExchange>
+          <NotionalFinalExchange>true</NotionalFinalExchange>
+        </Exchanges>
+      </Notionals>
+      <PaymentFrequency>6M</PaymentFrequency>
+      <DayCounter>ACT/365</DayCounter>
+      <ScheduleData>
+        <StartDate>2024-01-15</StartDate>
+        <EndDate>2029-01-15</EndDate>
+        <Rule>Forward</Rule>
+        <Tenor>6M</Tenor>
+      </ScheduleData>
+      <FloatingLegData>
+        <Index>USD-LIBOR-6M</Index>
+        <Spreads>
+          <Spread>0.02</Spread>
+        </Spreads>
+      </FloatingLegData>
+    </LegData>
+  </CrossCurrencySwapData>
+</Trade></Portfolio>

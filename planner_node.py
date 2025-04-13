@@ -13,7 +13,8 @@ from llm_manager import llm
 from summary_node import summary_node
 
 class CreatePlan(BaseModel):
-    plan_steps : List[Tuple[Literal[*list(members.keys())], str, str]] = Field(description="Create a step by step plan as list of string with Tuple of agent, task and stopping criteria based on given user query. should return an empty list if all tasks are already accomplished.")
+    plan_steps : List[Tuple[Literal[*list(members.keys())], str, str]] = Field(description="Create a step by step plan as list of string with Tuple of agent, task , stopping criteria based on given user query. should return an empty list if all tasks are already accomplished.")
+
 
 class FinishOrReplan(BaseModel):
     action : Literal["FINISH", "REPLAN"] = Field(description="Return FINISH if you think all the tasks requested by user is accomplished based on status of execution of past steps else return REPLAN.")

@@ -11,6 +11,7 @@ members = {"ore_xml_agent":f"Use this agent for any task related to ore.xml file
            "ore_execution_agent":f"Use this agent for any task related to ore execution or any ore executable operation.It has following tools:\n{''.join(list_ore_execution_tools_description)}",
            "analysis_agent":f"Use this agent for any task related to analysing results in output files that are produced by ore. It has following tools:\n{''.join(list_analysis_tools_description)}",
            "stress_test_agent":f"Use this agent for any task related to stress test.xml file.It has following tools:\n{''.join(list_stress_test_tools_description)}",
-           "portfolio_xml_agent":f"Use this agent for any task related to portfolio.xml file.It has following tools:\n{''.join(list_portfolio_xml_tools_description)}"}
+           "portfolio_xml_agent":f"Use this agent for any task related to portfolio.xml file.It has following tools:\n{''.join(list_portfolio_xml_tools_description)}"
+           }
 
 

@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field
 from config_file import f_path_trade_docs, f_path_in, f_path_trade_samples
 from glob import glob
 from langgraph.types import Command, interrupt
+from config_file import term_sheet_file
 
 
 
@@ -18,7 +19,7 @@ class ExtractTradeType(BaseModel):
     
 
 class GetTradeXMLResponse(BaseModel):
-    xml_content: str = Field(str, description="Content of the XML generated.")
+    xml_content: str = Field(str, description="Trade XML generated based details extracted from trade type and term sheet.")
     trade_type: Literal[*os.listdir(f_path_trade_docs)] = Field(str, description="Trade type used to generate XML.")
     trade_id: str = Field(str, description="Trade id used for the modified XML.")
 
@@ -40,25 +41,46 @@ def extract_trade_sample(trade_type:str) -> str:
 
     
 @tool(response_format="content")
-def create_trade_from_term_sheet(user_query: str, term_sheet_data: str) -> str:
+def create_trade_from_term_sheet(trade_description: str) -> str:
     """
     Create a new trade in the portfolio.xml file.
 
-    This function takes as input a user query and returns a string containing the XML code for the new trade.
-
+    This tool can convert a termsheet or trade description into a trade by extracting its details and add it to the portfolio.xml file.
     Args:
-        user_query (str): User query to be translated.
-
+        trade_description (str): Description of the trade to be created.
     Returns:
         str: Summary of the XML generated based on trade type.
     """
     try:
-        trade_type = llm_37.with_structured_output(ExtractTradeType).invoke([SystemMessage(content=portfolio_xml_agent_system_prompt_content), HumanMessage(content=f"\n\nYou will be given a term sheet of a financial derivative product. Your job is to identify the trade type described in the term sheet: {term_sheet_data}\n\n")])
+        term_sheet_data = term_sheet_file.term_sheet_data
+        if (term_sheet_data == ''):
+            return "Error: Term sheet data is empty"
+        elif trade_description == '':
+            return "Error: Trade description is empty"
+        elif trade_description != '':
+            term_sheet_data = trade_description
+        
+        trade_type = llm.with_structured_output(ExtractTradeType).invoke([SystemMessage(content=portfolio_xml_agent_system_prompt_content), HumanMessage(content=f"\r\n\r\nYou will be given a term sheet of a financial derivative product. Your job is to identify the trade type described in the term sheet: {term_sheet_data}\r\n\r\n")])
         trade_doc = extract_trade_doc(trade_type=trade_type.trade_type)
         trade_samples = extract_trade_sample(trade_type=trade_type.trade_type)
-        result = llm_37.with_structured_output(GetTradeXMLResponse).invoke([HumanMessage(content=f"You are an expert trader working for a trading desk in a bank who is tasked in extracting data from from a term sheet that describes a financial derivative product. Your job is to create trade xml snippet with a trade id by extracting relevant trade parameters that you find from the term sheet provided and the documentation of representing that trade as xml.\n\nTrade type: {trade_type.trade_type}\nTerm sheet: \n{term_sheet_data}\n\nTrade XML documentation: \n{trade_doc}\n\nTrade XML samples: \n{trade_samples}")])
+        trade_result = llm_37.invoke([HumanMessage(content=f"You are an expert trader working for a trading desk in a bank who is tasked in extracting data from from a term sheet that describes a financial derivative product. Your job is to create trade xml snippet with a trade id by extracting relevant trade parameters that you find from the term sheet provided and the documentation of representing that trade as xml.\r\nTrade type: {trade_type.trade_type}\r\nTerm sheet: \r\n{term_sheet_data}\r\n\r\nTrade XML documentation: \r\n{trade_doc}\r\n\r\nHere are a few trade XML samples for reference: \r\n{trade_samples}. Now create an trade xml snippet using the data from term sheet and the sample trade xmls provided above. Return the xml.")])
+        result = llm.with_structured_output(GetTradeXMLResponse).invoke([HumanMessage(content=f"You are given a data for financial derivative trade. Your job is to extract xml from the data provided and return the xml.\r\n Data:\r\n{trade_result.content}")])
         trade_xml = ET.fromstring(result.xml_content)
-        return f"Generated trade following trade xml for {trade_type.trade_type} successfully.\n\n Trade ID: {trade_xml.find('Trade').attrib['id']} \n\n Trade XML: {ET.tostring(trade_xml, encoding='unicode', method='xml')}"
+        with open(os.path.join(f_path_in, 'portfolio.xml'), 'r') as f:
+            file_content = f.read().strip()
+        if file_content == "":
+            # Create a new portfolio.xml with a single Trade element
+            root = ET.Element('Portfolio')
+            root.append(trade_xml)
+            tree = ET.ElementTree(root)
+            tree.write(os.path.join(f_path_in, 'portfolio.xml'), encoding='unicode', xml_declaration=True)
+        else:
+            tree = ET.parse(os.path.join(f_path_in, 'portfolio.xml'))
+            root = tree.getroot()
+            root.append(trade_xml)
+            tree.write(os.path.join(f_path_in, 'portfolio.xml'), encoding='unicode', xml_declaration=True)
+            
+        return f"Generated trade following trade xml for {trade_type.trade_type} successfully.\r\n Trade XML: {ET.tostring(trade_xml, encoding='unicode', method='xml')}"
     except Exception as e:
         return f"Error: {str(e)}"
     
@@ -74,7 +96,7 @@ def modify_trade(trade_id: str, modification_query: str) -> str:
         modification_query (str): Query describing the modification to be made
 
     Returns:
-        str: Summary of the modification made
+        str: Summary of the modification made to the trade
     """
     try:
         tree = ET.parse(os.path.join(f_path_in, 'portfolio.xml'))
@@ -170,5 +192,5 @@ def select_trades_by_trade_type(trade_type: str) -> str:
     except Exception as e:
         return f"Error: {str(e)}"
 
-list_portfolio_xml_tools = [get_trade_info, modify_trade, list_trades]
+list_portfolio_xml_tools = [get_trade_info, modify_trade, list_trades, create_trade_from_term_sheet]
 list_portfolio_xml_tools_description = [i.name+" : "+i.description + '\n\n' for n, i in enumerate(list_portfolio_xml_tools)]

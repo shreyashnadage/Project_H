@@ -4,7 +4,7 @@ import shutil
 from dotenv import load_dotenv, find_dotenv
 from langgraph.checkpoint.memory import MemorySaver
 load_dotenv(find_dotenv(), override = True)
-from config_file import f_path_in, f_path_out
+from config_file import f_path_in, f_path_out, term_sheet_file
 
 
 def copy_directory(src_dir):
@@ -28,7 +28,6 @@ def copy_directory(src_dir):
 
 from langchain_core.messages import HumanMessage
 from llm_manager import llm
-from supervisor_node import make_supervisor_node
 from ore_xml_agent import ore_xml_agent_node
 from langgraph.graph import StateGraph, MessagesState, START
 from sensitivity_agent import sensitivity_agent_node
@@ -40,6 +39,21 @@ from analysis_agent import analysis_agent_node
 from planner_node import planner_node, replanner_node
 from router_node import router_node
 from ExtendedStatePlanExecute import PlanExecuteState
+from langchain_community.document_loaders import PyPDFLoader
+
+
+
+def load_pdf(file_name):
+    loader = PyPDFLoader(file_name)
+    pages = []
+    doc_data = ''
+    for page in loader.lazy_load():
+        pages.append(page)
+        doc_data += page.page_content + '\n'
+    return pages, doc_data
+
+termsheet_path = r'D:\Project_H\usd-inr-ccs-fixed-float.pdf'
+term_sheet_file.term_sheet_data = load_pdf(termsheet_path)[1]
 
 # Set up memory
 memory = MemorySaver()
@@ -80,7 +94,7 @@ main_graph = main_agent_builder.compile()
 # user_query = """remove exposure analytics then add it back.then run ore to produce exposure results and then analyze the results of exposure results and provide summary of peak exposure."""
 # user_query = """analyze results for exposure. provide a detailed summary report with plots for exposure."""
 # user_query = """add a stress scenario where eur discounting curve is shocked parallely by 5% up and other scenario with 5% down. run ore for stress test and analyze the stress test results."""
-# user_query = """run ore for stress test and analyze the stress test results."""
+# user_query = """convert following into trade and add it to portfolio.xml. trade\nThis USD/INR cross currency swap trade, effective October 12, 2023, and expiring October 12, 2028, involves JPMorgan (Party A) and a counterparty (Party B). It has a USD Notional Amount of $50,000,000 and an INR Notional Amount based on a USD/INR spot rate of 83.25. In this fixed-to-float swap, Party A pays USD-SOFR-COMPOUND annually on the USD amount (A/360, adjusted), with payments starting October 12, 2024. Party B pays a fixed 7.30% semi-annually on the INR amount (A/365F, adjusted), starting April 12, 2024. Initial exchange on the Effective Date involves Party A paying INR and Party B paying USD notional amounts; the reverse occurs at termination. Governed by English law under ISDA, with JPMorgan as Calculation Agent, the swap hedges Party B’s USD floating rate liability into an INR fixed rate liability, maturing October 12, 2028."""
 
 # # test = []
 # for s in main_graph.stream(
@@ -88,7 +102,8 @@ main_graph = main_agent_builder.compile()
 #     print(s)
 #     print("---")
 
-ab= 0 
+# ab= 0 
+
 
 import streamlit as st
 st.set_page_config(page_title="ORE Agent", page_icon="Logo.jpg", layout="wide")
@@ -102,6 +117,10 @@ header_col, _, stop_button_col = st.columns(3)
 with header_col:
     st.header("Risk Engine Copilot", divider=True)
 
+with st.sidebar:
+    uploaded_file = st.file_uploader("Upload Term Sheet", type=["pdf"])
+    if uploaded_file is not None:
+        term_sheet_file.term_sheet_data = load_pdf(uploaded_file.name)[1]
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
