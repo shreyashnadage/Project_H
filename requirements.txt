@@ -1,4 +1,5 @@
 open-source-risk-engine
+tabulate
 # aiohappyeyeballs==2.4.6
 # aiohttp==3.11.13
 # aiohttp-client-cache==0.11.1
