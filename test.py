@@ -111,6 +111,7 @@ st.logo(
     "Logo.jpg",
     link="https://quantcatalysts.com",
     icon_image="Logo.jpg",
+    size = "large"
 )
 
 header_col, _, stop_button_col = st.columns(3)
