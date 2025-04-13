@@ -194,7 +194,10 @@ if user_prompt := st.chat_input("What do you want to get done from ORE today?"):
                 with st.expander('See detailed report...'):
                     st.markdown(summary_response)
                     plot_dict = stream[node_name].get('plot_file_dict')
-                    if plot_dict is not None:
-                        for plot_name, plot_description in plot_dict.items():
-                            st.image(plot_name, caption=plot_description)
+                    try:
+                        if plot_dict is not None:
+                            for plot_name, plot_description in plot_dict.items():
+                                st.image(plot_name, caption=plot_description)
+                    except Exception as e:
+                        pass
     st.session_state.messages.append({"role": "assistant", "content": stream})
