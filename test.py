@@ -52,13 +52,6 @@ def load_pdf(file_name):
         doc_data += page.page_content + '\n'
     return pages, doc_data
 
-# termsheet_path = r'D:\Project_H\usd-inr-ccs-fixed-float.pdf'
-# term_sheet_file.term_sheet_data = load_pdf(termsheet_path)[1]
-
-# Set up memory
-memory = MemorySaver()
-thread_config = {"configurable": {"thread_id": "1"}}
-
 
 main_planner_node = planner_node
 main_agent_builder = StateGraph(PlanExecuteState)
@@ -106,7 +99,7 @@ main_graph = main_agent_builder.compile()
 
 
 import streamlit as st
-st.set_page_config(page_title="ORE Agent", page_icon="Logo.jpg", layout="wide")
+st.set_page_config(page_title="Quantif AI", page_icon="Logo.jpg", layout="wide")
 st.logo(
     "Logo.jpg",
     link="https://quantcatalysts.com",
@@ -116,12 +109,13 @@ st.logo(
 
 header_col, _, stop_button_col = st.columns(3)
 with header_col:
-    st.header("Risk Engine Copilot", divider=True)
+    st.header("QuantifAI", divider=True)
 
 with st.sidebar:
     uploaded_file = st.file_uploader("Upload Term Sheet", type=["pdf"])
     if uploaded_file is not None:
         term_sheet_file.term_sheet_data = load_pdf(uploaded_file.name)[1]
+    
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -139,7 +133,7 @@ for message in st.session_state.messages:
 
                     if (stream[node_name].get('plan_steps') is not None) and (stream[node_name].get('action') is None):
                         for step in stream[node_name]['plan_steps']:
-                            st.write(f"Agent: {step[0]} | Task: {step[1]} | Stopping Criteria: {step[2]}")
+                            st.write(f"Task: {step[1]}")
                     
                 if stream[node_name].get('action') == "FINISH":
                     with st.expander('See detailed report...'):
@@ -152,7 +146,7 @@ for message in st.session_state.messages:
                     st.success("Completed successfully.", icon="✅")
                 elif stream[node_name] is not None:
                     with st.spinner('Working on task:'):
-                        st.write(f"👤 {stream['router']['next_agent']} 🎯 {stream['router']['next_task']}  ⏹️ {stream['router']['stopping_criteria']}")
+                        st.write(f"🎯 {stream['router']['next_task']}")
             else:
                 summary_response = stream[node_name]['past_steps'][0][1]
                 with st.expander('See detailed report...'):
@@ -176,7 +170,7 @@ if user_prompt := st.chat_input("What do you want to get done from ORE today?"):
 
                     if (stream[node_name].get('plan_steps') is not None) and (stream[node_name].get('action') is None):
                         for step in stream[node_name]['plan_steps']:
-                            st.write(f"Agent: {step[0]} | Task: {step[1]} | Stopping Criteria: {step[2]}")
+                            st.write(f"Task: {step[1]}")
                     
                 if stream[node_name].get('action') == "FINISH":
                     with st.expander('See detailed report...'):
@@ -189,7 +183,7 @@ if user_prompt := st.chat_input("What do you want to get done from ORE today?"):
                     st.success("Completed successfully.", icon="✅")
                 elif stream[node_name] is not None:
                     with st.spinner('Working on task:'):
-                        st.write(f"👤 {stream['router']['next_agent']} 🎯 {stream['router']['next_task']}  ⏹️ {stream['router']['stopping_criteria']}")
+                        st.write(f"🎯 {stream['router']['next_task']}")
             else:
                 summary_response = stream[node_name]['past_steps'][0][1]
                 with st.expander('See detailed report...'):

@@ -117,7 +117,7 @@ def analyze_and_plot_relevant_files(query: str) -> Tuple[str, List[str]]:
     sys_prompt_pandas_prefix = f"""You are an expert in creating plots and visualizing data using matplotlib library and providing insights by analyzing files using python and pandas library.
      The file provided to you is a {df_query.report_type} report.
      This data contained in this report is described as follows: \n\n{report_descriptions[df_query.report_type]}\n\n
-     Remember to save the plot in the current working directory as jpg with an intuitive name and return back the plot file name and if the plot was successfully created and saved. Analyze the following query and generate a plot requested by user: \n\n"""
+     Remember to save the plot in the current working directory as jpg with an intuitive name and return back the plot file name and if the plot was successfully created and saved.Important: DO NOT try to display the plot in markdown instead save it in current directory .Analyze the following query and generate a plot requested by user: \n\n"""
 
    
 

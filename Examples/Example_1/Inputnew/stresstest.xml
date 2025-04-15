@@ -1,23 +1,34 @@
 <?xml version='1.0' encoding='utf-8'?>
 <StressTesting>
-  <StressTest id="eur_discount_curve_5pct_relative_shift">
+  <StressTest id="eur_discount_curve_hump">
     <DiscountCurves>
       <DiscountCurve ccy="EUR">
-        <ShiftType>Relative</ShiftType>
+        <ShiftType>Absolute</ShiftType>
         <ShiftTenors>6M,1Y,2Y,3Y,5Y,7Y,10Y,15Y,20Y</ShiftTenors>
-        <Shifts>0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05</Shifts>
+        <Shifts>0.03,0.03,0.03,0.03,0.03,0.02,0.01,0.01,0.01</Shifts>
       </DiscountCurve>
     </DiscountCurves>
-    <IndexCurves />
-    <YieldCurves />
-    <FxSpots />
-    <FxVolatilities />
-    <SwaptionVolatilities />
-    <CapFloorVolatilities />
-    <EquitySpots />
-    <EquityVolatilities />
-    <SecuritySpreads />
-    <RecoveryRates />
-    <SurvivalProbabilities />
+    <IndexCurves>
+    </IndexCurves>
+    <YieldCurves>
+    </YieldCurves>
+    <FxSpots>
+    </FxSpots>
+    <FxVolatilities>
+    </FxVolatilities>
+    <SwaptionVolatilities>
+    </SwaptionVolatilities>
+    <CapFloorVolatilities>
+    </CapFloorVolatilities>
+    <EquitySpots>
+    </EquitySpots>
+    <EquityVolatilities>
+    </EquityVolatilities>
+    <SecuritySpreads>
+    </SecuritySpreads>
+    <RecoveryRates>
+    </RecoveryRates>
+    <SurvivalProbabilities>
+    </SurvivalProbabilities>
   </StressTest>
 </StressTesting>

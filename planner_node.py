@@ -68,9 +68,12 @@ def replanner_node(state: PlanExecuteState):
         HumanMessage(content=replan_prompt)
     ]
     should_continue = llm.with_structured_output(FinishOrReplan).invoke(messages)
-    if should_continue.action == "FINISH":
+    if (should_continue.action == "FINISH"):
         return Command(goto="__end__", update={"action": "FINISH", 'markdown_report':summary_node(state)})
     else:
         response_replan = llm.with_structured_output(CreatePlan).invoke(messages)
-        return Command(goto="router", update={"plan_steps": response_replan.plan_steps})
+        if (response_replan.plan_steps is not None) and (response_replan.plan_steps != []):
+            return Command(goto="router", update={"plan_steps": response_replan.plan_steps})
+        else:
+            return Command(goto="__end__", update={"action": "FINISH", 'markdown_report':summary_node(state)})
     

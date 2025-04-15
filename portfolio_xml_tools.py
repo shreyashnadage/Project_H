@@ -43,7 +43,7 @@ def extract_trade_sample(trade_type:str) -> str:
 @tool(response_format="content")
 def create_trade_from_term_sheet() -> str:
     """
-    Create a new trade in the portfolio.xml file.
+    Create a new trade in the portfolio.xml file from the termsheet.
 
     This tool can convert a termsheet or trade description into a trade by extracting its details and add it to the portfolio.xml file.
    
